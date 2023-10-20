@@ -22,9 +22,25 @@
 
 .container {
   width: 100%;
-  padding-left: 32px;
-  padding-right: 32px;
+  padding-left: 20px;
+  padding-right: 20px;
   margin: 0 auto;}
 
- 
+ @font-face {
+   font-family: 'Neue Montreal', sans-serif;
+   src: url('../fonts/NeueMontreal-Regular.woff2') format('woff2'),
+     url('../fonts/NeueMontreal-Regular.woff') format('woff'),
+     url('../fonts/NeueMontreal-Regular.ttf') format('truetype');
+   font-style: normal;
+   font-weight: normal;
+ }
+
+ @font-face {
+   font-family: 'Neue Montreal';
+   src: url('../fonts/NeueMontreal-Italic.woff2') format('woff2'),
+     url('../fonts/NeueMontreal-Italic.woff') format('woff'),
+     url('../fonts/NeueMontreal-Italic.ttf') format('truetype');
+   font-weight: normal;
+   font-style: italic;
+ }
     
