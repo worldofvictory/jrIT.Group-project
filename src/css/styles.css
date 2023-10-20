@@ -21,7 +21,7 @@
   font-weight: 400;
 
   color: #242424;
-  background-color: rgba(255, 255, 255, 0.87);
+  background-color: D0CECE;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -29,3 +29,9 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+
+.container {
+  width: 100%;
+  padding-left: 32px;
+  padding-right: 32px;
+  margin: 0 auto;}
