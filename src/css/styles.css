@@ -18,6 +18,11 @@
   --background-color: #D0CECE;
   --backgroud-footer-text-color: #242424;
   --white-text-color: #F4F4F4;
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-text-size-adjust: 100%;
 }
 
 .container {
