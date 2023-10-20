@@ -1,0 +1,52 @@
+#tui-pagination-container {
+/* display: inline-flex;
+gap:8px;  */
+    /* width: 71px;
+    height: 31px;  */
+
+.tui-page-btn {
+
+    width: 12px;
+       border: none; 
+            align-items: center;
+                justify-content: center;
+        color: #D4D4D4;
+        font-size: 20px;
+        line-height: 20px;
+        letter-spacing: 0.8px;
+       padding: 0;
+        
+        
+} 
+
+.tui-page-btn:not(:last-child){
+     margin-right: 8px;
+}
+
+ .tui-is-selected {
+    display: inline-flex;
+    border: 1px solid var(--backgroud-footer-text-color);
+    border-radius: 50%;
+    padding-bottom: 6px;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 6px;
+    color: var(--backgroud-footer-text-color);
+    background-color: inherit;
+width: 31px;
+height: 31px;
+}
+
+.tui-page-btn:hover {
+    background-color: inherit;
+}
+
+.tui-ico-first, .tui-ico-prev, .tui-ico-next , .tui-ico-last  {
+    display: none;
+    /* overflow: hidden; */
+}
+
+
+ 
+}
+
