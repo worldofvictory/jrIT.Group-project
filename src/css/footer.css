@@ -7,19 +7,6 @@
 /* ______________________MOBILE________________________ */
 
 /* __________________________________TABLET_______________________ */
-@media screen and (min-width: 768px) {
-  .footer_tablet_container {
-    display: flex;
-    gap: 100px;
-  }
-}
-
-.footer_container {
-  width: 100%;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin: 0 auto;
-}
 
 /* ______________________DESKTOP________________________ */
 
@@ -33,8 +20,11 @@
 
 /* ________________________MAILING___________________________________ */
 
-.mailing {
-  margin-bottom: 100px;
+.mailing_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .mailing_slogan {
@@ -43,6 +33,7 @@
   font-size: 40px;
   font-family: 'Neue Montreal', sans-serif;
   line-height: 48px;
+  letter-spacing: -0.8px;
   font-style: normal;
   font-weight: normal;
 }
@@ -55,6 +46,7 @@
 }
 
 .mailing_input {
+  display: block;
   margin-bottom: 20px;
   width: 100%;
   height: 42px;
@@ -65,21 +57,44 @@
   font-family: 'Neue Montreal', sans-serif;
 }
 
+.mailing_input::placeholder {
+  color: var(--white-text-color);
+  opacity: 0.6;
+  font-size: 14px;
+}
+
 .mailing_button {
   height: 42px;
   width: 100%;
   border-radius: 30px;
   background-color: var(--white-text-color);
+  color: #242424;
+  font-size: 14px;
   border: none;
   font-family: 'Neue Montreal', sans-serif;
+  margin-bottom: 100px;
 }
 
 /* _______________________POLICY________________________ */
+
 .policy {
+  color: #c6cdd1;
+  font-size: 14px;
+  letter-spacing: -0.28px;
+  opacity: 0.9;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.policy_rights {
+  margin-bottom: 10px;
+  text-align: left;
+}
+.policy_terms-year {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
 }
+
 .policy_text {
   color: #c6cdd1;
   font-family: 'Neue Montreal', sans-serif;
@@ -87,20 +102,24 @@
   flex-direction: column;
   gap: 10px;
 }
+
 .policy_year {
   color: #c6cdd1;
   font-family: 'Neue Montreal', sans-serif;
 }
+
 /* ________________________SOC-ICONS_____________________ */
 .soc-icons_list {
   display: flex;
   margin-bottom: 40px;
   gap: 12px;
 }
+.soc-icons_logo {
+  fill: #f4f4f4;
+}
 
 .soc-icons_item {
-  width: 40px;
-  height: 40px;
+  padding: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -108,9 +127,111 @@
   border: 1px solid rgba(244, 244, 244, 0.1);
   border-radius: 10px;
 }
-
-/* .soc-icons_link {
+.soc-icons_item:hover {
+  background-color: #f4f4f4;
+}
+.soc-icons_logo:hover {
+  fill: #242424;
 }
 
-.soc-icons_logo {
-} */
+.soc-icons_link {
+}
+
+@media screen and (min-width: 375px) {
+  .footer_container {
+    max-width: 335px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .footer_links-mailing {
+    display: flex;
+    gap: 75px;
+  }
+
+  .footer {
+    padding: 64px 32px 32px 32px;
+  }
+
+  .footer_logo {
+    margin-bottom: 32px;
+  }
+
+  .footer_soc-icons_logo {
+    height: 28px;
+    width: 28px;
+  }
+
+  .mailing_form_wrapper {
+    width: 350px;
+  }
+
+  .mailing_slogan {
+    font-size: 54px;
+    line-height: 1.07;
+    letter-spacing: -1.12px;
+  }
+
+  .mailing_label {
+    margin-top: 32px;
+    font-size: 17px;
+    line-height: 24px;
+  }
+
+  .mailing_input::placeholder {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .mailing_button {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .policy {
+    display: flex;
+  }
+
+  .policy_terms-year {
+    gap: 208px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .footer {
+  }
+  .footer_links-mailing {
+    display: flex;
+    gap: 158px;
+  }
+
+  .footer__container {
+    max-width: 1408px;
+    padding: 64px 32px 32px 32px;
+  }
+
+  .mailing {
+    display: flex;
+    gap: 158px;
+  }
+
+  .mailing_label {
+    margin-top: 0;
+  }
+  .mailing_form {
+    width: 350px;
+  }
+
+  .mailing_form_wrapper {
+    flex-direction: column;
+    width: 350px;
+  }
+  .policy {
+    display: flex;
+    justify-content: flex-start;
+    gap: 136px;
+  }
+
+  .policy_terms-year {
+    gap: 515px;
+  }
+}

@@ -1,6 +1,6 @@
 <footer class="footer">
-  <div class="container">
-    <div class="footer_tablet_container">
+  <div class="container footer_container">
+    <div class="footer_links-mailing">
       <div class="footer_links">
         <a class="footer_logo">YOUR ENERGY</a>
         <ul class="soc-icons_list">
@@ -23,7 +23,7 @@
             <a class="soc-icons_link"
               ><svg width="24" height="24" class="soc-icons_logo">
                 <use
-                  href="/img/sprite/sprite.svg#icon-youtube-white"
+                  href="./img/sprite/sprite.svg#icon-youtube-white"
                 ></use></svg
             ></a>
           </li>
@@ -31,14 +31,12 @@
       </div>
 
       <div class="mailing">
-        <p class="mailing_slogan">
+        <h3 class="mailing_slogan">
           Transforming your <i>body</i> shape with us
-        </p>
-        <form class="mailing_form">
-          <div class="mailing_form_box">
-            <p class="mailing_label">
-              Subscribe and learn about new exercises!
-            </p>
+        </h3>
+        <div class="mailing_form_wrapper">
+          <p class="mailing_label">Subscribe and learn about new exercises!</p>
+          <form class="mailing_form">
             <input
               type="email"
               name="email"
@@ -47,19 +45,20 @@
               id="mailing-email"
               required
             />
-          </div>
-          <button type="submit" class="mailing_button button">Send</button>
-        </form>
+
+            <button type="submit" class="mailing_button button">Send</button>
+          </form>
+        </div>
       </div>
     </div>
-
     <div class="policy">
-      <div class="policy_text">
-        <p>Your Energy. All rights reserved.</p>
-        <p>Privacy Policy / Terms of Service</p>
+      <p class="policy_rights">Your Energy. All rights reserved.</p>
+      <div class="policy_terms-year">
+        <p class="policy_terms">
+          Privacy Policy &nbsp;/&nbsp; Terms of Service
+        </p>
+        <p class="policy_year">©2023</p>
       </div>
-
-      <p class="policy_year">©2023</p>
     </div>
   </div>
 </footer>
