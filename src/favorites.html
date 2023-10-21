@@ -13,13 +13,45 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="./css/styles.css" />
-
   </head>
   <body>
-      <a href="./index.html">Go to home</a>
-      <load ="partials/header.html" />
-      <load ="partials/quote-of-the-day.html" />
-      <load ="partials/favorite.html" />
-    </section>
+    <a href="./index.html">Go to home</a>
+    <load ="partials/header.html" />
+    <load ="partials/quote-of-the-day.html" />
+    <load ="partials/favorite.html" />
+    <!-- header -->
+    <header></header>
+    <!-- main -->
+    <main>
+      <section class="favorites">
+        <div class="favorites-container">
+          <h1 class="favorites-tittle">Favorites</h1>
+          <div class="span"></div>
+          <div class="features">
+            <div class="features-content">
+              <svg width="20" height="20">
+                <use href="./img/sprite.svg#icon-dumbbell-black"></use>
+              </svg>
+              <p class="features-tittle">110 min</p>
+              <p class="features-text">Daily norm of sports</p>
+            </div>
+          </div>
+          <img
+            class="favorites-img"
+            src="./img/women-sportswear-working-out-outdoors (2) 1-min.png"
+            alt="women walking outdoors"
+            width="335"
+            height="119"
+          />
+          <div class="js-hidden-text">
+            <p class="features-text default-text">
+              It appears that you haven't added any exercises to your favorites
+              yet. To get started, you can add exercises that you like to your
+              favorites for easier access in the future.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
