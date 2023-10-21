@@ -3,11 +3,9 @@
   padding-top: 40px;
   padding-bottom: 20px;
 }
-@media screen and (min-width: 480px) {
-  .container {
-    width: 480px;
-  }
-}
+
+/* ______________________MOBILE________________________ */
+
 /* __________________________________TABLET_______________________ */
 @media screen and (min-width: 768px) {
   .footer_tablet_container {
@@ -23,11 +21,14 @@
   margin: 0 auto;
 }
 
+/* ______________________DESKTOP________________________ */
+
 /* ___________________________LOGO________________________________ */
 
 .footer_logo {
   color: var(--white-text-color);
   margin-bottom: 20px;
+  display: block;
 }
 
 /* ________________________MAILING___________________________________ */
@@ -41,6 +42,7 @@
   margin-bottom: 20px;
   font-size: 40px;
   font-family: 'Neue Montreal', sans-serif;
+  line-height: 48px;
   font-style: normal;
   font-weight: normal;
 }
@@ -93,4 +95,22 @@
 .soc-icons_list {
   display: flex;
   margin-bottom: 40px;
+  gap: 12px;
 }
+
+.soc-icons_item {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: 1px solid rgba(244, 244, 244, 0.1);
+  border-radius: 10px;
+}
+
+/* .soc-icons_link {
+}
+
+.soc-icons_logo {
+} */
