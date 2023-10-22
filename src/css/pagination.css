@@ -54,4 +54,11 @@
         display: none;
     }
 
+        .tui-first,
+        .tui-next,
+        .tui-prev,
+        .tui-last {
+            display: none;
+        }
+
 }
