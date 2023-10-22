@@ -1,4 +1,4 @@
-import Pagination  from "tui-pagination";
+import Pagination from "tui-pagination";
 import 'tui-pagination/dist/tui-pagination.css';
 
 const form = document.querySelector(".search-form");
@@ -17,17 +17,22 @@ function fetchExercises(keyword) {
     
     Promise.all(categories.map(category => {
         return fetch(`${apiUrl}/exercises?keyword=${keyword}&bodypart=${category}&limit=12`)
-            .then(response => response.json());
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Sorry, is not found`);
+                }
+                return response.json();
+            });
     }))
-    .then(data => {
-        exercisesBack.innerHTML = "";
-        data.forEach(categoryData => {
-            handleExerciseData(categoryData.results);
+        .then(data => {
+            exercisesBack.innerHTML = "";
+            data.forEach(categoryData => {
+                handleExerciseData(categoryData.results);
+            });
+        })
+        .catch(error => {
+            console.error(error);
         });
-    })
-    .catch(error => {
-        console.error(error);
-    });
 }
 
 function searchExercises(event) {
@@ -39,7 +44,7 @@ function searchExercises(event) {
 
 function handleExerciseData(results) {
     if (results.length === 0) {
-        exercisesInform.innerHTML = "Sorry, is not found";
+        exercisesBack.innerHTML = "Sorry, is not found";
     } else {
         results.forEach((exercise) => {
             const infoCard = createInfoCard(exercise);
@@ -47,6 +52,7 @@ function handleExerciseData(results) {
         });
     }
 }
+
 function createInfoCard(exercise) {
     const exerciseCard = document.createElement("li");
     exerciseCard.classList.add("exCard");
@@ -81,6 +87,5 @@ function createInfoCard(exercise) {
         <p class="ex-info-p last-p">Target: ${exercise.target}</p>
     </div>
     `;
-
     return exerciseCard;
 }
