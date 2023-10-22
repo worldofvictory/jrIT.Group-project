@@ -38,3 +38,8 @@
   font-family: 'NeueMontrealitalic';
   src: url('../fonts/NeueMontreal-Italic.otf.otf');
 }
+
+ @font-face {
+   font-family: "Neue Montreal Medium";
+   src: url('../fonts/NeueMontreal-Medium.otf');
+ }
