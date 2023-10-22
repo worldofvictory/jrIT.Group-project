@@ -5,3 +5,5 @@ import './js/header';
 import './js/filter-2';
 import './js/filter-1';
 import './js/preloader';
+import './js/scroll';
+import './js/menu';
