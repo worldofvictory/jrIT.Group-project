@@ -251,25 +251,25 @@
   }
 }
 
-.container {
+.container_test {
   width: 100%;
   padding: 0 15px;
   margin: 0 auto;
 }
 
 @media screen and (min-width: 375px) {
-  .container {
+  .container_test {
     max-width: 365px;
   }
 }
 @media screen and (min-width: 768px) {
-  .container {
+  .container_test {
     max-width: 734px;
     padding: 0;
   }
 }
 @media screen and (min-width: 1440px) {
-  .container {
+  .container_test {
     max-width: 1406px;
     padding: 0;
   }
