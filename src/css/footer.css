@@ -39,6 +39,7 @@
 }
 
 .mailing_input {
+  color: #f4f4f4;
   display: block;
   margin-bottom: 20px;
   width: 100%;
@@ -48,6 +49,16 @@
   border: 1px solid var(--white-text-color);
   background-color: initial;
   font-family: 'Neue Montreal', sans-serif;
+  outline: none;
+}
+
+.mailing_input:hover {
+  border-color: var(--white-text-color);
+  box-shadow: 0 0 15px rgba(244, 244, 244, 0.8);
+}
+.mailing_input:focus {
+  border-color: var(--white-text-color);
+  box-shadow: 0 0 15px rgba(244, 244, 244, 0.8);
 }
 
 .mailing_input::placeholder {
@@ -224,12 +235,12 @@
     width: 350px;
   }
   .policy {
-    /* display: flex;
-      justify-content: flex-start;
-      gap: 136px; */
-
     display: flex;
     position: relative;
+  }
+
+  .policy_rights {
+    margin-bottom: 0;
   }
 
   .policy_terms-year {
@@ -240,25 +251,25 @@
   }
 }
 
-.container {
+.container_test {
   width: 100%;
   padding: 0 15px;
   margin: 0 auto;
 }
 
 @media screen and (min-width: 375px) {
-  .container {
+  .container_test {
     max-width: 365px;
   }
 }
 @media screen and (min-width: 768px) {
-  .container {
+  .container_test {
     max-width: 734px;
     padding: 0;
   }
 }
 @media screen and (min-width: 1440px) {
-  .container {
+  .container_test {
     max-width: 1406px;
     padding: 0;
   }
