@@ -18,8 +18,8 @@ async function renderQuote() {
 
     const quoteText = document.querySelector(".quote-text"); 
     const quoteAuthor = document.querySelector(".quote-author");
-    quoteText.textContent = quoteData.quote; 
-    quoteAuthor.textContent = quoteData.author;
+    quoteText.textContent = storedQuoteState.quote; 
+    quoteAuthor.textContent = storedQuoteState.author;
 
 }
 
