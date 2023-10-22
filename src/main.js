@@ -7,3 +7,6 @@ import './js/filter-1';
 import './js/preloader';
 import './js/scroll';
 import './js/menu';
+import './js/modal-exercise';
+import './js/modal-form';
+import './js/modal-class-box';
