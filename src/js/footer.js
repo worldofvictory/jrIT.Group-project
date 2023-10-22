@@ -17,6 +17,7 @@ mailingForm.addEventListener('submit', function (e) {
     })
       .then(response => response.json())
       .then(data => {
+        mailingForm.reset();
         Notify.success(
           "We're excited to have you on board! 🎉 Thank you for subscribing to new exercises on Your Energy. You've just taken a significant step towards improving your fitness and well-being."
         );
