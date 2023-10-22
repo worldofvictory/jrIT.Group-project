@@ -15,6 +15,7 @@
 @import url('./hero.css');
 @import url('./pagination.css');
 @import url('./scrollbutton.css');
+@import url(./preloader.css);
 
 :root {
   --background-color: #D0CECE;

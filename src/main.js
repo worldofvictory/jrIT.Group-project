@@ -4,5 +4,4 @@ import './js/scrollbutton';
 import './js/header';
 import './js/filter-2';
 import './js/filter-1';
-import './js/menu';
-import './js/scroll';
+import './js/preloader';
