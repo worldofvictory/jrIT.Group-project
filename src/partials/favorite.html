@@ -1,69 +1,69 @@
-<main>
-  <section class="favorites">
-    <div class="favorites-container">
-      <h1 class="favorites-tittle">Favorites</h1>
+ <main>
+      <section class="favorites">
+        <div class="favorites-container">
+          <h1 class="favorites-tittle">Favorites</h1>
 
-      <div class="thumb">
-        <div class="flex-conteiner">
-          <div class="favorites-quote">
-            <div class="quote">
-              <svg width="34" height="32">
-                <use href="./img/sprite.svg#icon-icon"></use>
-              </svg>
-
-              <div class="quote-content">
-                <div class="flex">
-                  <h2 class="quote-tittle">Quote of the day</h2>
-                  <svg class="commas" width="20" height="20">
-                    <use href="./img/sprite.svg#icon-inverted-commas"></use>
+          <div class="thumb">
+            <div class="flex-conteiner">
+              <div class="favorites-quote">
+                <div class="quote">
+                  <svg width="34" height="32">
+                    <use href="./img/sprite.svg#icon-icon"></use>
                   </svg>
-                </div>
 
-                <p class="quote-text">
-                  A lot of times I find that people who are blessed with the
-                  most talent don't ever develop that attitude, and the ones who
-                  aren't blessed in that way are the most competitive and have
-                  the biggest heart.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="features-container">
-            <div class="features">
-              <div class="features-content">
-                <svg width="20" height="20">
-                  <use href="./img/sprite.svg#icon-dumbbell-black"></use>
-                </svg>
-                <div class="text-pozition">
-                  <p class="features-tittle">110 min</p>
-                  <p class="favorites-text">Daily norm of sports</p>
+                  <div class="quote-content">
+                    <div class="flex">
+                      <h2 class="quote-tittle">Quote of the day</h2>
+                      <svg class="commas" width="20" height="20">
+                        <use href="./img/sprite.svg#icon-inverted-commas"></use>
+                      </svg>
+                    </div>
+
+                    <p class="quote-text">
+                      A lot of times I find that people who are blessed with the
+                      most talent don't ever develop that attitude, and the ones
+                      who aren't blessed in that way are the most competitive
+                      and have the biggest heart.
+                    </p>
+                  </div>
                 </div>
               </div>
+              <div class="features-container">
+                <div class="features">
+                  <div class="features-content">
+                    <svg width="20" height="20">
+                      <use href="./img/sprite.svg#icon-dumbbell-black"></use>
+                    </svg>
+                    <div class="text-pozition">
+                      <p class="features-tittle">110 min</p>
+                      <p class="favorites-text">Daily norm of sports</p>
+                    </div>
+                  </div>
+                </div>
+                <img
+                  class="favorites-img"
+                  srcset="
+                    ./img/women-working-m.jpg 335w,
+                    ./img/women-working-t.jpg 344w,
+                    ./img/women-working-d.jpg 239w
+                  "
+                  sizes="(min-width: 1440px) 239px, (min-width: 768px) 344px, 100vw"
+                  src="./img/women-working-m.jpg"
+                  alt="women walking outdoors"
+                />
+              </div>
             </div>
-            <img
-              class="favorites-img"
-              srcset="
-                ./img/women-working-m.jpg 335w,
-                ./img/women-working-t.jpg 344w,
-                ./img/women-working-d.jpg 239w
-              "
-              sizes="(min-width: 1440px) 239px, (min-width: 768px) 344px, 100vw"
-              src="./img/women-working-m.jpg"
-              alt="women walking outdoors"
-            />
-          </div>
-        </div>
 
-        <div class="js-hidden-text">
-          <p class="favorites-text default-text">
-            It appears that you haven't added any exercises to your favorites
-            yet. To get started, you can add exercises that you like to your
-            favorites for easier access in the future.
-          </p>
+            <div class="js-hidden-text">
+              <p class="favorites-text default-text">
+                It appears that you haven't added any exercises to your
+                favorites yet. To get started, you can add exercises that you
+                like to your favorites for easier access in the future.
+              </p>
+            </div>
+          </div>
+          <div class="favorites-gallery"></div>
+          <div id="tui-pagination-container" class="tui-pagination"></div>
         </div>
-      </div>
-      <div class="favorites-gallery"></div>
-      <div id="tui-pagination-container" class="tui-pagination"></div>
-    </div>
-  </section>
-</main>
+      </section>
+    </main>
