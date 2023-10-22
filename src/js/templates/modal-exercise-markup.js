@@ -25,12 +25,24 @@ export function createModalExerciseMarkup({
         data-modal-exercise="close"
       >
         <svg class="modal-exercise-close-icon">
-          <use href="./img/sport-sprite.svg#icon-cross"></use>
+          <use href="./img/sprite.svg#icon-close-modal"></use>
         </svg>
       </button>
       <h3 class="modal-exercise-title">${makeUpperCaseFirstLetter(name)}</h3>
       <div class="modal-exercise-rating-container">
         <p class="modal-exercise-rating-number">${rating}</p>
+        <div class="modal-exercise-rating-stars" id="modal-exercise-rating-stars">
+            <svg class="modal-exercise-rating-icon">
+              <use href="./img/sprite.svg#icon-star-yellow"></use></svg>
+            <svg class="modal-exercise-rating-icon">
+              <use href="./img/sprite.svg#icon-star-yellow"></use></svg>
+            <svg class="modal-exercise-rating-icon">
+              <use href="./img/sprite.svg#icon-star-yellow"></use></svg>
+            <svg class="modal-exercise-rating-icon">
+              <use href="./img/sprite.svg#icon-star-yellow"></use></svg>
+            <svg class="modal-exercise-rating-icon">
+              <use href="./img/sprite.svg#icon-star-yellow"></use></svg>
+        </div> 
       </div>
       <div class="modal-exercise-tag-container">
         <ul class="modal-exercise-tag-list">
@@ -71,7 +83,7 @@ export function createModalExerciseMarkup({
         Add to favorites
         <span>
           <svg class="modal-exercise-heart-icon js-modal-exercise-heart-icon">
-            <use href="./img/sport-sprite.svg#icon-heart"></use></svg
+            <use href="./img/sprite.svg#icon-heart"></use></svg
         ></span>
       </button>
     </li>
@@ -90,7 +102,7 @@ export function createAddToFavoritesMarkup() {
   Add to favorites
         <span>
           <svg class="modal-exercise-heart-icon js-modal-exercise-heart-icon">
-            <use href="./img/sport-sprite.svg#icon-heart"></use></svg
+            <use href="./img/sprite.svg#icon-heart"></use></svg
         ></span>`;
 }
 
@@ -99,7 +111,7 @@ export function createRemoveFromFavoritesMarkup() {
   Remove from favorites
         <span>
           <svg class="modal-exercise-heart-icon js-modal-exercise-heart-icon modal-favorite-active-icon">
-            <use href="./img/sport-sprite.svg#icon-trash"></use></svg
+            <use href="./img/sprite.svg#icon-trash-modal"></use></svg
         ></span>
   `;
 }
