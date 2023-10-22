@@ -1,0 +1,120 @@
+.filter-section-next {
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+    background-color: #F4F4F4;
+}
+.search-exercises {
+    position: relative;
+}
+.search-input {
+    display: block;
+    width: 100%;
+    height: 44px;
+    margin: 0 auto;
+    border: 1px solid #242424;
+    border-radius: 30px;
+    font-size: 14px;
+    line-height: 1.43;
+    padding-left: 14px;
+    color: #242424;
+    margin-bottom: 20px;
+    font-family: 'Neue Montreal', sans-serif;
+}
+.search-input:hover {
+    color: #24242499;
+}
+#icon-search {
+    position: absolute;
+    right: 11px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.search-input:focus+#icon-search {
+    fill: #F4F4F4;
+}
+.search-input:focus+#icon-x {
+    background: #242424;
+}
+#icon-x {
+    position: absolute;
+    right: 11px;
+    top: 50%;
+    transform: translateY(-50%);
+    fill: #F4F4F4;
+}
+.filter-list-next {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+.exercises-back {
+    margin: 0 auto;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    width: 335px;
+    gap: 20px;
+}
+.exCard {
+    display: flex;
+    height: 141px;
+    width: 335px;
+    border-radius: 15px;
+    flex-wrap: wrap;
+    align-content: center;
+}
+.high-card {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.workout-p {
+    border: 1px solid #242424;
+    border-radius: 15px;
+    padding: 5px 7.5px;
+}
+#icon-star {
+    fill: #EEA10C;
+}
+.exercise-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+    white-space: nowrap;
+    gap: 16px;
+    margin-left: 20px;
+}
+.ex-name {
+    font-size: 20px;
+    line-height: 1;
+    color: #242424;
+    font-family: 'Neue Montreal', sans-serif;
+}
+.exercise-info {
+    display: flex;
+    gap: 10px;
+    margin: auto;
+    max-width: 303px;
+}
+.ex-info-p {
+    font-size: 12px;
+    line-height: 1.5;
+    color: #242424;
+    font-family: 'Neue Montreal', sans-serif;
+    white-space: nowrap;
+}
+.last-p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+@media screen and (min-width: 375px) {
+    .search-input {
+        width: 335px;
+    }
+}
