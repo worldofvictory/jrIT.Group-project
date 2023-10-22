@@ -14,16 +14,17 @@
 @import url('./footer.css');
 @import url('./hero.css');
 @import url('./pagination.css');
+@import url('./modal-form.css');
 
 :root {
-  --background-color: #D0CECE;
+  --background-color: #d0cece;
   --backgroud-footer-text-color: #242424;
-  --white-text-color: #F4F4F4;
-      font-synthesis: none;
-        text-rendering: optimizeLegibility;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        -webkit-text-size-adjust: 100%;
+  --white-text-color: #f4f4f4;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
 }
 .container {
   width: 100%;
@@ -54,13 +55,12 @@
   }
 }
 
- @font-face {
-   font-family: 'NeueMontrealRegular';
-   src: url("../fonts/NeueMontreal-Regular.otf");
- }
+@font-face {
+  font-family: 'NeueMontrealRegular';
+  src: url('../fonts/NeueMontreal-Regular.otf');
+}
 
- @font-face {
-   font-family: 'NeueMontrealitalic';
-  src: url("../fonts/NeueMontreal-Italic.otf.otf");
- }
-    
+@font-face {
+  font-family: 'NeueMontrealitalic';
+  src: url('../fonts/NeueMontreal-Italic.otf.otf');
+}
