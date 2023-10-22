@@ -1,16 +1,17 @@
-import Pagination from 'tui-pagination';
+import Pagination  from "tui-pagination";
 import 'tui-pagination/dist/tui-pagination.css';
 
 function makePagination(perPage, totalPages) {
-  const paginationEl = document.getElementById('tui-pagination-container');
+
+  const paginationEl = document.getElementById('tui-pagination-container');  
   const visiblePages = totalPages < 5 ? totalPages : 5;
   const options = {
-    totalItems: perPage * totalPages,
+    totalItems:perPage*totalPages,
     itemsPerPage: perPage,
     visiblePages,
     centerAlign: true,
   };
-  console.log(perPage, totalPages);
+ console.log(perPage, totalPages)
   const pagination = new Pagination(paginationEl, options);
 
   if (visiblePages <= 1) {
@@ -23,9 +24,9 @@ function makePagination(perPage, totalPages) {
 }
 
 export { makePagination };
-
-//  <div id="tui-pagination-container" class="tui-pagination"></div>
-
+    
+//  <div id="tui-pagination-container" class="tui-pagination"></div> 
+    
 // makePagination(12, data.totalPages).on(
 //     'afterMove',
 //     ({ page }) => {
