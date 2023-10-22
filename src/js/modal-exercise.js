@@ -1,5 +1,5 @@
 import { Notify } from 'notiflix';
-import { fetchExerciseModalById } from './api-service/modal-exercise-api';
+import { fetchExerciseModalById } from './api-services/modal-exercise-api';
 import {
   createModalExerciseMarkup,
   createAddToFavoritesMarkup,
