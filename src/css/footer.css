@@ -136,7 +136,7 @@
 }
 
 .soc-icons_logo {
-  fill: #f4f4f4;
+    fill: #f4f4f4;
 }
 .soc-icons_item:hover .soc-icons_logo {
   fill: #242424;
