@@ -1,20 +1,85 @@
-/* body {
+body {
     background: #F4F4F4;
-} */
+}
 
 .favorites {
     display:block;
-    padding-top: 84px;
+    padding-top: 80px;
     padding-bottom: 80px;
+}
+
+@media screen and (min-width: 768px) {
+    .favorites {
+        padding-top: 100px;
+        padding-bottom: 100px;
+         
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .favorites {
+        padding-top: 90px;
+        padding-bottom: 51px;
+
+    }
+}
+
+.features-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+
+@media screen and (min-width: 768px) {
+    .features-container {
+        flex-direction: row;
+        gap: 16px;
+        margin-top: 16px;
+    }
 }
 
 .favorites-container {
     min-width: 320px;
+    max-width: 480px;
     padding-left: 20px;
     padding-right: 20px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
+}
 
+
+@media screen and (min-width: 768px) {
+    .favorites-container {
+        max-width: 768px;
+        padding-left: 32px;
+        padding-right: 32px;  
+    }  
+}
+
+@media screen and (min-width: 1440px) {
+    .favorites-container {
+        max-width: 1440px;
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+ }
+
+@media screen and (min-width: 1440px) {
+    .flex-conteiner {
+        display: flex;
+        flex-direction: column;
+        width: 494px;          
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .thumb {
+        display: flex;
+        align-items: baseline;
+        margin-top: 44px;
+        gap: 180px;
+    }
 }
 
 .favorites-tittle {
@@ -26,21 +91,37 @@
     letter-spacing: -0.56px;
 }
 
-.span {
-    max-width: 335px;
+@media screen and (min-width: 768px) {
+    .favorites-tittle {
+       font-size: 44px;  
+    }
+}
+
+.favorites-quote {
     height: 159px;
     border-radius: 20px;
     background: #242424;
     margin-top:20px; 
 }
 
+@media screen and (min-width: 768px) {
+    .favorites-quote {
+        margin-top: 32px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .favorites-quote {
+        margin-top: 0; 
+        width: 494px;
+    }
+}
+
+
 .features {
-    max-width: 335px;
-    height: 119px;
-    /* border: 1px solid black; */
     border-radius: 20px;
     background: #FFF;
-    margin-top: 20px;
+    /* border: 1px solid red; */
 }
 
 .features-tittle { 
@@ -49,18 +130,23 @@
     font-size: 20px;
     font-style: normal;
     font-weight: 500;
-    line-height: 20px;   
-    margin-top: 15px;
+    line-height: 20px;     
 }
- .features-text { 
+
+@media screen and (min-width: 768px) {
+    .features-tittle {
+        font-size: 24px;
+    }
+}
+
+.favorites-text { 
     color: rgba(36, 36, 36, 0.60);
     font-family: NeueMontrealRegular;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
-    line-height: 18px;
-    margin-top: 6px; 
- }
+    line-height: 18px;   
+}
 
 .features-content {
     display: inline-flex;
@@ -70,23 +156,75 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-
 }
 
+@media screen and (min-width: 768px) {
+    .features-content {
+        padding-top: 25px;
+        padding-bottom: 25px;
+        padding-left: 25px;
+        padding-right: 200px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .features-content {
+    padding-right: 95px;
+}    
+}
+    
+
 .favorites-img {
+    display: block;
+    width: 100%;
+    height: auto;
     border-radius: 20px;
-    margin-top: 20px;
+ 
+    
+}
+
+.text-pozition {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    margin-top: 15px;
+    width: 119px;
 }
 
 .default-text {
-    color: #242424;    
+    color: #242424; 
+    margin-top: 0;
 }
+
+
+@media screen and (min-width: 768px) {
+    .default-text {
+        font-size: 18px;
+    }
+}
+
 
 .js-hidden-text {
     display: flex;
     margin-top: 40px;
-    max-width:318px;
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;    
+    /* margin-left: auto;
+    margin-right: auto;     */
+}
+
+@media screen and (min-width: 768px){
+    .js-hidden-text {
+        margin-top: 140px;  
+
+    /* padding-right: 75px;
+        padding-left: 75px; */
+} 
+
+
+@media screen and (min-width: 1440px) {
+    .js-hidden-text {
+        margin-top: 0px;     
+    }
+}
 }

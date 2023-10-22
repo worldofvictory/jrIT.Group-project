@@ -26,29 +26,45 @@
       <section class="favorites">
         <div class="favorites-container">
           <h1 class="favorites-tittle">Favorites</h1>
-          <div class="span"></div>
-          <div class="features">
-            <div class="features-content">
-              <svg width="20" height="20">
-                <use href="./img/sprite.svg#icon-dumbbell-black"></use>
-              </svg>
-              <p class="features-tittle">110 min</p>
-              <p class="features-text">Daily norm of sports</p>
+
+          <div class="thumb">
+            <div class="flex-conteiner">
+              <div class="favorites-quote"></div>
+              <div class="features-container">
+                <div class="features">
+                  <div class="features-content">
+                    <svg width="20" height="20">
+                      <use href="./img/sprite.svg#icon-dumbbell-black"></use>
+                    </svg>
+                    <div class="text-pozition">
+                      <p class="features-tittle">110 min</p>
+                      <p class="favorites-text">Daily norm of sports</p>
+                    </div>
+                  </div>
+                </div>
+                <img
+                  class="favorites-img"
+                  srcset="
+                    ./img/women-working-m.jpg 335w,
+                    ./img/women-working-t.jpg 344w,
+                    ./img/women-working-d.jpg 239w
+                  "
+                  sizes="(min-width: 1440px) 239px, (min-width: 768px) 344px, 100vw"
+                  src="./img/women-working-m.jpg"
+                  alt="women walking outdoors"
+                />
+              </div>
             </div>
-          </div>
-          <img
-            class="favorites-img"
-            src="./img/women-sportswear-working-out-outdoors (2) 1-min.png"
-            alt="women walking outdoors"
-            width="335"
-            height="119"
-          />
-          <div class="js-hidden-text">
-            <p class="features-text default-text">
-              It appears that you haven't added any exercises to your favorites
-              yet. To get started, you can add exercises that you like to your
-              favorites for easier access in the future.
-            </p>
+
+            <div class="js-hidden-text">
+              <p class="favorites-text default-text">
+                It appears that you haven't added any exercises to your
+                favorites yet. To get started, you can add exercises that you
+                like to your favorites for easier access in the future.
+              </p>
+            </div>
+            <div class="favorites-gallery"></div>
+            <div id="tui-pagination-container" class="tui-pagination"></div>
           </div>
         </div>
       </section>
