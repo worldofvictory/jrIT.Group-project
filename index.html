@@ -13,21 +13,142 @@
       referrerpolicy="no-referrer"
     />
     
-    <script type="module" crossorigin src="/jrIT.Group-project/assets/index-2842ca58.js"></script>
+    <script type="module" crossorigin src="/jrIT.Group-project/assets/index-8907f805.js"></script>
     <link rel="stylesheet" href="/jrIT.Group-project/assets/index-a0b14d8a.css">
-    <link rel="stylesheet" href="/jrIT.Group-project/assets/styles-25995e94.css">
+    <link rel="stylesheet" href="/jrIT.Group-project/assets/styles-11b94973.css">
   </head>
   <body>
     <header class="header">
-  <h1>Хедер</h1>
-  <nav class="nav">
-    <ul class="nav-list">
-      <li class="nav-item">
-        <a href="./favorites.html" class="nav-link">Ciao</a>
-        <p>Ciao1</p>
+  <div class="h-container header-container">
+    <nav class="nav-header">
+      <a href="./index.html" class="header-logo">
+        <svg class="header-logo-swg" width="132" height="24">
+          <!-- <use href="./img/svg/symbol-defs.svg#icon-logo"></use> -->
+
+          <use href="/jrIT.Group-project/assets/sprite-975e2cde.svg#icon-logo"></use>
+        </svg>
+        </a>
+
+      <ul class="list-menu list">
+        <li class="list-header">
+          <a href="./index.html" class="h-list-link">Home</a>
+        </li>
+        <li class="list-header-favorites">
+          <a href="./favorite.html" class="h-list-link-favorites">Favorites</a>
+        </li>
+      </ul>
+    </nav>
+
+    <ul class="heder-social">
+      <li class="heder-soc-li">
+        <a class="heder-soc-svg" href="https://www.facebook.com/goITclub/" target="_blank">
+          <svg class="heder-soc-icon" width="44" height="44">
+            <use href="/jrIT.Group-project/assets/sprite-975e2cde.svg#icon-facebook-black"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="heder-soc-li">
+        <a class="heder-soc-svg" href="https://www.instagram.com/goitclub/" target="_blank">
+          <svg class="heder-soc-icon" width="44" height="44">
+            <use href="/jrIT.Group-project/assets/sprite-975e2cde.svg#icon-instagram-black"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="heder-soc-li">
+        <a class="heder-soc-svg" href="https://www.youtube.com/c/GoIT" target="_blank">
+          <svg class="heder-soc-icon" width="44" height="44">
+            <use href="/jrIT.Group-project/assets/sprite-975e2cde.svg#icon-youtube-black"></use>
+          </svg>
+        </a>
       </li>
     </ul>
-  </nav>
+
+
+    <button class="mob-button" type="button" data-menu-open>
+      <svg class="menu-button" width="32" height="32">
+        <use href="/jrIT.Group-project/assets/sprite-975e2cde.svg#icon-align-justify"></use>
+      </svg>
+    </button>
+  </div>
+
+  <!--* Мобільне меню**************************************************************************** -->
+
+  <div class="mobil-menu">
+    <!-- Для підключення JS додаємо в хедер data-menu-open на кнопку відкриття і  data-menu-close на кнопку закриття-->
+    <!-- Додаємо is-hidden для JS -->
+    <div class="mob-menu is-hidden" data-menu>
+      <!-- мобільний хедер -->
+
+      <div class="mob-mob-header">
+        <div class="h-container mob-header-container">
+          <div class="mob-header-header">
+            <div class="mob-nav-header">
+              <a class="mob-text-header-logo" href="./index.html">INDEX.HTML</a>
+            </div>
+          </div>
+          <button class="mob-close-button" type="button" data-menu-close>
+            <svg class="mob-close-button-mob" width="24" height="24">
+              <use href="/jrIT.Group-project/assets/sprite-975e2cde.svg#icon-x"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="mobil">
+        <ul class="mob-menu-list list">
+          <li class="mob-menu-item">
+            <a href="./index.html" class="mob-menu-link scroll-to ">Home</a>
+          </li>
+          <li class="mob-menu-item">
+            <a href="./favorite.html" class="mob-menu-link scroll-to">Favorites</a>
+          </li>
+                      <!-- для переходу на модалку data-modal-open="order" -->
+            <!-- <a class="mob-menu-link scroll-to" href="" data-modal-open="order">
+              <svg class="m-menu-basket" width="20" height="20">
+                <use href="./img/svg/symbol-defs.svg#icon-shopping-cart"></use>
+              </svg>
+            </a> -->
+          </li>
+        </ul>
+
+        <ul class="heder-social">
+          <li class="heder-soc-li">
+            <a
+              class="heder-soc-svg"
+              href="https://www.facebook.com/goITclub/"
+              target="_blank"
+            >
+              <svg class="heder-soc-icon" width="44" height="44">
+                <use href="/jrIT.Group-project/assets/sprite-975e2cde.svg#icon-facebook-black"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="heder-soc-li">
+            <a
+              class="heder-soc-svg"
+              href="https://www.instagram.com/goitclub/"
+              target="_blank"
+            >
+              <svg class="heder-soc-icon" width="44" height="44">
+                <use href="/jrIT.Group-project/assets/sprite-975e2cde.svg#icon-instagram-black"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="heder-soc-li">
+            <a
+              class="heder-soc-svg"
+              href="https://www.youtube.com/c/GoIT"
+              target="_blank"
+            >
+              <svg class="heder-soc-icon" width="44" height="44">
+                <use href="/jrIT.Group-project/assets/sprite-975e2cde.svg#icon-youtube-black"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </header>
 
     <section class="filter-section">
@@ -69,7 +190,7 @@
       <div class="footer_links">
         <a class="footer_logo_link" href="../index.html"
           ><svg class="footer_logo" width="132" height="24">
-            <use href="/jrIT.Group-project/assets/sprite-eb585dea.svg#icon-your-energy"></use></svg
+            <use href="/jrIT.Group-project/assets/sprite-975e2cde.svg#icon-your-energy"></use></svg
         ></a>
         <ul class="soc-icons_list">
           <li class="soc-icons_item">
@@ -78,7 +199,7 @@
               href="https://www.facebook.com/goITclub/"
               target="_blank"
               ><svg width="24" height="24" class="soc-icons_logo">
-                <use href="/jrIT.Group-project/assets/sprite-eb585dea.svg#icon-facebook-white"></use>
+                <use href="/jrIT.Group-project/assets/sprite-975e2cde.svg#icon-facebook-white"></use>
               </svg>
             </a>
           </li>
@@ -89,7 +210,7 @@
               target="_blank"
             >
               <svg width="24" height="24" class="soc-icons_logo">
-                <use href="/jrIT.Group-project/assets/sprite-eb585dea.svg#icon-instagram-white"></use></svg
+                <use href="/jrIT.Group-project/assets/sprite-975e2cde.svg#icon-instagram-white"></use></svg
             ></a>
           </li>
           <li class="soc-icons_item">
@@ -98,7 +219,7 @@
               href="https://www.youtube.com/c/GoIT"
               target="_blank"
               ><svg width="24" height="24" class="soc-icons_logo">
-                <use href="/jrIT.Group-project/assets/sprite-eb585dea.svg#icon-youtube-white"></use></svg
+                <use href="/jrIT.Group-project/assets/sprite-975e2cde.svg#icon-youtube-white"></use></svg
             ></a>
           </li>
         </ul>
