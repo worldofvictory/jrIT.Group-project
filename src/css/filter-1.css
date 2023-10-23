@@ -1,3 +1,4 @@
+
 .filter-container {
   padding: 40px 20px 0 20px;
   width: 100%;
@@ -7,6 +8,7 @@
 .filter-container-header {
   display: flex;
   flex-direction: column;
+
 }
 .filter-container-title {
   color: #242424;
@@ -37,16 +39,21 @@
   font-weight: 400;
   line-height: 20px; /* 142.857% */
 }
+
 .filter-container-category {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+
 .filter-category-list {
   display: flex;
   flex-direction: column;
+
   justify-content: center;
+
+
 }
 .filter-category-item {
   display: flex;
@@ -54,6 +61,7 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
+
   position: relative;
   border-radius: 12px;
   overflow: hidden;
@@ -103,6 +111,7 @@
 }
 
 @media screen and (min-width: 375px) {
+
   .filter-container {
     max-width: 375px;
     padding-left: 20px;
@@ -209,6 +218,7 @@
     }
     .filter-category-item {
       margin-bottom: 0;
+
     }
   }
 }

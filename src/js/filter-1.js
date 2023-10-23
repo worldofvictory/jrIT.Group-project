@@ -22,6 +22,7 @@ function createMarcup(arr) {
   gallery.innerHTML = '';
   return arr
     .map(
+
       ({ filter, name, imgURL }) => `<li class="filter-category-item"
           style = "background-image: linear-gradient(
     to right,
@@ -41,6 +42,7 @@ function createMarcup(arr) {
     )
     .join('');
 }
+
 // <img
 //   class="filter-category-img"
 //   src="${imgURL}"
