@@ -144,7 +144,16 @@
 #icon-star {
     fill: #EEA10C;
 }
-
+.filter-btn-ex {
+    border: none;
+    background-color: white;
+}
+.start-btn {
+    color: var(--backgroud-footer-text-color);
+    font-family: Neue Montreal, sans-serif;
+    font-size: 16px;
+    line-height: 2.38;
+}
 .exercise-name {
     display: flex;
     white-space: nowrap;
@@ -152,7 +161,6 @@
     margin-bottom: 16px;
     padding-left: 16px;
 }
-
 .ex-name {
     font-size: 20px;
     line-height: 1;
