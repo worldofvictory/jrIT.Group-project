@@ -22,8 +22,8 @@ ul {
 
 .header {
   width: 100%;
-  padding-top: 28px;
-  padding-bottom: 28px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   background-color: #f4f4f4;
 }
 
@@ -53,9 +53,6 @@ ul {
   flex-grow: 1;
   justify-content: space-between;
 }
-.list-menu {
-  display: none;
-}
 
 .header-logo-swg {
   fill: #242424;
@@ -69,7 +66,7 @@ ul {
   gap: 12px;
   /* padding-bottom: 0px; */
   /* margin: auto; */
-  margin-left: 30px;
+  margin-left: 80px;
   align-items: center;
 }
 
@@ -93,11 +90,45 @@ ul {
   fill: #f4f4f4;
 }
 
+/*! ******************  */
+
+.burger-social {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  /* padding-bottom: 0px; */
+  margin: 0 auto;
+  /* margin-left: 30px; */
+  align-items: center;
+}
+
+/* ! ???? */
+.burger-soc-icon {
+  border-radius: 10px;
+  border: 1px solid rgba(36, 36, 36, 0.1);
+  display: flex;
+  padding: 8px;
+  align-items: center;
+  gap: 8px;
+  fill: #f4f4f4;
+  /* color: #242424; */
+
+  background: #242424;
+}
+
+.burger-soc-svg:hover .burger-soc-icon,
+.burger-soc-svg:hover .burger-soc-icon {
+  background-color: #f4f4f4;
+  fill: #242424;
+}
+
+/* ! ************************** */
+
 .mob-button {
   background-color: transparent;
   border: transparent;
   padding: 0;
-  margin-left: 50px;
+  /* margin-left: 50px; */
 }
 
 .menu-button {
@@ -109,8 +140,8 @@ ul {
 
 .mob-button:hover .menu-button,
 .mob-button:focus .menu-button {
-  fill: #f4f4f4;
-  stroke: #4d4131;
+  /* fill: #f4f4f4;
+  stroke: #4d4131; */
   background-color: #f4f4f4;
 }
 
@@ -186,110 +217,12 @@ ul {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 3;
+  z-index: 12;
   width: 100%;
   height: 100%;
   background-color: #fff;
   padding: 16px 20px 16px 20px;
 }
-
-.logotype {
-  display: flex;
-}
-
-/* @media screen and (min-width: 375px) {
-  .h-container {
-    max-width: 335px;
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  .list-menu {
-    display: none;
-  }
-
-  .basket {
-    display: none;
-  }
-
-  .mob-button {
-    background-color: #830a0a;
-    border: transparent;
-    padding: 0;
-    margin-left: auto;
-  }
-
-  
-
-  .basket-button {
-    display: none;
-  }
-
-  .mob-menu-basket {
-    display: none;
-  }
-
-  .header-header {
-    display: flex;
-    width: 100%;
-  }
-} */
-
-/* @media screen and (min-width: 768px) {
-  .h-container {
-    max-width: 704px;
-  }
-
-  .header-header {
-    display: flex;
-    width: 100%;
-  }
-
-
-  .basket-button-but {
-    fill: #fff;
-    stroke: #141414;
-  }
-
-  .nav-header {
-    display: flex;
-    align-items: center;
-    margin: 0;
-    flex-grow: 1;
-  }
-
-} */
-
-/* @media screen and (min-width: 1440px) {
-  .h-container {
-    max-width: 1376px;
-  }
-
-  .basket-button {
-    display: flex;
-    background-color: transparent;
-    border: none;
-    margin-left: auto;
-  }
-
-  .basket-button:hover,
-  .basket-button:focus {
-    fill: #77ac63;
-  }
-
-  .header-header {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-  }
-
-  .basket-button-but {
-    fill: #fff;
-    stroke: #141414;
-  }
-
- 
-} */
 
 /* * Мобільне меню **********************************************************************/
 
@@ -299,10 +232,10 @@ ul {
 /* ! */
 .mob-mob-header {
   width: 100%;
-  padding-top: 13px;
-  padding-bottom: 13px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   background-color: #fff;
-  z-index: 3;
+  z-index: 12;
   position: absolute;
 }
 /* ! */
@@ -353,16 +286,16 @@ ul {
   background-color: red;
   cursor: pointer;
   fill: #242424;
-  stroke: #77ac63;
+  stroke: #242424;
+  transition: transform 300ms linear;
 }
 
 /* ! */
 .mob-close-button:hover .mob-close-button-mob,
 .mob-close-button:focus .mob-close-button-mob {
-  color: #4d4131;
-  fill: #4d4131;
-  stroke: #4d4131;
   background-color: green;
+  transform: scale(1.5);
+  transform: rotate(45deg);
 }
 
 /* !!!!  MOB MENU HEADER */
@@ -371,7 +304,7 @@ ul {
 .mobil-menu {
   position: fixed;
   top: 0;
-  z-index: 3;
+  z-index: 12;
   /* width: 100%; */
   /* height: 100%; */
 }
@@ -381,7 +314,7 @@ ul {
   width: 100vw;
   height: 100vh;
   background-color: blue;
-  z-index: 3;
+  z-index: 12;
   overflow: auto;
   transition: visibility 800ms cubic-bezier(0.4, 0, 0.2, 1),
     opacity 800ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -448,8 +381,54 @@ ul {
   color: red;
 }
 
-/* @media screen and (min-width: 768px) {
+/* ! MEDIA */
+
+.list-menu {
+  display: none;
+}
+
+.heder-social {
+  display: none;
+}
+
+@media screen and (min-width: 375px) {
+  .h-container {
+    max-width: 335px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .h-container {
+    max-width: 704px;
+  }
+
   .mobil-menu {
     display: none;
   }
-} */
+
+  .menu-button {
+    display: none;
+  }
+
+  .list-menu {
+    display: flex;
+  }
+
+  .heder-social {
+    display: flex;
+  }
+  .header {
+    padding-top: 24px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .h-container {
+    max-width: 1376px;
+  }
+  .heder-social {
+    margin-left: 400px;
+  }
+}
