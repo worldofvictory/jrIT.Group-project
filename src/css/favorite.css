@@ -3,7 +3,7 @@
 } */
 
 .favorites {
-    display:block;
+    /* display:block; */
     padding-top: 80px;
     padding-bottom: 80px;
 }
@@ -69,16 +69,18 @@
     .flex-conteiner {
         display: flex;
         flex-direction: column;
-        width: 494px;          
+        /* width: 494px;           */
+        margin-right: 32px;
     }
 }
 
 @media screen and (min-width: 1440px) {
     .thumb {
         display: flex;
-        align-items: baseline;
+        /* align-items: baseline; */
         margin-top: 44px;
-        gap: 180px;
+        /* gap: 180px; */
+       
     }
 }
 
@@ -99,17 +101,21 @@
 
 .favorites-quote {
     
-    display:inline-flex; 
-    height: 159px;
+    display:flex; 
+   
     border-radius: 20px;
     background: #242424;
     margin-top:20px; 
     padding: 20px;
+
 }
 
 @media screen and (min-width: 768px) {
     .favorites-quote {
         margin-top: 32px;
+        padding: 40px;
+       
+        
     }
 }
 
@@ -117,27 +123,15 @@
     .favorites-quote {
         margin-top: 0; 
         width: 494px;
+       
     }
 }
 
-.circule-svg {
-    position: relative;
-    top: 6px;
-    left: 6px;
-    width: 20px;
-    height: 20px;
-    fill: #F4F4F4;
-}
-
-/* .commas {
-position: relative;
-bottom: 20px;
-left: 80px;
-} */
 
 .flex {
     display: inline-flex;
     justify-content: space-between;
+    margin-bottom: 6px;
 
 }
 
@@ -158,17 +152,33 @@ left: 80px;
     font-style: normal;
     font-weight: 400;
     line-height: 18px;
+
 }
 
 .quote-content {
     display: flex;
-    height: 119px;
     flex-direction: column;          
-    gap: 6px;
+    /* gap: 6px; */
+}
+
+@media screen and (min-width: 768px) {
+    .quote-content {
+        width: 574px;
+    }
+}
+
+.quote-author {
+   margin-top: 18px;
+    color: #F4F4F4;    
+    font-family: NeueMontrealRegular;
+    font-size: 16px;
+    font-style: normal;        
+    line-height: 24px;      
 }
 
 .man-svg {
     margin-right: 18px;
+    
 }
 
 .features {
@@ -226,14 +236,11 @@ left: 80px;
 }    
 }
     
-
 .favorites-img {
     display: block;
     width: 100%;
     height: auto;
-    border-radius: 20px;
- 
-    
+    border-radius: 20px;  
 }
 
 .text-pozition {
@@ -248,6 +255,7 @@ left: 80px;
 .default-text {
     color: #242424; 
     margin-top: 0;
+    /* display: none; */
 }
 
 
@@ -262,22 +270,76 @@ left: 80px;
     display: flex;
     margin-top: 40px;
     text-align: center;
-    /* margin-left: auto;
-    margin-right: auto;     */
+    
+    margin-left: auto;
+    margin-right: auto;  
+    padding-left: 9px;
+    padding-right: 9px;  
 }
+
+
 
 @media screen and (min-width: 768px){
     .js-hidden-text {
         margin-top: 140px;  
+width: 554px;
+/* margin-left: auto;
+margin-right: auto; */
 
     /* padding-right: 75px;
         padding-left: 75px; */
 } 
-
+}
 
 @media screen and (min-width: 1440px) {
     .js-hidden-text {
-        margin-top: 0px;     
+        /* margin-top: 0px;      */
+       
+        margin: auto;
+        
     }
 }
+
+/* .favorites-gallery {
+    display: flex;
+ 
+} */
+
+
+@media screen and (min-width: 1440px) {
+    .gallery-list {
+        margin-top: 0px;
+    }
+}
+
+.gallery-list {
+    display: flex;
+       margin-top: 40px;
+    text-align: center;
+    /* justify-content: center; */
+    border: 1px solid green;
+    flex-wrap: wrap;
+    gap: 20px;
+
+}
+
+@media screen and (min-width: 1440px) {
+    .gallery-list {
+        margin-top: 0px;
+        
+    }
+}
+
+
+.test-card {
+    width: 335px;
+    height: 141px;
+    border: 1px solid rgb(38, 0, 128);
+    margin: 0;
+    padding: 0;
+}
+
+
+.hidden {
+    display: none;
 }
