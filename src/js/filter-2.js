@@ -74,7 +74,7 @@ function createInfoCard(exercise) {
          </div>
     </div>
         <div class="open-modal-exercises" >
-        <p>Start</p>
+        <button class="filter-btn-ex" type="button">Start</button>
         <svg id="icon-arrow" width="16" height="16">
             <use href="./img/sprite.svg#icon-arrow-top"></use>
         </svg>
