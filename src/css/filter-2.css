@@ -4,6 +4,9 @@
     margin: 0 auto;
     background-color: var(--white-text-color);
 }
+.search-form {
+    margin: auto;
+        }
 .header-filters {
     display: flex;
     flex-direction: column;
@@ -36,23 +39,21 @@
     font-family: 'Neue Montreal', sans-serif;
     background-color: var(--white-text-color);
 }
-.search-input:hover {
-    color: #24242499;
-}
 .icon-position {
     position: absolute;
     right: 11px;
     top: 50%;
     transform: translateY(-50%);
 }
-.search-input:focus+#icon-search {
-    fill: var(--white-text-color);
-}
-.search-input:focus+#icon-x {
-    background: var(--backgroud-footer-text-color);
-}
 #icon-x {
-    fill: var(--white-text-color);
+    stroke: var(--backgroud-footer-text-color);
+    display: none;
+}
+#search-input:focus+.icon-position #icon-search {
+    display: none;
+}
+#search-input:focus+.icon-position #icon-x {
+    display: block;
 }
 .filter-list-next {
     display: flex;
@@ -95,19 +96,19 @@
     flex-wrap: nowrap;
     justify-content: space-between;
     padding: 16px;
+    align-items: baseline;
 }
 .left-high-card {
     display: flex;
     flex-wrap: nowrap;
     gap: 16px;
+    
 }
-
 .ex-rating {
     display: flex;
     flex-wrap: nowrap;
     gap: 2px;
 }
-
 .workout-p {
     font-family: 'Neue Montreal', sans-serif;
     font-weight: 500;
@@ -115,7 +116,6 @@
     line-height: 1.16px;
     letter-spacing: 0em;
 }
-
 .workout-symbol {
     width: 75px;
     height: 24px;
@@ -139,15 +139,23 @@
     font-size: 16px;
     line-height: 2.38;
 }
-
+.open-modal-exercises {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: baseline;
+}
+#icon-arrow {
+    stroke: var(--backgroud-footer-text-color);
+    margin-left: 4px;
+}
 .exercise-name {
     display: flex;
     white-space: nowrap;
     gap: 16px;
     margin-bottom: 16px;
     padding-left: 16px;
+    align-items: baseline;
 }
-
 .ex-name {
     font-size: 20px;
     line-height: 1;
@@ -156,7 +164,6 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
-
 .exercise-info {
     display: flex;
     gap: 10px;
@@ -202,6 +209,7 @@
             height: 48px;
         }
     .search-form {
+        margin: 0;
         margin-right: auto;
     }
 

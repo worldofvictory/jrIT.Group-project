@@ -4,7 +4,8 @@ import 'tui-pagination/dist/tui-pagination.css';
 const form = document.querySelector(".search-form");
 const searchInput = document.querySelector(".search-input");
 const exercisesBack = document.querySelector(".exercises-back");
-const exercisesInform = document.querySelector(".exercises-inform");
+const iconSearch = document.getElementById('icon-search');
+const iconX = document.getElementById('icon-x');
 
 const apiUrl = "https://your-energy.b.goit.study/api";
 
@@ -74,15 +75,10 @@ function createInfoCard(exercise) {
          </div>
     </div>
     <div class="open-modal-exercises" >
-        <button class="filter-btn-ex" type="button"><p class="start-btn">Start</p><svg id="icon-arrow" width="16" height="16">
+        <button class="filter-btn-ex" type="button" data-modal-exercise="open"><p class="start-btn">Start<svg id="icon-arrow" width="16" height="16">
             <use href="./img/sprite.svg#icon-arrow"></use>
-        </svg></button>
+        </svg></p></button>
     </div>
-        <div class="open-modal-exercises" >
-        
-    </div>
-    </div>
-    
     </div>
     <div class="exercise-name">
         <svg id="icon-run" width="24" height="24">
@@ -98,3 +94,11 @@ function createInfoCard(exercise) {
     `;
     return exerciseCard;
 }
+searchInput.addEventListener('focus', function() {
+        iconSearch.style.display = 'none';
+        iconX.style.display = 'block';
+    });
+    searchInput.addEventListener('blur', function() {
+        iconSearch.style.display = 'block';
+        iconX.style.display = 'none';
+    });
