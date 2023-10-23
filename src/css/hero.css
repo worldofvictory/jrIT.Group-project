@@ -1,29 +1,62 @@
 .hero {
+  padding-top: 84px;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 40px;
 }
 
 .hero-container {
 }
 
 .hero-title-container {
+  width: 335px;
+  height: 96px;
+  margin-bottom: 20px;
 }
 
 .hero-title {
+  font-family: Neue Montreal;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 40px;
 }
 
 .hero-text-container {
+  width: 335px;
+  height: 36px;
+  margin-bottom: 16px;
 }
 
 .hero-text {
+  font-family: Neue Montreal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
 }
 
 .hero-image-container {
+  width: 335px;
+  height: 450px;
+  border-radius: 30px;
+  overflow: hidden;
+  background-color: #ffffff;
 }
 
 .hero-tags-container {
+  margin-top: 11px;
+  align-self: flex-start;
 }
 
 .hero-tags-list {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  list-style: none;
+  margin-left: -50px;
 }
 
 .hero-tags-items {
+  border: 1px solid #242424;
+  border-radius: 30px;
+  padding: 4px 16px;
 }
