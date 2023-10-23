@@ -73,18 +73,20 @@ function createInfoCard(exercise) {
         </svg>
          </div>
     </div>
+    <div class="open-modal-exercises" >
+        <button class="filter-btn-ex" type="button"><p class="start-btn">Start</p><svg id="icon-arrow" width="16" height="16">
+            <use href="./img/sprite.svg#icon-arrow"></use>
+        </svg></button>
+    </div>
         <div class="open-modal-exercises" >
-        <p>Start</p>
-        <svg id="icon-arrow" width="16" height="16">
-            <use href="./img/sprite.svg#icon-arrow-top"></use>
-        </svg>
+        
     </div>
     </div>
     
     </div>
     <div class="exercise-name">
         <svg id="icon-run" width="24" height="24">
-        <use href="./img/sprite.svg#icon-running-man-black"></use>
+        <use href="./img/sprite.svg#icon-icon-run"></use>
         </svg>
         <h3 class="ex-name">${exercise.name}</h3>
     </div>
