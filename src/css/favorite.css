@@ -1,6 +1,9 @@
 /* body {
     background: #F4F4F4;
 } */
+.hidden {
+    display: none;
+}
 
 .favorites {
     /* display:block; */
@@ -320,7 +323,6 @@ margin-right: auto; */
     border: 1px solid green;
     flex-wrap: wrap;
     gap: 20px;
-
 }
 
 @media screen and (min-width: 1440px) {
@@ -330,16 +332,51 @@ margin-right: auto; */
     }
 }
 
-
 .test-card {
-    width: 335px;
-    height: 141px;
+    /* width: 335px; */
+    /* height: 141px; */
+    width: 100%;
     border: 1px solid rgb(38, 0, 128);
     margin: 0;
-    padding: 0;
+    padding: 16px;
 }
 
+.workout {
+    display: inline-block;
+    font-family: NeueMontrealRegular;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding:  6px 7.6px; 
+ 
+    border-radius: 15px;
+        border: 1px solid #242424;
+}
 
-.hidden {
-    display: none;
+.exercise-btn {
+font-family: inherit;
+    font-size: 14px;
+   padding:0;
+        line-height: 18px;
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 54px;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+  min-height: 30px;
+}
+
+.exersise-header {
+    display: flex;
+    justify-content: space-between
+}
+
+.exercise-name {
+    font-family: NeueMontrealRegular;
+    font-size: 20px;
+    line-height: 20px;
+   
 }
