@@ -3,6 +3,8 @@
   padding-right: 20px;
   padding-left: 20px;
   padding-bottom: 40px;
+  max-width: 375px;
+  margin: auto;
 }
 
 .hero-container {
@@ -39,7 +41,17 @@
   height: 450px;
   border-radius: 30px;
   overflow: hidden;
-  background-color: #ffffff;
+  background: -webkit-linear-gradient(211, 211, 211, 0.5),
+    url(../src/img/women-sportswear-title_x1-min.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .hero-image-container {
+    background: linear-gradient(211, 211, 211, 0.5),
+      url(../src/img/women-sportswear-title_x2-min.png);
+  }
 }
 
 .hero-tags-container {
@@ -59,4 +71,50 @@
   border: 1px solid #242424;
   border-radius: 30px;
   padding: 4px 16px;
+}
+
+@media screen and (min-width: 768px) {
+  .hero {
+  }
+
+  .hero-title-container {
+    width: 593px;
+    color: #242424;
+    font-family: Neue Montreal;
+    font-size: 74px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 74px;
+    letter-spacing: -1.48px;
+    height: 148px;
+  }
+
+  .hero-text-container {
+  }
+
+  .hero-image-container {
+    width: 1160px;
+    height: 773px;
+  }
+
+  .hero-tags-list {
+    justify-content: flex-end;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .hero {
+  }
+
+  .hero-title-container {
+  }
+
+  .hero-text-container {
+  }
+
+  .hero-image-container {
+  }
+
+  .hero-tags-list {
+  }
 }
