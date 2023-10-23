@@ -16,10 +16,11 @@
 @import url('./pagination.css');
 @import url('./scrollbutton.css');
 @import url(./preloader.css);
+@import url(./loader-subscribe.css);
 @import url('./modal-form.css');
 
 :root {
-  --background-color: #d0cece;
+  --background-color: #f4f4f4;
   --backgroud-footer-text-color: #242424;
   --white-text-color: #f4f4f4;
   font-synthesis: none;
@@ -43,3 +44,8 @@
    font-family: "Neue Montreal Medium";
    src: url('../fonts/NeueMontreal-Medium.otf');
  }
+
+ body {
+background-color: var(--background-color);
+ }
+  

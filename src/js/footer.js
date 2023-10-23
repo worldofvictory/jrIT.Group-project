@@ -8,7 +8,7 @@ mailingForm.addEventListener('submit', function (e) {
   if (mailingInput.checkValidity()) {
     const email = mailingInput.value;
 
-    fetch('https://your-energy.b.goit.study/api/v1/subscription', {
+    fetch('https://your-energy.b.goit.study/api/subscription', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
