@@ -11,7 +11,7 @@ function makePagination(perPage, totalPages) {
     visiblePages,
     centerAlign: true,
   };
- console.log(perPage, totalPages)
+ 
   const pagination = new Pagination(paginationEl, options);
 
   if (visiblePages <= 1) {
