@@ -21,6 +21,7 @@ mailingForm.addEventListener('submit', function (e) {
         Notify.success(
           "We're excited to have you on board! 🎉 Thank you for subscribing to new exercises on Your Energy. You've just taken a significant step towards improving your fitness and well-being."
         );
+        console.log(`The user has just subscribed with the email: ${email}`);
       })
       .catch(error => {
         Notify.failure('Error occurred while making subscription');
