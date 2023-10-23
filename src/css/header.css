@@ -120,6 +120,7 @@ ul {
 .burger-soc-svg:hover .burger-soc-icon {
   background-color: #f4f4f4;
   fill: #242424;
+  
 }
 
 /* ! ************************** */
@@ -133,6 +134,7 @@ ul {
 
 .menu-button {
   fill: #4d4131;
+  stroke: #141414;
   /* color: #242424; */
   background-color: #f4f4f4;
   /* margin-left: 50px; */
