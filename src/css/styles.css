@@ -16,6 +16,7 @@
 @import url('./pagination.css');
 @import url('./scrollbutton.css');
 @import url(./preloader.css);
+@import url(./loader-subscribe.css);
 @import url('./modal-form.css');
 
 :root {
