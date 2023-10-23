@@ -22,14 +22,18 @@ function createMarcup(arr) {
   gallery.innerHTML = '';
   return arr
     .map(
-      ({ filter, name, imgURL }) => `<li class="filter-category-item">
-              <img
-                class="filter-category-img"
-                src="${imgURL}"
-                alt=""
-                loading="lazy"
-                 width='335' height='225'
-              />
+
+      ({ filter, name, imgURL }) => `<li class="filter-category-item"
+          style = "background-image: linear-gradient(
+    to right,
+    rgba(47, 48, 50, 0.5),
+    rgba(47, 48, 50, 0.5)
+  ), url(${imgURL});
+     background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+     width='335' height='225'
+    >
             <div class="category-text">
               <h3 class="filter-category-title">${name}</h3>
               <p class="filter-category-descr">${filter}</p>
@@ -38,6 +42,14 @@ function createMarcup(arr) {
     )
     .join('');
 }
+
+// <img
+//   class="filter-category-img"
+//   src="${imgURL}"
+//   alt=""
+//   loading="lazy"
+//    width='335' height='225'
+// />
 
 // Початкова фільтрація "Body parts"
 
