@@ -53,7 +53,7 @@
     color: rgba(244, 244, 244, 0.60);
     font-family: "NeueMontrealRegular";
     font-size: 14px;
-    line-height: 1.3;
+    line-height: 1.29;
     /* margin-bottom: 16px; */
 }
 
@@ -61,7 +61,7 @@
     color: var(--white-text-color);
     font-family: "NeueMontrealRegular";
     font-size: 14px;
-    line-height: 1.3;
+    line-height: 1.29;
 }
 
 .quote-photo {
@@ -89,6 +89,7 @@
     padding: 20px 20px 20px 70px;
     border-radius: 20px;
     background: #FFF;
+    height: 203px;
 }
 
 .quote-sport-item {
@@ -110,14 +111,14 @@
     font-size: 20px;
     font-weight: 500;
     line-height: 1.0;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
 }
 
 .quote-sport-text {
     color: rgba(36, 36, 36, 0.60);
     font-family: "NeueMontrealRegular";
     font-size: 14px;
-    line-height: 1.3;
+    line-height: 1.29;
     margin-bottom: 16px;
 }
 
@@ -125,11 +126,11 @@
     color: var(--backgroud-footer-text-color);
     font-family: "NeueMontrealRegular";
     font-size: 14px;
-    line-height: 1.3;
-    white-space: nowrap;
+    line-height: 1.29;
     overflow: hidden;
-    text-overflow: ellipsis;
-    height: 100%;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
 }
 
 @media screen and (min-width: 375px) {
@@ -177,14 +178,12 @@
 
     .quote-title {
         font-size: 24px;
-        line-height: 1.3;
+        line-height: 1.33;
     }
 
     .quote-markup {
         gap: 18px;
     }
-
-    
 
     .quote-text-author {
         font-size: 16px;
@@ -206,6 +205,7 @@
     .quote-sport {
         max-width: 400px;
         padding: 40px 40px 40px 90px;
+        height: 249px;
     }
 
     .quote-sport-item {
@@ -217,8 +217,6 @@
         font-size: 24px;
         line-height: 1.3;
     }
-
-    
 }
 
 @media screen and (min-width: 1440px) {
@@ -247,12 +245,12 @@
 
     .quote-sport {
         max-width: 444px;
+        height: unset;
     }
 
     .quote-sport-description {
-        white-space: unset;
         overflow: unset;
-        text-overflow: unset;
+        display: unset;
     }
 }
 
