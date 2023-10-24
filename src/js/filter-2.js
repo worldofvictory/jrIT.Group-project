@@ -4,38 +4,40 @@ import 'tui-pagination/dist/tui-pagination.css';
 const form = document.querySelector(".search-form");
 const searchInput = document.querySelector(".search-input");
 const exercisesBack = document.querySelector(".exercises-back");
-const exercisesInform = document.querySelector(".exercises-inform");
+const iconSearch = document.getElementById('icon-search');
+const iconX = document.getElementById('icon-x');
 
 const apiUrl = "https://your-energy.b.goit.study/api";
 
 fetchExercises("");
 
 form.addEventListener('submit', searchExercises);
+searchInput.addEventListener('input', startSearch);
 
 function fetchExercises(keyword) {
     const categories = ["back", "cardio", "chest", "lower arms", "lower legs", "neck", "shoulders", "upper arms", "upper legs", "waist"];
     
-    const promises = categories.map(category => {
+    
+const promises = categories.map(category => {
         return fetch(`${apiUrl}/exercises?keyword=${keyword}&bodypart=${category}&limit=12`)
             .then(response => {
                 if (!response.ok) {
-                    throw new Error('Sorry, is not found');
+                     throw new Error(`Sorry, is not found`);
                 }
                 return response.json();
             });
     })
-        Promise.all(promises)
-        .then(data => {
-            exercisesBack.innerHTML = "";
-            data.forEach(categoryData => {
-                handleExerciseData(categoryData.results);
-            });
-        })
-        .catch(error => {
-            console.error(error);
+Promise.all(promises)
+    .then(data => {
+        exercisesBack.innerHTML = "";
+        data.forEach(categoryData => {
+            handleExerciseData(categoryData.results);
         });
+    })
+    .catch(error => {
+        console.error(error);
+    });
 }
-
 
 function searchExercises(event) {
     event.preventDefault();
@@ -54,6 +56,10 @@ function handleExerciseData(results) {
             exercisesBack.appendChild(infoCard);
         });
     }
+}
+function startSearch() {
+    const searchValue = searchInput.value.toLowerCase();
+    fetchExercises(searchValue);
 }
 
 function createInfoCard(exercise) {
@@ -74,25 +80,32 @@ function createInfoCard(exercise) {
          </div>
     </div>
         <div class="open-modal-exercises" >
-        <p>Start</p>
-        <svg id="icon-arrow" width="16" height="16">
-            <use href="./img/sprite.svg#icon-arrow-top"></use>
-        </svg>
+        <button class="filter-btn-ex" type="button" data-modal-exercise="open"><p class="start-btn">Start<svg id="icon-arrow" width="16" height="16">
+            <use href="./img/sprite.svg#icon-arrow"></use>
+        </svg></p></button>
     </div>
     </div>
-    
-    </div>
+
     <div class="exercise-name">
         <svg id="icon-run" width="24" height="24">
-        <use href="./img/sprite.svg#icon-running-man-black"></use>
+        <use href="./img/sprite.svg#icon-icon-run"></use>
         </svg>
         <h3 class="ex-name">${exercise.name}</h3>
     </div>
     <div class="exercise-info">
-        <p class="ex-info-p">Burned calories: <span class="ex-info-back">${exercise.burnedCalories} / ${exercise.time}</p>
-        <p class="ex-info-p">Body part: <span class="ex-info-back">${exercise.bodyPart}</p>
-        <p class="ex-info-p last-p">Target: <span class="ex-info-back">${exercise.target}</p>
+        <p class="ex-info-p">Burned calories: <span class="ex-info-back">${exercise.burnedCalories} / ${exercise.time}</span></p>
+        <p class="ex-info-p">Body part: <span class="ex-info-back">${exercise.bodyPart}</span></p>
+        <p class="ex-info-p last-p">Target: <span class="ex-info-back">${exercise.target}</span></p>
     </div>
     `;
     return exerciseCard;
 }
+searchInput.addEventListener('focus', function() {
+        iconSearch.style.display = 'none';
+        iconX.style.display = 'block';
+    });
+    searchInput.addEventListener('blur', function() {
+        iconSearch.style.display = 'block';
+        iconX.style.display = 'none';
+        searchInput.value = '';
+    });
