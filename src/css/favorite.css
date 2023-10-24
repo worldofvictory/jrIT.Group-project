@@ -225,6 +225,12 @@ right: 20px;
     height: auto;
     border-radius: 20px;  
 }
+/* @media screen and (min-width: 1440px) {
+.favorites-img {
+        height: 141px;
+    }
+} */
+
 
 .text-pozition {
     display: flex;
@@ -355,7 +361,7 @@ right: 20px;
 
 .exercise-btn:hover,
 .exercise-btn:focus {
-    font-size: 15px;
+    font-size: 16px;
 }
 
 .exersise-header {
@@ -394,6 +400,7 @@ right: 20px;
 .trash-svg {
     stroke: black;
     fill: transparent;    
+    /* margin-left: 8px; */
 }
 
 .arrow-svg {
@@ -401,12 +408,12 @@ right: 20px;
 }
 
 .trash-svg:hover,
-.trash-svg:focus,
-.arrow-svg:hover,
-.arrow-svg:focus
+.trash-svg:focus
+
 {
     width: 17px;
     height: 17px;
+    cursor: pointer;
 }
 
 .exercise-category {
@@ -428,6 +435,3 @@ right: 20px;
     margin-top: 16px;
 }
 
-.hidden {
-    display: none;
-}
