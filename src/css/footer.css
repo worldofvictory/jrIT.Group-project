@@ -136,7 +136,7 @@
 }
 
 .soc-icons_logo {
-    fill: #f4f4f4;
+  fill: #f4f4f4;
 }
 .soc-icons_item:hover .soc-icons_logo {
   fill: #242424;
@@ -146,23 +146,10 @@
   background-color: #f4f4f4;
 }
 
-@media screen and (min-width: 375px) {
-  .footer_container {
-    max-width: 335px;
-  }
-}
 @media screen and (min-width: 768px) {
   .footer_links-mailing {
     display: flex;
     gap: 100px;
-  }
-
-  .footer {
-    padding: 64px 32px 32px 32px;
-  }
-
-  .footer_log_link {
-    margin-bottom: 32px;
   }
 
   .footer_soc-icons_logo {
@@ -199,9 +186,12 @@
   .policy {
     display: flex;
   }
+  .policy_rights {
+    margin-bottom: 0px;
+  }
 
   .policy_terms-year {
-    gap: 208px;
+    gap: 215px;
   }
 }
 
@@ -211,18 +201,10 @@
     gap: 158px;
   }
 
-  .footer__container {
-    max-width: 1408px;
-    padding: 64px 32px 32px 32px;
-  }
-
   .mailing {
     display: flex;
     gap: 158px;
   }
-.fotteri {
-  font-family: 'NeueMontrealitalic';
-}
 
   .mailing_label {
     margin-top: 0;
@@ -247,7 +229,7 @@
   }
 
   .policy_terms-year {
-    gap: 515px;
+    gap: 530px;
     position: absolute;
     top: 0;
     left: 310px;
@@ -256,24 +238,40 @@
 
 .container_test {
   width: 100%;
-  padding: 0 15px;
+  padding: 0 20px;
   margin: 0 auto;
 }
 
 @media screen and (min-width: 375px) {
   .container_test {
-    max-width: 365px;
+    max-width: 375px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
+
+@media screen and (max-width: 374px) {
+  .container_test {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .container_test {
-    max-width: 734px;
-    padding: 0;
+    max-width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  .footer {
+    padding-bottom: 32px;
   }
 }
+
 @media screen and (min-width: 1440px) {
   .container_test {
-    max-width: 1406px;
-    padding: 0;
+    max-width: 1440px;
+    padding-left: 32px;
+    padding-right: 32px;
   }
 }
