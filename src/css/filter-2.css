@@ -200,8 +200,12 @@
 }
 
 @media screen and (min-width: 375px) {
-    .search-input {
+    /* .search-input {
         width: 335px;
+    } */
+    .search-exercises {
+        max-width: 335px;
+        margin: 0 auto;
     }
 }
 
