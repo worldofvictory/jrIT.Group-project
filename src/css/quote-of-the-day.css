@@ -154,7 +154,7 @@
     }
 
     .quote {
-        max-width: 400px;
+        width: 400px;
         padding: 40px 40px 40px 90px;
         margin-bottom: unset;
         height: 249px;
@@ -222,7 +222,7 @@
     }
 
     .quote {
-        max-width: 444px;
+        width: 444px;
         padding: 40px 40px 40px 90px;
         margin-bottom: 32px;
         height: 230px;

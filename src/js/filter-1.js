@@ -23,12 +23,8 @@ function createMarcup(arr) {
   return arr
     .map(
       ({ filter, name, imgURL }) => `<li class="filter-category-item"
-          style = "background-image: linear-gradient(
-    to right,
-    rgba(47, 48, 50, 0.5),
-    rgba(47, 48, 50, 0.5)
-  ), url(${imgURL});
-     background-repeat: no-repeat;
+          style = "background-image: linear-gradient(0deg, rgba(17, 17, 17, 0.50) 0%, rgba(17, 17, 17, 0.50) 100%), url(${imgURL});
+    background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     ">
