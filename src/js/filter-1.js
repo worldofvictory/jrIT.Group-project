@@ -64,7 +64,7 @@ fetchData('Body parts').then(data => {
 });
 
 // Обробники подій для кнопок фільтрації
-const filterButtons = document.querySelectorAll('.filter-btn');
+const filterButtons = document.querySelectorAll('.filter1-btn');
 filterButtons.forEach(button => {
   button.addEventListener('click', async () => {
     // Видаляємо клас 'current' з усіх кнопок

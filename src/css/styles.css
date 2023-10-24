@@ -37,15 +37,16 @@
 
 @font-face {
   font-family: 'NeueMontrealitalic';
-  src: url('../fonts/NeueMontreal-Italic.otf.otf');
+  src: url('../fonts/NeueMontreal-Italic.otf');
 }
 
  @font-face {
-   font-family: "Neue Montreal Medium";
+   font-family: 'Neue MontrealMedium';
    src: url('../fonts/NeueMontreal-Medium.otf');
  }
 
  body {
 background-color: var(--background-color);
+  font-family: 'NeueMontrealRegular'
  }
   

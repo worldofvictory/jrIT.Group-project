@@ -220,6 +220,9 @@
     display: flex;
     gap: 158px;
   }
+.fotteri {
+  font-family: 'NeueMontrealitalic';
+}
 
   .mailing_label {
     margin-top: 0;

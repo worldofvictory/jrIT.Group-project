@@ -9,8 +9,8 @@
   flex-direction: column;
 }
 .filter-container-title {
-  color: #242424;
-  font-family: 'Neue Montreal', sans-serif;
+  color: var(--backgroud-footer-text-color);
+  font-family: 'NeueMontrealRegular';
   font-size: 28px;
   font-style: normal;
   font-weight: 400;
@@ -24,14 +24,14 @@
   margin-bottom: 20px;
 }
 
-.filter-btn {
+.filter1-btn {
   border: none;
   margin: 0;
   padding: 0;
   background-color: transparent;
   cursor: pointer;
   color: rgba(36, 36, 36, 0.6);
-  font-family: 'Neue Montreal', sans-serif;
+  font-family:'NeueMontrealRegular';
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -39,7 +39,7 @@
 }
 
 .filter-container-category {
-  display: flex;
+ 
   justify-content: center;
   align-items: center;
 }
@@ -87,7 +87,7 @@
   color: #f4f4f4;
   text-align: center;
   font-feature-settings: 'clig' off, 'liga' off;
-  font-family: 'Neue Montreal', sans-serif;
+  font-family: 'NeueMontrealRegular';
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -97,7 +97,7 @@
 .filter-category-descr {
   color: rgba(244, 244, 244, 0.4);
   font-feature-settings: 'clig' off, 'liga' off;
-  font-family: 'Neue Montreal', sans-serif;
+  font-family: 'NeueMontrealRegular';
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -130,7 +130,7 @@
   }
   .filter-container-title {
     color: #242424;
-    font-family: 'Neue Montreal', sans-serif;
+    font-family: 'NeueMontrealRegular';
     font-size: 44px;
     font-style: normal;
     font-weight: 400;
@@ -142,12 +142,12 @@
     margin-bottom: 32px;
   }
 
-  .filter-btn {
+  .filter1-btn {
     padding: 0;
     border: none;
     background: transparent;
     color: rgba(36, 36, 36, 0.6);
-    font-family: 'Neue Montreal', sans-serif;
+    font-family: 'NeueMontrealRegular';
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -180,7 +180,7 @@
     }
     .filter-container-title {
       color: #242424;
-      font-family: 'Neue Montreal', sans-serif;
+      font-family: 'NeueMontrealRegular';
       font-size: 28px;
       font-style: normal;
       font-weight: 400;
@@ -192,9 +192,9 @@
       margin-bottom: 42px;
       position: relative;
     }
-    .filter-btn {
+    .filter1-btn {
       color: rgba(36, 36, 36, 0.6);
-      font-family: 'Neue Montreal', sans-serif;
+      font-family: 'NeueMontrealRegular';
       font-size: 16px;
       font-style: normal;
       font-weight: 400;
@@ -216,7 +216,7 @@
   }
 }
 
-.filter-btn.current {
+.filter1-btn.current {
   color: #242424;
   border-bottom: 4px solid #242424;
 }
