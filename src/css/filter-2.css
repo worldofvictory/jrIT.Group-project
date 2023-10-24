@@ -4,13 +4,16 @@
     margin: 0 auto;
     background-color: var(--white-text-color);
 }
+
 .search-form {
     margin: auto;
 }
+
 .header-filters {
     display: flex;
     flex-direction: column;
 }
+
 .exercises-title {
     color: var(--backgroud-footer-text-color);
     font-family: Neue Montreal, sans-serif;
@@ -21,9 +24,11 @@
     letter-spacing: -.56px;
     margin-bottom: 20px;
 }
+
 .search-exercises {
     position: relative;
 }
+
 .search-input {
     display: block;
     width: 100%;
@@ -39,28 +44,34 @@
     font-family: 'Neue Montreal', sans-serif;
     background-color: var(--white-text-color);
 }
+
 .icon-position {
     position: absolute;
     right: 11px;
     top: 50%;
     transform: translateY(-50%);
 }
+
 #icon-x {
     stroke: var(--backgroud-footer-text-color);
     display: none;
 }
+
 #search-input:focus+.icon-position #icon-x {
     display: block;
 }
+
 .filter-list-next {
     display: flex;
     gap: 20px;
     margin-bottom: 20px;
 }
+
 .filter-btn.current {
     color: var(--backgroud-footer-text-color);
     border-bottom: 4px solid var(--backgroud-footer-text-color);
 }
+
 .filter-btn {
     border: none;
     margin: 0;
@@ -74,6 +85,7 @@
     font-weight: 400;
     line-height: 20px;
 }
+
 .exercises-back {
     border-radius: 15px;
     display: flex;
@@ -81,6 +93,7 @@
     gap: 20px;
     margin-bottom: 80px;
 }
+
 .exCard {
     margin: auto;
     height: 141px;
@@ -88,6 +101,7 @@
     border-radius: 15px;
     background-color: white;
 }
+
 .high-card {
     display: flex;
     flex-wrap: nowrap;
@@ -95,16 +109,19 @@
     padding: 16px;
     align-items: baseline;
 }
+
 .left-high-card {
     display: flex;
     flex-wrap: nowrap;
     gap: 16px;
 }
+
 .ex-rating {
     display: flex;
     flex-wrap: nowrap;
     gap: 2px;
 }
+
 .workout-p {
     font-family: 'Neue Montreal', sans-serif;
     font-weight: 500;
@@ -112,6 +129,7 @@
     line-height: 1.16px;
     letter-spacing: 0em;
 }
+
 .workout-symbol {
     width: 75px;
     height: 24px;
@@ -121,36 +139,43 @@
     align-items: center;
     justify-content: center;
 }
+
 #icon-star {
     fill: #EEA10C;
 }
+
 .filter-btn-ex {
     border: none;
     background-color: white;
 }
+
 .start-btn {
     color: var(--backgroud-footer-text-color);
     font-family: Neue Montreal, sans-serif;
     font-size: 16px;
     line-height: 2.38;
 }
+
 .open-modal-exercises {
     display: flex;
     flex-wrap: nowrap;
     align-items: baseline;
 }
+
 #icon-arrow {
     stroke: var(--backgroud-footer-text-color);
     margin-left: 4px;
 }
+
 .exercise-name {
     display: flex;
-   white-space: nowrap;
+    white-space: nowrap;
     gap: 16px;
     margin-bottom: 16px;
     padding-left: 16px;
     align-items: baseline;
 }
+
 .ex-name {
     font-size: 20px;
     line-height: 1;
@@ -159,11 +184,13 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
 .exercise-info {
     display: flex;
     gap: 10px;
     margin: auto;
 }
+
 .ex-info-p {
     font-size: 12px;
     line-height: 1.5;
@@ -172,10 +199,12 @@
     white-space: nowrap;
     color: #24242466;
 }
+
 .last-p {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
 .ex-info-back {
     font-size: 12px;
     line-height: 1.5;
@@ -187,31 +216,35 @@
 @media screen and (min-width: 375px) {
     .search-input {
         width: 335px;
-}
+    }
 }
 
 @media screen and (min-width: 768px) {
     .header-filters {
         flex-direction: row;
         align-items: baseline;
-}
-.search-input {
-    width: 271px;
-    height: 48px;
-}
-.search-form {
-    margin: 0;
-    margin-right: auto;
-}
-.exercises-back {
-    gap: 32px 16px;
-    max-width: 704px;
-    margin: auto;
-}
-.exCard {
-    max-width: 344px;
-    margin: 0;
-}
+    }
+
+    .search-input {
+        width: 271px;
+        height: 48px;
+    }
+
+    .search-form {
+        margin: 0;
+        margin-right: auto;
+    }
+
+    .exercises-back {
+        gap: 32px 16px;
+        max-width: 704px;
+        margin: auto;
+    }
+
+    .exCard {
+        max-width: 344px;
+        margin: 0;
+    }
 }
 
 @media screen and (min-width: 1440px) {
@@ -219,12 +252,14 @@
         max-width: 900px;
         margin: 0;
         margin-left: auto;
-}
-.search-form {
-    margin-right: 0;
-    margin-left: auto;
-}
-.header-filters {
-    gap: 32px;
-}
+    }
+
+    .search-form {
+        margin-right: 0;
+        margin-left: auto;
+    }
+
+    .header-filters {
+        gap: 32px;
+    }
 }

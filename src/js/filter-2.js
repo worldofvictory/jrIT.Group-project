@@ -12,9 +12,11 @@ const apiUrl = "https://your-energy.b.goit.study/api";
 fetchExercises("");
 
 form.addEventListener('submit', searchExercises);
+searchInput.addEventListener('input', startSearch);
 
 function fetchExercises(keyword) {
     const categories = ["back", "cardio", "chest", "lower arms", "lower legs", "neck", "shoulders", "upper arms", "upper legs", "waist"];
+    
     
 const promises = categories.map(category => {
         return fetch(`${apiUrl}/exercises?keyword=${keyword}&bodypart=${category}&limit=12`)
@@ -54,6 +56,10 @@ function handleExerciseData(results) {
             exercisesBack.appendChild(infoCard);
         });
     }
+}
+function startSearch() {
+    const searchValue = searchInput.value.toLowerCase();
+    fetchExercises(searchValue);
 }
 
 function createInfoCard(exercise) {
@@ -101,4 +107,5 @@ searchInput.addEventListener('focus', function() {
     searchInput.addEventListener('blur', function() {
         iconSearch.style.display = 'block';
         iconX.style.display = 'none';
+        searchInput.value = '';
     });
