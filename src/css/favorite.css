@@ -175,7 +175,7 @@ right: 20px;
 
 .features-tittle { 
     color: #242424;
-    font-family: NeueMontrealRegular;
+    font-family: Neue Montreal Medium;
     font-size: 20px;
     font-weight: 500;
     line-height: 20px;     
@@ -201,7 +201,7 @@ right: 20px;
     padding-left: 20px;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    
 }
 
 @media screen and (min-width: 768px) {
@@ -435,3 +435,10 @@ right: 20px;
     margin-top: 16px;
 }
 
+
+/* 
+@media screen and (min-width: 1440px) {
+    .favorite-tui-pagination {
+        width: 405px;
+    }
+} */

@@ -277,7 +277,8 @@ function renderCards() {
     perPage = 10; 
   
   }
-   if (window.innerWidth >= 1440) {
+
+  if (window.innerWidth >= 1440) {
     console.log(window.innerWidth)
     perPage = 6; 
   
@@ -334,4 +335,4 @@ function capitalize(s) {
   return s[0].toUpperCase() + s.slice(1);
 }
 
-// console.log(window.innerWidth)
+
