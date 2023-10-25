@@ -3,22 +3,20 @@
     <div class="favorites-container">
       <h1 class="favorites-tittle">Favorites</h1>
 
-      <div class="thumb">
-        <div class="flex-conteiner">
+      <div class="favorites-thumb">
+        <div class="quote-conteiner">
           <div class="favorites-quote">
-            <div class="man-svg">
-              <svg width="34" height="32">
-                <use href="./img/sprite.svg#icon-icon"></use>
-              </svg>
-            </div>
+            <svg class="man-svg" width="34" height="32">
+              <use href="./img/sprite.svg#icon-icon"></use>
+            </svg>
 
             <div class="quote-content">
-              <div class="flex">
-                <h2 class="quote-tittle">Quote of the day</h2>
-                <svg class="commas" width="20" height="20">
-                  <use href="./img/sprite.svg#icon-inverted-commas"></use>
-                </svg>
-              </div>
+              <svg class="commas-svg" width="20" height="20">
+                <use href="./img/sprite.svg#icon-inverted-commas"></use>
+              </svg>
+
+              <h2 class="quote-tittle">Quote of the day</h2>
+
               <p class="quote-text">
                 A lot of times I find that people who are blessed with the most
                 talent don't ever develop that attitude, and the ones who aren't
@@ -62,20 +60,10 @@
             favorites for easier access in the future.
           </p>
         </div>
-        <div class="favorites-gallery hidden">
-          <ul class="gallery-list">
-            <li class="test-card"></li>
-            <li class="test-card"></li>
-            <li class="test-card"></li>
-            <li class="test-card"></li>
-            <li class="test-card"></li>
-            <li class="test-card"></li>
-            <li class="test-card"></li>
-            <li class="test-card"></li>
-          </ul>
-        </div>
+        <!-- <div class="favorites-gallery"> -->
+        <ul class="gallery-list"></ul>
+        <!-- </div> -->
       </div>
-
       <div id="tui-pagination-container" class="tui-pagination"></div>
     </div>
   </section>

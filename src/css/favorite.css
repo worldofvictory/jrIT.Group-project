@@ -1,9 +1,4 @@
-/* body {
-    background: #F4F4F4;
-} */
-
 .favorites {
-    /* display:block; */
     padding-top: 80px;
     padding-bottom: 80px;
 }
@@ -24,13 +19,27 @@
     }
 }
 
+.favorites-tittle {
+    color: #242424;
+    font-family: NeueMontrealRegular;
+    font-size: 28px;
+    font-style: normal;
+    line-height: 38px;
+    letter-spacing: -0.56px;
+}
+
+@media screen and (min-width: 768px) {
+    .favorites-tittle {
+        font-size: 44px;
+    }
+} 
+
 .features-container {
     display: flex;
     flex-direction: column;
     gap: 20px;
     margin-top: 20px;
 }
-
 
 @media screen and (min-width: 768px) {
     .features-container {
@@ -47,7 +56,6 @@
     padding-right: 20px;
     margin: 0 auto;
 }
-
 
 @media screen and (min-width: 768px) {
     .favorites-container {
@@ -66,43 +74,23 @@
  }
 
 @media screen and (min-width: 1440px) {
-    .flex-conteiner {
+    .quote-conteiner {
         display: flex;
         flex-direction: column;
-        /* width: 494px;           */
         margin-right: 32px;
     }
 }
 
 @media screen and (min-width: 1440px) {
-    .thumb {
+    .favorites-thumb {
         display: flex;
-        /* align-items: baseline; */
-        margin-top: 44px;
-        /* gap: 180px; */
-       
-    }
-}
-
-.favorites-tittle {
-    color: #242424;
-    font-family: NeueMontrealRegular;
-    font-size: 28px;
-    font-style: normal;
-    line-height: 38px;       
-    letter-spacing: -0.56px;
-}
-
-@media screen and (min-width: 768px) {
-    .favorites-tittle {
-       font-size: 44px;  
+        margin-top: 44px;      
     }
 }
 
 .favorites-quote {
-    
     display:flex; 
-   
+    position: relative;
     border-radius: 20px;
     background: #242424;
     margin-top:20px; 
@@ -110,28 +98,27 @@
 
 }
 
+.favorites-quote > man-svg {
+    position: absolute;
+}
+
 @media screen and (min-width: 768px) {
     .favorites-quote {
         margin-top: 32px;
-        padding: 40px;
-       
-        
+        padding: 40px;        
     }
 }
 
 @media screen and (min-width: 1440px) {
     .favorites-quote {
         margin-top: 0; 
-        width: 494px;
-       
+        width: 494px;       
     }
 }
 
-
-.flex {
-    display: inline-flex;
-    justify-content: space-between;
-    margin-bottom: 6px;
+.commas-svg {
+position: absolute;
+right: 20px;
 
 }
 
@@ -139,26 +126,28 @@
     color: #F4F4F4;
     font-family: NeueMontrealRegular;
     font-size: 20px;
-    font-style: normal;
     font-weight: 500;
     line-height: 20px;
+    margin-bottom: 6px;
    
+}
+
+@media screen and (min-width: 768px) {
+    .quote-tittle {
+        font-size: 24px;
+    }
 }
 
 .quote-text {
     color: rgba(244, 244, 244, 0.60);
     font-family: NeueMontrealRegular;
     font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
     line-height: 18px;
-
 }
 
 .quote-content {
     display: flex;
     flex-direction: column;          
-    /* gap: 6px; */
 }
 
 @media screen and (min-width: 768px) {
@@ -168,30 +157,26 @@
 }
 
 .quote-author {
-   margin-top: 18px;
+    margin-top: 18px;
     color: #F4F4F4;    
     font-family: NeueMontrealRegular;
     font-size: 16px;
-    font-style: normal;        
     line-height: 24px;      
 }
 
 .man-svg {
-    margin-right: 18px;
-    
+    margin-right: 18px;  
 }
 
 .features {
     border-radius: 20px;
     background: #FFF;
-    border: 1px solid red;
 }
 
 .features-tittle { 
     color: #242424;
     font-family: NeueMontrealRegular;
     font-size: 20px;
-    font-style: normal;
     font-weight: 500;
     line-height: 20px;     
 }
@@ -206,8 +191,6 @@
     color: rgba(36, 36, 36, 0.60);
     font-family: NeueMontrealRegular;
     font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
     line-height: 18px;   
 }
 
@@ -242,6 +225,12 @@
     height: auto;
     border-radius: 20px;  
 }
+/* @media screen and (min-width: 1440px) {
+.favorites-img {
+        height: 141px;
+    }
+} */
+
 
 .text-pozition {
     display: flex;
@@ -282,29 +271,15 @@
 @media screen and (min-width: 768px){
     .js-hidden-text {
         margin-top: 140px;  
-width: 554px;
-/* margin-left: auto;
-margin-right: auto; */
-
-    /* padding-right: 75px;
-        padding-left: 75px; */
-} 
+        width: 554px;
+    } 
 }
 
 @media screen and (min-width: 1440px) {
-    .js-hidden-text {
-        /* margin-top: 0px;      */
-       
-        margin: auto;
-        
+    .js-hidden-text {   
+        margin: auto;       
     }
 }
-
-/* .favorites-gallery {
-    display: flex;
- 
-} */
-
 
 @media screen and (min-width: 1440px) {
     .gallery-list {
@@ -314,32 +289,149 @@ margin-right: auto; */
 
 .gallery-list {
     display: flex;
-       margin-top: 40px;
+    margin-top: 40px;
     text-align: center;
     /* justify-content: center; */
-    border: 1px solid green;
     flex-wrap: wrap;
     gap: 20px;
-
 }
 
-@media screen and (min-width: 1440px) {
-    .gallery-list {
-        margin-top: 0px;
-        
+
+@media screen and (min-width: 768px) {
+.gallery-list {
+       gap:16px; 
+       margin-top: 64px;
     }
 }
 
 
-.test-card {
-    width: 335px;
-    height: 141px;
-    border: 1px solid rgb(38, 0, 128);
+@media screen and (min-width: 1440px) {
+    .gallery-list {
+        margin-top: 0px;
+        gap:  32px 16px;        
+    }
+}
+
+.exercise-card {
+    width: 100%;
     margin: 0;
-    padding: 0;
+    padding: 16px;
+    border-radius: 15px;
+    background: #FFF;
 }
 
-
-.hidden {
-    display: none;
+@media screen and (min-width: 768px) {
+.exercise-card {
+       width: 343px;
+    }
 }
+
+@media screen and (min-width: 1440px) {
+    .exercise-card {
+        width: 405px;
+    }
+}
+
+.workout {
+    display: inline-block;
+    font-family: NeueMontrealRegular;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: normal;
+    padding:  5px 7.5px; 
+    border-radius: 15px;
+    border: 1px solid #242424;
+}
+
+.exercise-btn {
+    font-family: inherit;
+    font-size: 14px;
+    padding:0;
+    line-height: 18px;
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 54px;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    min-height: 30px;
+    background-color: inherit;
+}
+
+.exercise-btn:hover,
+.exercise-btn:focus {
+    font-size: 16px;
+}
+
+.exersise-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.favorite-exercise-name {
+    font-family: NeueMontrealRegular;
+    font-size: 20px;
+    line-height: 20px;
+    margin-left: 16px;
+    font-weight: 400;   
+}
+
+.exercise-tittle {
+    display: flex;
+    margin-top: 27px;
+    align-items: center;
+}
+
+.exercise-trash {
+    display: flex;
+    align-items: center;
+}
+
+.trash-btn {
+    margin-left: 8px;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    background-color: inherit;
+}
+
+.trash-svg {
+    stroke: black;
+    fill: transparent;    
+    /* margin-left: 8px; */
+}
+
+.arrow-svg {
+    stroke: black;
+}
+
+.trash-svg:hover,
+.trash-svg:focus
+
+{
+    width: 17px;
+    height: 17px;
+    cursor: pointer;
+}
+
+.exercise-category {
+    color: rgba(36, 36, 36, 0.40);  
+    font-family: NeueMontrealRegular;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+.exercise-category>span {
+    color: #242424;
+}
+
+.exercice-information {
+    display: flex;
+    justify-content:space-between;
+    margin-top: 16px;
+}
+
