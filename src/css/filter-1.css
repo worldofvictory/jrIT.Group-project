@@ -63,7 +63,21 @@
   object-fit: cover;
   width: 335px;
   height: 225px;
+  cursor: pointer; 
+  transition: transform 0.2s, box-shadow 0.2s;
 }
+.filter-category-item:hover {
+  transform: scale(1.05); /* Увеличиваем размер при наведении */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+}
+
+.filter-category-item:active {
+  transform: scale(0.95); 
+  box-shadow: none; 
+}
+/* .hidden {
+  display: none;
+} */
 .filter-category-img {
   display: block;
   border-radius: 12px;
