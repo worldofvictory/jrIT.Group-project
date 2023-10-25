@@ -4,7 +4,7 @@ const link2 = document.getElementById('link2');
 
 // Додати обробник події для першого посилання
 link1.addEventListener('click', e => {
-  e.preventDefault(); // Забороняємо перехід за посиланням
+  // e.preventDefault(); // Забороняємо перехід за посиланням
 
   link1.classList.add('h-link-active');
   link1.classList.remove('h-link-inactive');
@@ -14,7 +14,7 @@ link1.addEventListener('click', e => {
 
 // Додати обробник події для другого посилання
 link2.addEventListener('click', e => {
-  e.preventDefault(); // Забороняємо перехід за посиланням
+  // e.preventDefault(); // Забороняємо перехід за посиланням
 
   link2.classList.add('h-link-active');
   link2.classList.remove('h-link-inactive');

@@ -33,7 +33,7 @@ async function serviceQuote() {
     );
     return response.data; 
   } catch (error) {
-    console.error('Помилка отримання даних: ', error);
+    // console.error('Помилка отримання даних: ', error);
     return null;
   }
 }
@@ -219,7 +219,7 @@ function createExerciseCards(exercises) {
                   
           </div>    
             <button id = "open" class="exercise-btn" type="button">Start
-              <svg class="arrow-svg" width="16" height="16">
+              <svg id = "arrow" class="arrow-svg" width="16" height="16">
                 <use href="./img/sprite.svg#icon-arrow"></use>
               </svg>
             </button>
@@ -257,7 +257,7 @@ function renderExercises(exercises) {
     
   const cardsEl = document.querySelectorAll(".exercise-card"); 
   for (let card of cardsEl) {
-    card.addEventListener('click', handleCardClick);  
+    card.addEventListener('click', onCardClick);  
   }
 
   if (exercises.length === 0) {
@@ -270,16 +270,16 @@ let perPage = 7
 window.addEventListener("resize", renderCards)
 function renderCards() {
   let exercises = getAllFavoriteCards();
-  console.log(exercises.length)
+  
 
   if (window.innerWidth >= 768) {
-    console.log(window.innerWidth)
+    
     perPage = 10; 
   
   }
 
   if (window.innerWidth >= 1440) {
-    console.log(window.innerWidth)
+   
     perPage = 6; 
   
   }
@@ -301,34 +301,30 @@ renderCards();
 const cards = document.querySelectorAll(".exercise-card"); 
 
 for (let card of cards) {
-  card.addEventListener('click', handleCardClick);
+  card.addEventListener('click', onCardClick);
 }
 
-async function handleCardClick(event) {
+async function onCardClick(event) {
   switch (event.target.id) {
     case "dell":
       return removeCard(event);
     case "open":
-      return openCard(event);
+      return openModal(event);
+    case "arrow":
+      return openModal(event);
   }
 }
 
 function removeCard(event) {
-    const id = event.currentTarget.dataset.id; 
+  const id = event.currentTarget.dataset.id; 
   deleteCard(id);
   renderCards();  
 }
 
-
-async function openCard(event) {
- console.log(event.target);
-      console.log(event.curentTarget);
-
-      const id = event.currentTarget.dataset.id; 
-  console.log(id) 
-  
+async function openModal(event) {
+  const id = event.currentTarget.dataset.id; 
+    
   handleOpenModalClick(event, id);
-
 }
 
 function capitalize(s) {

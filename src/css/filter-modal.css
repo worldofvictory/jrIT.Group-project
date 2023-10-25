@@ -13,6 +13,10 @@
   overflow: auto;
 }
 
+.modal-exercise-container {
+  margin-bottom: 40px;
+}
+
 .modal-exercise-img {
   display: block;
   width: 295px;
@@ -36,6 +40,7 @@
   width: 24px;
   height: 24px;
 }
+
 
 .modal-exercise-title {
   font-size: 20px;
@@ -76,6 +81,8 @@
 
 .modal-exercise-tag-container {
   margin-bottom: 20px;
+  border-top: 1px solid rgba(244, 244, 244, 0.20);
+  border-bottom: 1px solid rgba(244, 244, 244, 0.20);
 }
 
 .modal-exercise-tag-container::before,
@@ -115,45 +122,43 @@
   margin-bottom: 40px;
 }
 
-.modal-exercise-btn-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.modal-exercise-btn {
-  display: block;
-  padding: 12px 24px;
-  border-radius: 30px;
-  line-height: 1.29;
-}
 
 /* TODO Change gap to 8px (when font-family will be correct) */
 
 .add-to-favorites-btn {
-  background: #f4f4f4;
-  color: #242424;
-  display: flex;
-  gap: 6px;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 6px;
+  background: #f4f4f4;
+  color: #242424;
+  border-radius: 30px;
+  line-height: 1.29;
+  border: none;
+  font-size: 14px;
+  padding: 12px 24px;
 }
 
-.add-to-favorites-btn span {
-  display: block;
-  width: 18px;
-  height: 18px;
+.add-to-favorites-btn:hover, 
+.add-to-favorites-btn:focus {
+border: 1px solid #f4f4f4;
+background-color: var(--backgroud-footer-text-color);
+color: #F4F4F4;
+}
+
+.add-to-favorites-btn:hover>svg, 
+.add-to-favorites-btn:focus>svg {
+stroke: #F4F4F4;
 }
 
 .modal-exercise-heart-icon {
   width: 18px;
   height: 18px;
-  stroke: #242424;
+  stroke:#242424; 
   fill: transparent;
 }
 
 .give-rating-btn {
-  border: 1px solid #f4f4f4;
   color: #f4f4f4;
   background-color: transparent;
 }
@@ -172,6 +177,7 @@
   .modal-exercise {
     max-width: 704px;
     padding: 32px;
+    
   }
 
   .modal-exercise-container {
@@ -224,6 +230,7 @@
 
   .modal-exercise-tag-list {
     gap: 16px;
+   
   }
 
   .modal-exercise-tag-container {
@@ -248,10 +255,7 @@
     height: 20px;
   }
 
-  .modal-exercise-heart-icon {
-    width: 20px;
-    height: 20px;
-  }
+ 
 }
 
 /** ======== DESKTOP ======== */

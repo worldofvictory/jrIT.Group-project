@@ -8,9 +8,7 @@ import {
 import { ModalBox } from './modal-class-box';
 import { addFavoriteCards, deleteCard, getAllFavoriteCards } from "./local-storage";
 
-const openModalSelector = '[data-modal-exercise="open"]';
 const closeModalSelector = '[data-modal-exercise="close"]';
-const openModalExerciseBtnRef = document.querySelector(openModalSelector);
 const LS_FAVORITES_ID = 'favorite-id-list';
 const favoriteList = getAllFavoriteCards() || [];
 const favoriteIdList = favoriteList.map((item) => item._id);
@@ -22,8 +20,10 @@ export async function handleOpenModalClick(
   let modalBox = {};
   let ratingValue = 0;
 
+  let exericiseData;
+
   try {
-    const exericiseData = await fetchExerciseModalById(favoriteId);
+    exericiseData = await fetchExerciseModalById(favoriteId);
     modalBox = new ModalBox(
       createModalExerciseMarkup,
       closeModalSelector,
@@ -41,24 +41,16 @@ export async function handleOpenModalClick(
 
   processActiveRatingStars(ratingValue);
 
-  const giveRatingBtnRef = document.querySelector('.js-give-rating-btn');
+
   const addToFavoriteBtnRef = document.querySelector(
     '.js-add-to-favorites-btn'
   );
 
-  giveRatingBtnRef.addEventListener('click', event =>
-    handleGiveRatingBtnClick(event, modalBox)
-  );
-
-  addToFavoriteBtnRef.addEventListener('click', event =>
+   addToFavoriteBtnRef.addEventListener('click', event =>
     handleAddToFavoriteBtnClick(event, favoriteId, addToFavoriteBtnRef, exericiseData)
   );
 
   createRemoveMarkupIfIncludesId(favoriteId, addToFavoriteBtnRef);
-}
-
-function handleGiveRatingBtnClick(_, modalBox) {
-  modalBox.instance.close();
 }
 
 function handleAddToFavoriteBtnClick(_, favoriteId, addToFavoriteBtnRef, exericiseData) {
