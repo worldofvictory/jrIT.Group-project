@@ -21,6 +21,6 @@ link2.addEventListener('click', e => {
   link1.classList.remove('h-link-active');
   link1.classList.add('h-link-inactive');
 
-  console.log(link1);
-  console.log(link2);
+  /*console.log(link1);
+  console.log(link2);*/
 });
