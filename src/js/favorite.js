@@ -207,7 +207,7 @@ const Refs = {
 function createExerciseCards(exercises) {
   
     return exercises.map(({_id, bodyPart, burnedCalories, target, name, time}) => 
-      `<li data-id="${_id}" class="exercise-card">
+      `<li data-id="${_id}" class="exercise-card ">
         <div class="exersise-header">
           <div class="exercise-trash">
             <p class="workout">WORKOUT</p>
@@ -240,9 +240,9 @@ function createExerciseCards(exercises) {
 }
 
 
-// for (const data of exData) {
-//   addFavoriteCards(data);
-// }
+for (const data of exData) {
+  addFavoriteCards(data);
+}
 
 
 

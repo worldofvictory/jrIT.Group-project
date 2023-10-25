@@ -6,14 +6,17 @@ import {
   createRemoveFromFavoritesMarkup,
 } from './templates/modal-exercise-markup';
 import { ModalBox } from './modal-class-box';
+import { addFavoriteCards, deleteCard, getAllFavoriteCards } from "./local-storage";
 
 const openModalSelector = '[data-modal-exercise="open"]';
 const closeModalSelector = '[data-modal-exercise="close"]';
 const openModalExerciseBtnRef = document.querySelector(openModalSelector);
 const LS_FAVORITES_ID = 'favorite-id-list';
-const favoriteIdList = JSON.parse(localStorage.getItem(LS_FAVORITES_ID)) || [];
+const favoriteIdList = getAllFavoriteCards().map((item) => item._id);
 
-openModalExerciseBtnRef.addEventListener('click', handleOpenModalClick);
+// const favoriteIdList = JSON.parse(localStorage.getItem(LS_FAVORITES_ID)) || [];
+
+// openModalExerciseBtnRef.addEventListener('click', handleOpenModalClick);
 
 export async function handleOpenModalClick(
   _,
@@ -51,7 +54,7 @@ export async function handleOpenModalClick(
   );
 
   addToFavoriteBtnRef.addEventListener('click', event =>
-    handleAddToFavoriteBtnClick(event, favoriteId, addToFavoriteBtnRef)
+    handleAddToFavoriteBtnClick(event, favoriteId, addToFavoriteBtnRef, exericiseData)
   );
 
   createRemoveMarkupIfIncludesId(favoriteId, addToFavoriteBtnRef);
@@ -61,23 +64,24 @@ function handleGiveRatingBtnClick(_, modalBox) {
   modalBox.instance.close();
 }
 
-function handleAddToFavoriteBtnClick(_, favoriteId, addToFavoriteBtnRef) {
+function handleAddToFavoriteBtnClick(_, favoriteId, addToFavoriteBtnRef, exericiseData) {
   if (favoriteIdList.includes(favoriteId)) {
     processRemovalsFromFavorites(favoriteId, addToFavoriteBtnRef);
     removeLocalStorageIfEmpty();
     return;
   }
 
-  processAddingToFavorites(favoriteId, addToFavoriteBtnRef);
+  processAddingToFavorites(favoriteId, addToFavoriteBtnRef, exericiseData);
 }
 
-function processAddingToFavorites(favoriteId, addToFavoriteBtnRef) {
+function processAddingToFavorites(favoriteId, addToFavoriteBtnRef, exericiseData) {
   addToFavoriteBtnRef.innerHTML = createRemoveFromFavoritesMarkup();
 
   favoriteIdList.push(favoriteId);
   const favoriteIdData = JSON.stringify(favoriteIdList);
-
   localStorage.setItem(LS_FAVORITES_ID, favoriteIdData);
+
+  addFavoriteCards(exericiseData)
 }
 
 function processRemovalsFromFavorites(favoriteId, addToFavoriteBtnRef) {
@@ -88,6 +92,8 @@ function processRemovalsFromFavorites(favoriteId, addToFavoriteBtnRef) {
   localStorage.setItem(LS_FAVORITES_ID, favoriteIdData);
 
   addToFavoriteBtnRef.innerHTML = createAddToFavoritesMarkup();
+
+  deleteCard(favoriteId)
 }
 
 function createRemoveMarkupIfIncludesId(favoriteId, addToFavoriteBtnRef) {
