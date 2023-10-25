@@ -12,7 +12,8 @@ const openModalSelector = '[data-modal-exercise="open"]';
 const closeModalSelector = '[data-modal-exercise="close"]';
 const openModalExerciseBtnRef = document.querySelector(openModalSelector);
 const LS_FAVORITES_ID = 'favorite-id-list';
-const favoriteIdList = getAllFavoriteCards().map((item) => item._id);
+const favoriteList = getAllFavoriteCards() || [];
+const favoriteIdList = favoriteList.map((item) => item._id);
 
 export async function handleOpenModalClick(
   _,
