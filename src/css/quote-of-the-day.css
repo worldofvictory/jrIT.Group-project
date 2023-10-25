@@ -64,7 +64,7 @@
 
 .quote-photo {
     background-color: #FFF;
-    background-image: url(../img/women-sportswear.jpg);
+    background-image: url(../img/women-sportswear-mob.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -78,7 +78,7 @@
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
         .quote-photo {
-            background-image: url(../img/women-sportswear-2x.jpg);
+            background-image: url(../img/women-sportswear-mob-2x.jpg);
         }
     }
 
@@ -196,7 +196,16 @@
         width: 288px;
         height: 249px;
         margin-bottom: unset;
+        background-image: url(../img/women-sportswear-tablet.jpg);
     }
+    
+    @media (min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi),
+        (min-resolution: 2dppx) {
+            .quote-photo {
+                background-image: url(../img/women-sportswear-tablet-2x.jpg);
+            }
+        }
 
     .quote-sport {
         max-width: 400px;
@@ -237,7 +246,16 @@
         width: 444px;
         height: 242px;
         margin-bottom: 32px;
+        background-image: url(../img/women-sportswear-desktop.jpg);
     }
+    
+    @media (min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi),
+        (min-resolution: 2dppx) {
+            .quote-photo {
+                background-image: url(../img/women-sportswear-desktop-2x.jpg);
+            }
+        }
 
     .quote-sport {
         max-width: 444px;
