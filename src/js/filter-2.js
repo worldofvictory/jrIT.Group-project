@@ -1,21 +1,66 @@
-import Pagination from "tui-pagination";
-import 'tui-pagination/dist/tui-pagination.css';
-
-const form = document.querySelector(".search-form");
-const searchInput = document.querySelector(".search-input");
-const exercisesBack = document.querySelector(".exercises-back");
-const iconSearch = document.getElementById('icon-search');
-const iconX = document.getElementById('icon-x');
-
-const apiUrl = "https://your-energy.b.goit.study/api";
-
-fetchExercises("");
-
-form.addEventListener('submit', searchExercises);
-searchInput.addEventListener('input', startSearch);
-
-function fetchExercises(keyword) {
-    const categories = ["back", "cardio", "chest", "lower arms", "lower legs", "neck", "shoulders", "upper arms", "upper legs", "waist"];
+import Pagination from "tui-pagination"; 
+import 'tui-pagination/dist/tui-pagination.css'; 
+ 
+const form = document.querySelector(".search-form"); 
+const searchInput = document.querySelector(".search-input"); 
+const exercisesBack = document.querySelector(".exercises-back"); 
+const iconSearch = document.getElementById('icon-search'); 
+const iconX = document.getElementById('icon-x'); 
+import { handleOpenModalClick } from './modal-exercise'; 
+ 
+const apiUrl = "https://your-energy.b.goit.study/api"; 
+ 
+fetchExercises(""); 
+ 
+form.addEventListener('submit', searchExercises); 
+searchInput.addEventListener('input', startSearch); 
+ 
+function fetchExercises(keyword) { 
+    const categories = ["back", "cardio", "chest", "lower arms", "lower legs", "neck", "shoulders", "upper arms", "upper legs", "waist"]; 
+     
+     
+const promises = categories.map(category => { 
+        return fetch (`${apiUrl}/exercises?keyword=${keyword}&bodypart=${category}&limit=12`) 
+            .then(response => { 
+                if (!response.ok) { 
+                     throw new Error(`Sorry, is not found`); 
+                } 
+                return response.json(); 
+            }); 
+    }) 
+Promise.all(promises) 
+    .then(data => { 
+        exercisesBack.innerHTML = ""; 
+        data.forEach(categoryData => { 
+            handleExerciseData(categoryData.results); 
+        }); 
+    }) 
+    .catch(error => { 
+        console.error(error); 
+    }); 
+} 
+ 
+function searchExercises(event) { 
+    event.preventDefault(); 
+    const searchValue = searchInput.value.toLowerCase(); 
+ 
+    fetchExercises(searchValue); 
+} 
+ 
+function handleExerciseData(results) { 
+    exercisesBack.innerHTML = ""; 
+    if (results.length === 0) { 
+        exercisesBack.innerHTML = "Sorry, is not found"; 
+    } else { 
+        results.forEach((exercise) => { 
+            const infoCard = createInfoCard(exercise); 
+            infoCard.addEventListener('click', onStartClick); 
+            exercisesBack.appendChild(infoCard);         
+        }); 
+    } 
+} 
+ 
+async function onStartClick(event) { 
     
         if (event.target.id !== "ok" && event.target.id !== "icon-arrow") {  
         return;  
