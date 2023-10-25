@@ -1,5 +1,5 @@
-.filter-section {
-  padding: 40 20px 0 20px;
+.filter-container {
+  padding: 40px 20px 0 20px;
   width: 100%;
   max-width: 375px;
   margin: 0 auto;
@@ -7,11 +7,10 @@
 .filter-container-header {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
 }
 .filter-container-title {
-  color: #242424;
-  font-family: 'Neue Montreal', sans-serif;
+  color: var(--backgroud-footer-text-color);
+  font-family: 'NeueMontrealRegular';
   font-size: 28px;
   font-style: normal;
   font-weight: 400;
@@ -25,23 +24,31 @@
   margin-bottom: 20px;
 }
 
-.filter-btn {
+.filter1-btn {
   border: none;
   margin: 0;
   padding: 0;
   background-color: transparent;
   cursor: pointer;
   color: rgba(36, 36, 36, 0.6);
-  font-family: 'Neue Montreal', sans-serif;
+  font-family:'NeueMontrealRegular';
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: 20px; /* 142.857% */
 }
 
+.filter-container-category {
+ 
+  justify-content: center;
+  align-items: center;
+}
+
 .filter-category-list {
   display: flex;
   flex-direction: column;
+
+  justify-content: center;
 }
 .filter-category-item {
   display: flex;
@@ -49,21 +56,21 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
-  height: 225px;
+
   position: relative;
-  width: 335px;
   border-radius: 12px;
   overflow: hidden;
+  object-fit: cover;
+  width: 335px;
+  height: 225px;
 }
 .filter-category-img {
   display: block;
-  background: linear-gradient(
-    0deg,
-    rgba(17, 17, 17, 0.5) 0%,
-    rgba(17, 17, 17, 0.5) 100%
-  );
   border-radius: 12px;
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  align-items: center;
 }
 .category-text {
   display: flex;
@@ -80,7 +87,7 @@
   color: #f4f4f4;
   text-align: center;
   font-feature-settings: 'clig' off, 'liga' off;
-  font-family: 'Neue Montreal', sans-serif;
+  font-family: 'NeueMontrealRegular';
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -90,7 +97,7 @@
 .filter-category-descr {
   color: rgba(244, 244, 244, 0.4);
   font-feature-settings: 'clig' off, 'liga' off;
-  font-family: 'Neue Montreal', sans-serif;
+  font-family: 'NeueMontrealRegular';
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -99,9 +106,23 @@
 }
 
 @media screen and (min-width: 375px) {
+  .filter-container {
+    max-width: 375px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 374px) {
+  .filter-container {
+    padding-left: 15px;
+    padding-right: 15px;
+    min-width: 320px;
+  }
 }
 @media screen and (min-width: 768px) {
-  .filter-section {
+  .filter-container {
     padding: 64px 32px 0 32px;
     width: 100%;
     max-width: 768px;
@@ -109,7 +130,7 @@
   }
   .filter-container-title {
     color: #242424;
-    font-family: 'Neue Montreal', sans-serif;
+    font-family: 'NeueMontrealRegular';
     font-size: 44px;
     font-style: normal;
     font-weight: 400;
@@ -121,12 +142,12 @@
     margin-bottom: 32px;
   }
 
-  .filter-btn {
+  .filter1-btn {
     padding: 0;
     border: none;
     background: transparent;
     color: rgba(36, 36, 36, 0.6);
-    font-family: 'Neue Montreal', sans-serif;
+    font-family: 'NeueMontrealRegular';
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -137,13 +158,15 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: 32px 15px;
+    justify-content: flex-start;
   }
   .filter-category-item {
     width: calc((100% - (2 * 15px)) / 3);
+    margin-bottom: 0;
   }
 
   @media screen and (min-width: 1440px) {
-    .filter-section {
+    .filter-container {
       padding: 64px 32px 0 32px;
       width: 100%;
       max-width: 1440px;
@@ -157,7 +180,7 @@
     }
     .filter-container-title {
       color: #242424;
-      font-family: 'Neue Montreal', sans-serif;
+      font-family: 'NeueMontrealRegular';
       font-size: 28px;
       font-style: normal;
       font-weight: 400;
@@ -169,9 +192,9 @@
       margin-bottom: 42px;
       position: relative;
     }
-    .filter-btn {
+    .filter1-btn {
       color: rgba(36, 36, 36, 0.6);
-      font-family: 'Neue Montreal', sans-serif;
+      font-family: 'NeueMontrealRegular';
       font-size: 16px;
       font-style: normal;
       font-weight: 400;
@@ -185,11 +208,15 @@
       display: flex;
       max-width: 900px;
       margin-left: auto;
+      justify-content: flex-start;
+    }
+    .filter-category-item {
+      margin-bottom: 0;
     }
   }
 }
 
-.filter-btn.current {
+.filter1-btn.current {
   color: #242424;
   border-bottom: 4px solid #242424;
 }

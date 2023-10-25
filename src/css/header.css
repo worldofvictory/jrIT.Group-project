@@ -23,7 +23,7 @@ ul {
 .header {
   width: 100%;
   padding-top: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 0px;
   background-color: #f4f4f4;
 }
 
@@ -34,7 +34,7 @@ ul {
   margin: 0 auto;
   padding-right: 20px;
   padding-left: 20px;
-  outline: 2px solid red;
+  /* outline: 2px solid red; */
 }
 
 .header-container {
@@ -59,7 +59,6 @@ ul {
 }
 
 /* Soc Links */
-/* SOCIAL */
 .heder-social {
   display: flex;
   justify-content: center;
@@ -70,7 +69,6 @@ ul {
   align-items: center;
 }
 
-/* ! ???? */
 .heder-soc-icon {
   border-radius: 10px;
   border: 1px solid rgba(36, 36, 36, 0.1);
@@ -90,8 +88,6 @@ ul {
   fill: #f4f4f4;
 }
 
-/*! ******************  */
-
 .burger-social {
   display: flex;
   justify-content: center;
@@ -102,16 +98,15 @@ ul {
   align-items: center;
 }
 
-/* ! ???? */
 .burger-soc-icon {
   border-radius: 10px;
-  border: 1px solid rgba(36, 36, 36, 0.1);
+  border: 1px solid rgba(244, 244, 244, 0.1);
   display: flex;
   padding: 8px;
   align-items: center;
   gap: 8px;
   fill: #f4f4f4;
-  /* color: #242424; */
+  /* stroke: #242424; */
 
   background: #242424;
 }
@@ -120,7 +115,6 @@ ul {
 .burger-soc-svg:hover .burger-soc-icon {
   background-color: #f4f4f4;
   fill: #242424;
-  
 }
 
 /* ! ************************** */
@@ -137,14 +131,13 @@ ul {
   stroke: #141414;
   /* color: #242424; */
   background-color: #f4f4f4;
-  /* margin-left: 50px; */
+  transition: transform 300ms linear;
 }
 
 .mob-button:hover .menu-button,
 .mob-button:focus .menu-button {
-  /* fill: #f4f4f4;
-  stroke: #4d4131; */
   background-color: #f4f4f4;
+  transform: scale(1.3);
 }
 
 .list-menu {
@@ -165,7 +158,7 @@ ul {
 }
 
 /* ! + */
-.h-list-link {
+.h-link-active {
   background-color: #f4f4f4;
   padding: 6px 12px;
   border-radius: 30px;
@@ -180,8 +173,7 @@ ul {
   transition: color 300ms linear;
 }
 
-.h-list-link-favorites {
-  background-color: #141414;
+.h-link-inactive {
   padding: 6px 12px;
   border-radius: 30px;
   color: #f4f4f4;
@@ -195,85 +187,46 @@ ul {
   transition: color 300ms linear;
 }
 
-.h-list-link:hover,
-.h-list-link:focus {
+.h-link-active:hover {
   color: #f4f4f4;
   background-color: #141414;
 }
 
-.h-list-link-favorites:hover,
-.h-list-link-favorites:focus {
+.h-link-inactive:hover {
   color: #141414;
   background-color: #f4f4f4;
-}
-
-.veggie-items {
-  display: flex;
-}
-
-.header-mob-menu {
-  display: none;
-}
-
-.header-mob-menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 12;
-  width: 100%;
-  height: 100%;
-  background-color: #fff;
-  padding: 16px 20px 16px 20px;
 }
 
 /* * Мобільне меню **********************************************************************/
 
-/* Mob Menu Section */
+/*! Mob Menu Section */
 
-/* !!!!  MOB MENU HEADER */
-/* ! */
 .mob-mob-header {
   width: 100%;
   padding-top: 20px;
   padding-bottom: 20px;
-  background-color: #fff;
+  background-color: #242424;
   z-index: 12;
   position: absolute;
 }
-/* ! */
+
 .mob-header-container {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  /* align-items: center; */
+  justify-content: end;
 }
-/* ! */
+
 .mob-header-header {
   display: flex;
   align-items: center;
 }
-/* ! */
+
 .mob-nav-header {
   display: flex;
   align-items: center;
   margin: 0;
 }
 
-/* ! */
-.mob-text-header-logo {
-  color: #141414;
-  text-align: center;
-  font-family: Neue Montreal;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 1.29; /* 128.571% */
-  cursor: pointer;
-  text-transform: uppercase;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-/* ! */
 .mob-close-button {
   border: none;
   background-color: transparent;
@@ -281,22 +234,18 @@ ul {
   padding: 0;
 }
 
-/* ! */
 .mob-close-button-mob {
   border: none;
-  /* background-color: transparent; */
-  background-color: red;
+  /* background-color: #f4f4f4; */
   cursor: pointer;
-  fill: #242424;
-  stroke: #242424;
+  fill: #f4f4f4;
+  stroke: #f4f4f4;
   transition: transform 300ms linear;
 }
 
-/* ! */
 .mob-close-button:hover .mob-close-button-mob,
 .mob-close-button:focus .mob-close-button-mob {
-  background-color: green;
-  transform: scale(1.5);
+  transform: scale(1.3);
   transform: rotate(45deg);
 }
 
@@ -315,12 +264,11 @@ ul {
   position: fixed;
   width: 100vw;
   height: 100vh;
-  background-color: blue;
+  background-color: #242424;
   z-index: 12;
   overflow: auto;
-  transition: visibility 800ms cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 800ms cubic-bezier(0.4, 0, 0.2, 1);
-  /* align-content: space-between; */
+  transition: visibility 1000ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 1000ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .is-hidden {
@@ -329,7 +277,7 @@ ul {
   pointer-events: none;
 }
 
-/* Блокує основну сторінку від скролу через JS */
+/*! Блокує основну сторінку від скролу через JS */
 
 .no-scroll {
   overflow: hidden;
@@ -369,18 +317,19 @@ ul {
 .mob-menu-link {
   text-decoration: none;
   color: #f4f4f4;
-  font-family: Neue Montreal;
+  font-family: 'NeueMontrealRegular';
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: 1.29; /* 128.571% */
   cursor: pointer;
-  transition: color 300ms linear;
+  transition: font-size 300ms linear;
 }
 
 .mob-menu-link:hover,
 .mob-menu-link:focus {
-  color: red;
+  /* col+or: red; */
+  font-size: 20px;
 }
 
 /* ! MEDIA */
@@ -423,6 +372,7 @@ ul {
   }
   .header {
     padding-top: 24px;
+    padding-bottom: 0px;
   }
 }
 
@@ -432,5 +382,10 @@ ul {
   }
   .heder-social {
     margin-left: 400px;
+  }
+
+  .header {
+    padding-top: 28px;
+    padding-bottom: 0px;
   }
 }
