@@ -1,4 +1,4 @@
-async function sendForm() {
+/*async function sendForm() {
   try {
     document.forms.user.querySelector('[type="submit"]').disabled = true;
     document.forms.user
@@ -41,4 +41,4 @@ async function sendForm() {
 document.forms.user.addEventListener('submit', e => {
   e.preventDefault();
   sendForm();
-});
+});*/

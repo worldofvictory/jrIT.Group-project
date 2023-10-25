@@ -22,14 +22,12 @@ function createMarcup(arr) {
   gallery.innerHTML = '';
   return arr
     .map(
-      ({ filter, name, imgURL }) => `<li class="filter-category-item">
-              <img
-                class="filter-category-img"
-                src="${imgURL}"
-                alt=""
-                loading="lazy"
-                 width='335' height='225'
-              />
+      ({ filter, name, imgURL }) => `<li class="filter-category-item"
+          style = "background-image: linear-gradient(0deg, rgba(17, 17, 17, 0.50) 0%, rgba(17, 17, 17, 0.50) 100%), url(${imgURL});
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    ">
             <div class="category-text">
               <h3 class="filter-category-title">${name}</h3>
               <p class="filter-category-descr">${filter}</p>
@@ -38,6 +36,14 @@ function createMarcup(arr) {
     )
     .join('');
 }
+
+// <img
+//   class="filter-category-img"
+//   src="${imgURL}"
+//   alt=""
+//   loading="lazy"
+//    width='335' height='225'
+// />
 
 // Початкова фільтрація "Body parts"
 
@@ -54,7 +60,7 @@ fetchData('Body parts').then(data => {
 });
 
 // Обробники подій для кнопок фільтрації
-const filterButtons = document.querySelectorAll('.filter-btn');
+const filterButtons = document.querySelectorAll('.filter1-btn');
 filterButtons.forEach(button => {
   button.addEventListener('click', async () => {
     // Видаляємо клас 'current' з усіх кнопок

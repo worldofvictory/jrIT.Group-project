@@ -1,0 +1,230 @@
+
+
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 0 20px 0 20px;
+}
+
+.hero-small-image {
+    display: none;
+}
+
+.hero-icon {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+}
+
+.hero-title {
+
+    color: var(--backgroud-footer-text-color);
+    font-family: 'NeueMontrealRegular';
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 48px;
+    letter-spacing: -0.8px;
+    margin-bottom: 20px;
+
+}
+
+.hero-span {
+    color: var(--backgroud-footer-text-color);
+    font-family: 'NeueMontrealitalic';
+    font-size: 40px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 48px;
+    letter-spacing: -0.8px;
+}
+
+.hero-text {
+    color: var(--backgroud-footer-text-color);
+    font-family: 'NeueMontrealRegular';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: -0.28px;
+    margin-bottom: 40px;
+}
+
+.hero-image {
+    background-image: url(../img/women-sportswear-working-mobile.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 30px;
+    height: 450px;
+    margin-bottom: 20px;
+}
+
+@media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+        .hero-image {
+            background-image: url(../img/women-sportswear-working-mob-2x.jpg);
+        }
+    }
+
+.hero-tags {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 6px;
+}
+
+.hero-tags-item {
+    color: var(--backgroud-footer-text-color);
+    font-family: 'NeueMontrealRegular';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+
+    border-radius: 30px;
+    border: 1px solid var(--backgroud-footer-text-color);
+
+    display: flex;
+    padding: 4px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+
+@media screen and (min-width: 375px)  {
+    .hero-container {
+        max-width: 375px;
+       
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .hero-container {
+        max-width: 704px;
+        padding: 100px 32px 64px 32px;
+    }
+
+    .hero-image {
+        background-image: url(../img/women-sportswear-working-tablet.jpg);
+        border-radius: 60px;
+        height: 550px;
+    }
+
+    
+    @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+        .hero-image {
+            background-image: url(../img/women-sportswear-working-tablet-2x.jpg);
+        }
+    }
+
+    .hero-title {
+        width: 593px;
+        font-size: 74px;
+        line-height: 74px;
+        letter-spacing: -1.48px;
+    }
+
+    .hero-span {
+        font-size: 74px;
+        line-height: 74px;
+        letter-spacing: -1.48px;
+    }
+
+    .hero-text {
+        margin-bottom: 32px;
+        width: 528px;
+    }
+
+    .hero-tags {
+        justify-content: right;
+        gap: 8px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .hero-container {
+        position: relative;
+        max-width: 1376px;
+        padding: 100px 32px 64px 32px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .hero-title {
+        font-size: 74px;
+        line-height: 74px;
+        letter-spacing: -1.48px;
+        margin-right: 450px;
+    }
+
+    .hero-span {
+        font-size: 74px;
+        line-height: 74px;
+        letter-spacing: -1.48px;
+    }
+
+    .hero-small-image {
+        display: inline-block;
+        width: 168px;
+        height: 100px;
+    }
+
+    .hero-text {
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: -0.36px;
+        margin-bottom: 32px;
+    }
+
+    .hero-image {
+        background-image: url(../img/women-sportswear-working-desktop.jpg);
+        border-radius: 60px;
+        height: 350px;
+
+        display: flex;
+        width: 1376px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+        .hero-image {
+            background-image: url(../img/women-sportswear-working-desktop-2x.jpg);
+        }
+    }
+
+    .hero-tags {
+        position: absolute;
+        top: 32%;
+        right: 32px;
+        display: flex;
+        width: 182px;
+        justify-content: flex-end;
+        align-items: flex-start;
+        align-content: flex-start;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-left: 1032px;
+    }
+
+    .hero-tags-item {
+        display: flex;
+        padding: 4px 16px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .hero-tags-item:is(:hover, :focus) {
+        background-color: var(--backgroud-footer-text-color);
+        color: #fff;
+    }
+}
