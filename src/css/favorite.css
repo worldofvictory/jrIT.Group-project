@@ -147,7 +147,8 @@ right: 20px;
 
 .quote-content {
     display: flex;
-    flex-direction: column;          
+    flex-direction: column; 
+    padding-left: 48px;         
 }
 
 @media screen and (min-width: 768px) {
@@ -165,7 +166,8 @@ right: 20px;
 }
 
 .man-svg {
-    margin-right: 18px;  
+    /* margin-right: 18px; */
+    position: absolute;  
 }
 
 .features {
@@ -175,7 +177,7 @@ right: 20px;
 
 .features-tittle { 
     color: #242424;
-    font-family: Neue Montreal Medium;
+    font-family: Neue MontrealMedium;
     font-size: 20px;
     font-weight: 500;
     line-height: 20px;     
