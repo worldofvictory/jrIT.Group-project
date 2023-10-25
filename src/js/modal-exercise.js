@@ -13,7 +13,7 @@ const openModalExerciseBtnRef = document.querySelector(openModalSelector);
 const LS_FAVORITES_ID = 'favorite-id-list';
 const favoriteIdList = JSON.parse(localStorage.getItem(LS_FAVORITES_ID)) || [];
 
-openModalExerciseBtnRef.addEventListener('click', handleOpenModalClick);
+/*openModalExerciseBtnRef.addEventListener('click', handleOpenModalClick);*/
 
 export async function handleOpenModalClick(
   _,
@@ -23,7 +23,7 @@ export async function handleOpenModalClick(
   let ratingValue = 0;
 
   try {
-    const exericiseData = await fetchExerciseModalById();
+    const exericiseData = await fetchExerciseModalById(favoriteId);
     modalBox = new ModalBox(
       createModalExerciseMarkup,
       closeModalSelector,

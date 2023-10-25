@@ -50,3 +50,11 @@ background-color: var(--background-color);
   font-family: 'NeueMontrealRegular'
  }
   
+ .quote-sport-container {
+  float: left;
+  width: 444px;
+ }
+
+ .filter-section {
+margin-left: 476px;
+ }

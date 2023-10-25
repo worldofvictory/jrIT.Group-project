@@ -34,7 +34,7 @@
 //-----------------------------------------------------------------------------------------//
 
 // loader-subscribe.js + footer.js
-const mailingInput = document.querySelector('.mailing_input');
+/*const mailingInput = document.querySelector('.mailing_input');
 const mailingForm = document.querySelector('.mailing_form');
 import { Notify } from 'notiflix';
 
@@ -74,6 +74,58 @@ const sendForm = async (email) => {
 };
 
 mailingForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  if (mailingInput.checkValidity()) {
+    sendForm(mailingInput.value);
+  } else {
+    Notify.warning('Invalid e-mail address entered.');
+  }
+});*/
+
+const mailingInput = document.querySelector('.mailing_input');
+const mailingForm = document.querySelector('.mailing_form');
+import { Notify } from 'notiflix';
+
+const sendForm = async email => {
+  try {
+    const submitButton = mailingForm.querySelector('.mailing_button');
+    submitButton.disabled = true;
+    const spinner = mailingForm.querySelector('.submit-spinner');
+    spinner.classList.remove('submit-spinner_hide');
+
+    const response = await fetch(
+      'https://your-energy.b.goit.study/api/subscription',
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      }
+    );
+
+    submitButton.disabled = false;
+    spinner.classList.add('submit-spinner_hide');
+
+    if (response.ok) {
+      const result = await response.json();
+      console.log(`The user has just subscribed with the email: ${email}`);
+      mailingForm.reset();
+      Notify.success(
+        "We're excited to have you on board! 🎉 Thank you for subscribing to new exercises on Your Energy. You've just taken a significant step towards improving your fitness and well-being."
+      );
+    } else {
+      Notify.failure('Error occurred while making subscription');
+    }
+  } catch (error) {
+    const submitButton = mailingForm.querySelector('.mailing_button');
+    submitButton.disabled = false;
+    const spinner = mailingForm.querySelector('.submit-spinner');
+    spinner.classList.add('submit-spinner_hide');
+    console.error(error);
+    Notify.failure('Error occurred while making subscription');
+  }
+};
+
+mailingForm.addEventListener('submit', e => {
   e.preventDefault();
   if (mailingInput.checkValidity()) {
     sendForm(mailingInput.value);

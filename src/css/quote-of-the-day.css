@@ -218,7 +218,7 @@
 @media screen and (min-width: 1440px) {
     .quote-sport-container {
         max-width: 1440px;
-        padding: 32px 32px 409px 32px;
+        padding: 32px 32px /*409px*/ 32px;
     }
 
     .quote {
