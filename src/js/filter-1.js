@@ -24,11 +24,51 @@ async function fetchData(filter, page = 1) {
 }
 
 function createMarcup(arr) {
+
   gallery.innerHTML = '';
+
   return arr
+
     .map(
-      ({ filter, name, imgURL }) => `<li class="filter-category-item">
-              <img
+
+      ({ filter, name, imgURL }) => `<li class="filter-category-item "
+
+          style = "background-image: linear-gradient(
+
+    to right,
+
+    rgba(47, 48, 50, 0.5),
+
+    rgba(47, 48, 50, 0.5)
+
+  ), url(${imgURL});
+
+     background-repeat: no-repeat;
+
+    background-size: cover;
+
+    background-position: center;
+
+     width='335' height='225'
+
+    >
+
+            <div class="category-text">
+
+              <h3 class="filter-category-title">${name}</h3>
+
+              <p class="filter-category-descr">${filter}</p>
+
+            </div>
+
+            </li>`
+
+    )
+
+    .join('');
+
+}
+             /* <img
                 class="filter-category-img"
                 src="${imgURL}"
                 alt=""
@@ -43,7 +83,7 @@ function createMarcup(arr) {
     )
     .join('');
 }
-
+*/
 // Початкова фільтрація "Body parts"
 
 fetchData('Body parts').then(data => {
