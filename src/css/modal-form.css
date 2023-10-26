@@ -1,9 +1,9 @@
-.form-modal-btn {
+/* .form-modal-btn {
   padding: 15px;
   cursor: pointer;
   background-color: rgba(4, 4, 4, 0.4);
   border-radius: 20px;
-}
+} */
 
 .form-modal-backdrop {
   /* position: fixed; */ /* вернуть*/
@@ -45,6 +45,7 @@
   color: #f4f4f4;
 }
 
+
 .form-modal-title {
   color: rgba(244, 244, 244, 0.4);
   font-feature-settings: 'clig' off, 'liga' off;
@@ -62,6 +63,7 @@
   align-items: center;
   gap: 2px;
 }
+
 .total-stars-title {
   color: #f4f4f4;
   font-feature-settings: 'clig' off, 'liga' off;
@@ -75,6 +77,7 @@
 .star {
   fill: rgba(244, 244, 244, 0.2);
 }
+
 .form-info {
   padding-top: 20px;
   display: flex;

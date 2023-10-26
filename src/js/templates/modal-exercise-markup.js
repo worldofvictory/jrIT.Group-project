@@ -1,4 +1,5 @@
 export function createModalExerciseMarkup({
+  _id,
   gifUrl,
   name,
   rating,
@@ -22,7 +23,7 @@ export function createModalExerciseMarkup({
       <button
         type="button"
         class="modal-exercise-close-btn"
-        data-modal-exercise="close"
+        data-close="close"
       >
         <svg class="modal-exercise-close-icon">
           <use href="./img/sprite.svg#icon-close-modal"></use>
@@ -77,12 +78,11 @@ export function createModalExerciseMarkup({
       <p class="modal-exercise-description">${description}</p>
     </div>
   </div>
-   <button type="button" class="add-to-favorites-btn js-add-to-favorites-btn">
-        Add to favorites
-        <svg class="modal-exercise-heart-icon js-modal-exercise-heart-icon">
-            <use href="./img/sprite.svg#icon-heart-white"></use></svg
-        >
+   <button type="button" id="1" class="exersice-modal-btn ">
+     
       </button>  
+     
+
 </section>
   `;
 }
@@ -90,20 +90,19 @@ export function createModalExerciseMarkup({
 export function createAddToFavoritesMarkup() {
   return `
   Add to favorites
-        <span>
-          <svg class="modal-exercise-heart-icon js-modal-exercise-heart-icon">
-            <use href="./img/sprite.svg#icon-heart"></use></svg
-        ></span>`;
+   
+          <svg class="modal-exercise-icon">
+            <use href="./img/sprite.svg#icon-heart-white"></use></svg
+        >`;
 }
 
 export function createRemoveFromFavoritesMarkup() {
   return `
   Remove from favorites
-        <span>
-          <svg class="modal-exercise-heart-icon js-modal-exercise-heart-icon modal-favorite-active-icon">
+        
+          <svg class="modal-exercise-icon">
             <use href="./img/sprite.svg#icon-trash-modal"></use></svg
-        ></span>
-  `;
+        >`;
 }
 
 function makeUpperCaseFirstLetter(str) {
