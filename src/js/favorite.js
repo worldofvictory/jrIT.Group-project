@@ -212,7 +212,7 @@ function createExerciseCards(exercises) {
             <p class="workout">WORKOUT</p>
           <button class="trash-btn" type="submit">
           <svg class="trash-svg"  width="16" height="16">
-                <use id = "dell" href="./img/sprite.svg#icon-trash-modal"></use>
+                <use id = "dell" href="../img/sprite.svg#icon-trash-modal"></use>
                 </svg> 
           </button>              
           </div>    
