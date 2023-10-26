@@ -2,10 +2,15 @@ import axios from 'axios';
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
 import { makePagination } from './pagination.js';
+import { fetchExercises } from './filter-2.js';
+import { handleExerciseData } from './filter-2.js';
+import { getExercises } from './filter-2.js';
+const filterCategoryItem = document.querySelector(".filter-category-item");
+const filterSectionNext = document.querySelector(".filter-section-next");
+const filterSection = document.querySelector(".filter-section");
 
 const gallery = document.querySelector('.filter-category-list');
 
-// Функція для отримання даних з API
 async function fetchData(filter, page = 1) {
   try {
     const response = await axios.get(
@@ -22,12 +27,14 @@ function createMarcup(arr) {
   gallery.innerHTML = '';
   return arr
     .map(
-      ({ filter, name, imgURL }) => `<li class="filter-category-item"
-          style = "background-image: linear-gradient(0deg, rgba(17, 17, 17, 0.50) 0%, rgba(17, 17, 17, 0.50) 100%), url(${imgURL});
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    ">
+      ({ filter, name, imgURL }) => `<li class="filter-category-item">
+              <img
+                class="filter-category-img"
+                src="${imgURL}"
+                alt=""
+                loading="lazy"
+                 width='335' height='225'
+              />
             <div class="category-text">
               <h3 class="filter-category-title">${name}</h3>
               <p class="filter-category-descr">${filter}</p>
@@ -36,14 +43,6 @@ function createMarcup(arr) {
     )
     .join('');
 }
-
-// <img
-//   class="filter-category-img"
-//   src="${imgURL}"
-//   alt=""
-//   loading="lazy"
-//    width='335' height='225'
-// />
 
 // Початкова фільтрація "Body parts"
 
@@ -60,7 +59,7 @@ fetchData('Body parts').then(data => {
 });
 
 // Обробники подій для кнопок фільтрації
-const filterButtons = document.querySelectorAll('.filter1-btn');
+const filterButtons = document.querySelectorAll('.filter-btn');
 filterButtons.forEach(button => {
   button.addEventListener('click', async () => {
     // Видаляємо клас 'current' з усіх кнопок
@@ -87,4 +86,26 @@ async function renderCards(filter, page) {
   if (data) {
     gallery.insertAdjacentHTML('beforeend', createMarcup(data.results));
   }
-}
+} 
+
+function openExerciseCard() { 
+  document.querySelector('.filterCategoryItem').addEventListener('click', function (event) {  
+    filterSectionNext.classList.remove('hiden'); 
+    filterSection.style.display = 'none'; 
+    if (filterCategoryItem) {  
+      let filterObjString = galleryItem.dataset.filterObj; 
+      let filterObj = null; 
+      if (filterObjString.length) { 
+        try { 
+        filterObj = JSON.parse(filterObjString); 
+           
+        } catch(error) { 
+          console.error('An error occurred while parsing JSON:', error); 
+        } 
+      } 
+      if (filterObj) { 
+        getExercises(filterObj); 
+      } 
+    }  
+  }); 
+} 

@@ -1,80 +1,90 @@
 import Pagination from "tui-pagination"; 
 import 'tui-pagination/dist/tui-pagination.css'; 
- 
-const form = document.querySelector(".search-form"); 
-const searchInput = document.querySelector(".search-input"); 
-const exercisesBack = document.querySelector(".exercises-back"); 
-const iconSearch = document.getElementById('icon-search'); 
-const iconX = document.getElementById('icon-x'); 
+import axios from "axios";
 import { handleOpenModalClick } from './modal-exercise'; 
  
-const apiUrl = "https://your-energy.b.goit.study/api"; 
- 
-fetchExercises(""); 
- 
-form.addEventListener('submit', searchExercises); 
-searchInput.addEventListener('input', startSearch); 
- 
-function fetchExercises(keyword) { 
-    const categories = ["back", "cardio", "chest", "lower arms", "lower legs", "neck", "shoulders", "upper arms", "upper legs", "waist"]; 
-     
-     
-const promises = categories.map(category => { 
-        return fetch (`${apiUrl}/exercises?keyword=${keyword}&bodypart=${category}&limit=12`) 
-            .then(response => { 
-                if (!response.ok) { 
-                     throw new Error(`Sorry, is not found`); 
-                } 
-                return response.json(); 
-            }); 
-    }) 
-Promise.all(promises) 
-    .then(data => { 
-        exercisesBack.innerHTML = ""; 
-        data.forEach(categoryData => { 
-            handleExerciseData(categoryData.results); 
-        }); 
-    }) 
-    .catch(error => { 
-        console.error(error); 
-    }); 
-} 
- 
-function searchExercises(event) { 
-    event.preventDefault(); 
-    const searchValue = searchInput.value.toLowerCase(); 
- 
-    fetchExercises(searchValue); 
-} 
- 
-function handleExerciseData(results) { 
+const form = document.querySelector(".search-form");
+const searchInput = document.querySelector(".search-input");
+const exercisesBack = document.querySelector(".exercises-back");
+const iconSearch = document.getElementById('icon-search');
+const iconX = document.getElementById('icon-x');
+const filterBtn = document.querySelectorAll(".filter-btn");
+const filterCategoryItem = document.querySelector(".filter-category-item");
+
+
+const apiUrl = "https://your-energy.b.goit.study/api";
+
+let activeFilter = 'Body parts';
+let activeCategory = 'Body parts';
+let activePage = 1;
+const itemsPerPage = 12;
+
+const filterParams = {
+    filter: activeFilter,
+    category: activeCategory,
+    keyword: '',
+};
+
+export function fetchExercises() {
+    const { filter, category, keyword } = filterParams;
+    fetch(`${apiUrl}/exercises?filter=${filter}&category=${category}&keyword=${keyword}&page=${activePage}&limit=${itemsPerPage}`)
+        .then(response => response.json())
+        .then(data => {
+            handleExerciseData();
+        })
+        .catch(error => {
+            console.error('Sorry, is not found', error);
+            return {
+                success: false
+            }
+        });
+}
+
+filterBtn.forEach(element => {
+    element.addEventListener('click', event => {
+        filterBtn.forEach(btn => btn.classList.remove('current'));
+        element.classList.add('current');
+
+        filterParams.filter = event.target.dataset.filter;
+        filterParams.category = event.target.dataset.filter;
+        activePage = 1;
+
+        fetchExercises();
+    });
+});
+
+form.addEventListener('submit', event => {
+    event.preventDefault();
+    const searchValue = searchInput.value.toLowerCase();
+    filterParams.keyword = searchValue;
+    activePage = 1;
+    fetchExercises();
+});
+
+export function handleExerciseData(results) { 
     exercisesBack.innerHTML = ""; 
     if (results.length === 0) { 
         exercisesBack.innerHTML = "Sorry, is not found"; 
     } else { 
         results.forEach((exercise) => { 
             const infoCard = createInfoCard(exercise); 
-            infoCard.addEventListener('click', onStartClick); 
+            filterCategoryItem.addEventListener('click', ); 
             exercisesBack.appendChild(infoCard);         
         }); 
     } 
 } 
  
 async function onStartClick(event) { 
-    
-        if (event.target.id !== "ok" && event.target.id !== "icon-arrow") {  
+    console.log(event.target); 
+        if (event.target.id !== "ok" && event.target.id !== "icon-arrow") { 
+        console.log("+") 
         return;  
     } 
         
     const id = event.currentTarget.dataset.id;  
        handleOpenModalClick(event, id); 
 } 
- 
-function startSearch() { 
-    const searchValue = searchInput.value.toLowerCase(); 
-    fetchExercises(searchValue); 
-} 
- 
+
 function createInfoCard(exercise) { 
     const exerciseCard = document.createElement("li"); 
     exerciseCard.classList.add("exCard"); 
@@ -118,14 +128,33 @@ function createInfoCard(exercise) {
  
     return exerciseCard; 
 } 
- 
+
+
+export function getExercises({ filter, name }) {
+  const filterParamMap = {
+    'Body parts': 'bodypart',
+    'muscles': 'muscles',
+    'equipment': 'equipment'
+  };
+  const filterParam = filterParamMap[filter];
+  
+  fetch(`${apiUrl}/exercises?${filterParam}=${name}&page=${activePage}&limit=${activeLimit}`)
+    .then(response => response.json())
+    .then(data => {
+      handleExerciseResponse(data);
+    })
+    .catch(error => {
+      console.error('Error while fetching exercises:', error);
+    });
+}
+
 searchInput.addEventListener('focus', function() { 
         iconSearch.style.display = 'none'; 
         iconX.style.display = 'block'; 
-});
-    
+    });
 searchInput.addEventListener('blur', function() { 
         iconSearch.style.display = 'block'; 
         iconX.style.display = 'none'; 
         searchInput.value = ''; 
     });
+
