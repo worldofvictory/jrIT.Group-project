@@ -85,6 +85,7 @@ mailingForm.addEventListener('submit', (e) => {
 const mailingInput = document.querySelector('.mailing_input');
 const mailingForm = document.querySelector('.mailing_form');
 import { Notify } from 'notiflix';
+import Swal from 'sweetalert2';
 
 const sendForm = async email => {
   try {
@@ -108,12 +109,21 @@ const sendForm = async email => {
     if (response.ok) {
       const result = await response.json();
       console.log(`The user has just subscribed with the email: ${email}`);
+
+      Swal.fire({
+        title: 'Thank you for subscribing to new exercises on Your Energy!',
+        icon: 'success',
+        confirmButtonColor: '#242424',
+        buttonsStyling: 'false',
+      });
+
       mailingForm.reset();
-      Notify.success(
-        "We're excited to have you on board! 🎉 Thank you for subscribing to new exercises on Your Energy. You've just taken a significant step towards improving your fitness and well-being."
-      );
     } else {
-      Notify.failure('Error occurred while making subscription');
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Error occurred while making subscription',
+      });
     }
   } catch (error) {
     const submitButton = mailingForm.querySelector('.mailing_button');
@@ -121,7 +131,11 @@ const sendForm = async email => {
     const spinner = mailingForm.querySelector('.submit-spinner');
     spinner.classList.add('submit-spinner_hide');
     console.error(error);
-    Notify.failure('Error occurred while making subscription');
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Error occurred while making subscription',
+    });
   }
 };
 
