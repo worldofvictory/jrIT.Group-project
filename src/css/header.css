@@ -165,7 +165,7 @@ ul {
   color: #141414;
   text-align: center;
   text-align: center;
-  font-family: Neue Montreal;
+  /* font-family: Neue Montreal; */
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -179,7 +179,7 @@ ul {
   color: #f4f4f4;
   text-align: center;
   text-align: center;
-  font-family: Neue Montreal;
+  /* font-family: Neue Montreal; */
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -187,13 +187,15 @@ ul {
   transition: font-size 300ms linear;
 }
 
-.h-link-active:hover {
+.h-link-active:hover,
+.h-link-active:focus {
   /* color: #f4f4f4;
   background-color: #141414; */
   font-size: 20px;
 }
 
-.h-link-inactive:hover {
+.h-link-inactive:hover,
+.h-link-inactive:focus {
   /* color: #141414;
   background-color: #f4f4f4; */
   font-size: 20px;
