@@ -33,7 +33,6 @@ async function serviceQuote() {
     );
     return response.data; 
   } catch (error) {
-    // console.error('Помилка отримання даних: ', error);
     return null;
   }
 }
@@ -215,8 +214,7 @@ function createExerciseCards(exercises) {
           <svg class="trash-svg"  width="16" height="16">
                 <use id = "dell" href="./img/sprite.svg#icon-trash-modal"></use>
                 </svg> 
-          </button>
-                  
+          </button>              
           </div>    
             <button id = "open" class="exercise-btn" type="button">Start
               <svg id = "arrow" class="arrow-svg" width="16" height="16">
@@ -225,9 +223,11 @@ function createExerciseCards(exercises) {
             </button>
         </div>  
           <div class = "exercise-tittle"> 
-            <svg class="man-svg-quote" width="24" height="24">
+          <div class= "man-svg-thumb">
+            <svg width="24" height="24">
               <use href="./img/sprite.svg#icon-icon-2"></use>
             </svg>
+            </div>
             <p class="favorite-exercise-name">${capitalize(name)}</p>
           </div> 
           <div class="exercice-information">
@@ -240,9 +240,9 @@ function createExerciseCards(exercises) {
 }
 
 
-for (const data of exData) {
-  addFavoriteCards(data);
-}
+// for (const data of exData) {
+//   addFavoriteCards(data);
+// }
 
 
 

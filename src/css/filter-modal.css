@@ -13,10 +13,6 @@
   overflow: auto;
 }
 
-.modal-exercise-container {
-  margin-bottom: 40px;
-}
-
 .modal-exercise-img {
   display: block;
   width: 295px;
@@ -119,7 +115,7 @@
 .modal-exercise-description {
   color: rgba(244, 244, 244, 0.6);
   line-height: 1.29; /* 128.571% */
-  margin-bottom: 40px;
+  
 }
 
 
@@ -129,7 +125,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: 8px;
   background: #f4f4f4;
   color: #242424;
   border-radius: 30px;
@@ -137,6 +133,7 @@
   border: none;
   font-size: 14px;
   padding: 12px 24px;
+  margin-top: 40px;
 }
 
 .exersice-modal-btn:active {
@@ -184,7 +181,7 @@ stroke: #F4F4F4;
   .modal-exercise-container {
     display: flex;
     gap: 28px;
-    margin-bottom: 64px;
+
   }
 
   .modal-exercise-close-btn {
@@ -242,21 +239,16 @@ stroke: #F4F4F4;
     margin-bottom: 0;
   }
 
-  .modal-exercise-btn-list {
-    gap: 8px;
-  }
-
-  .modal-exercise-btn {
-    font-size: 16px;
-    line-height: 1.5;
-  }
-
   .add-to-favorites-btn span {
     width: 20px;
     height: 20px;
   }
 
- 
+  .exersice-modal-btn {
+    margin-top: 64px;
+    font-size: 16px;
+      line-height: 24px;
+    }
 }
 
 /** ======== DESKTOP ======== */

@@ -73,13 +73,17 @@ export async function handleOpenModalClick(
          
     //   deleteCard(id);   
     // }
-    addToFavoriteBtnRef.addEventListener('click', event =>
+   
+  }
+ addToFavoriteBtnRef.addEventListener('click', event =>
       handleAddToFavoriteBtnClick(event, favoriteId, addToFavoriteBtnRef, exericiseData)
     );
 
     createRemoveMarkupIfIncludesId(favoriteId, addToFavoriteBtnRef);
-  }
+
 }
+
+
 
 function handleAddToFavoriteBtnClick(_, favoriteId, addToFavoriteBtnRef, exericiseData) {
   if (favoriteIdList.includes(favoriteId)) {
@@ -116,6 +120,8 @@ function processRemovalsFromFavorites(favoriteId, addToFavoriteBtnRef) {
 
 function createRemoveMarkupIfIncludesId(favoriteId, addToFavoriteBtnRef) {
   if (favoriteIdList.includes(favoriteId)) {
+    addToFavoriteBtnRef.innerHTML = createRemoveFromFavoritesMarkup();
+  } else {
     addToFavoriteBtnRef.innerHTML = createRemoveFromFavoritesMarkup();
   }
 }
