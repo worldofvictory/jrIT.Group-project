@@ -5,6 +5,8 @@ import { makePagination } from './pagination.js';
 import { getExercises } from './filter-2.js';
 
 const gallery = document.querySelector('.filter-category-list');
+const exerciseContainer = document.querySelector('.exercises-back');
+const currentExerciseContainer = document.querySelector('.current-exercises');
 
 // Функція для отримання даних з API
 async function fetchData(filter, page = 1) {
@@ -57,14 +59,14 @@ fetchData('Body parts').then(data => {
   }
   gallery.insertAdjacentHTML('beforeend', createMarcup(data.results));
   assignCardsClick()
-
+  
   makePagination(12, data.totalPages).on('afterMove', ({ page }) => {
     renderCards(filter, page);
   });
 });
 
 // Обробники подій для кнопок фільтрації
-const filterButtons = document.querySelectorAll('.filter1-btn');
+const filterButtons = document.querySelectorAll('.filter-btn');
 filterButtons.forEach(button => {
   button.addEventListener('click', async () => {
     // Видаляємо клас 'current' з усіх кнопок
@@ -98,6 +100,8 @@ async function renderCards(filter, page) {
 }
 
 function assignCardsClick() {
+  setDisplayCards(true)
+
   const cards = document.querySelectorAll(".filter-category-item")
 
   for (const card of cards) {
@@ -105,8 +109,22 @@ function assignCardsClick() {
       const name = event.currentTarget.dataset.name
       const filter = event.currentTarget.dataset.filter
 
-      getExercises({filter, name})
+      setDisplayCards(false)
+      getExercises({ filter, name })
+
+      currentExerciseContainer.innerHTML = `<p class="current-exercises"><span>/</span>${name}</p>`
     })
   }
 }
 
+function setDisplayCards(isFilter) {
+  if (isFilter) {
+    gallery.style.display = 'flex';
+    exerciseContainer.style.display = 'none';
+    currentExerciseContainer.style.display = 'none';
+  } else {
+    gallery.style.display = 'none';
+    exerciseContainer.style.display = 'flex';
+    currentExerciseContainer.style.display = 'flex';
+  }
+}
