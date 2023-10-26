@@ -187,15 +187,13 @@ ul {
   transition: font-size 300ms linear;
 }
 
-.h-link-active:hover,
-.h-link-active:focus {
+.h-link-active:hover {
   /* color: #f4f4f4;
   background-color: #141414; */
   font-size: 20px;
 }
 
-.h-link-inactive:hover,
-.h-link-inactive:focus {
+.h-link-inactive:hover {
   /* color: #141414;
   background-color: #f4f4f4; */
   font-size: 20px;
