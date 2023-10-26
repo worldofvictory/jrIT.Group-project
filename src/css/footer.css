@@ -1,3 +1,16 @@
+.swal2-popup {
+  border-radius: 30px;
+}
+.swal2-popup .swal2-confirm {
+  border-radius: 60px;
+  width: 100px;
+  font-family: 'Neue Montreal', sans-serif;
+}
+.swal2-confirm:hover {
+  border-color: var(--white-text-color);
+  box-shadow: 0 0 15px rgba(36, 36, 36, 0.8);
+}
+
 .footer {
   background-color: rgba(36, 36, 36, 1);
   padding-top: 40px;
