@@ -3,7 +3,6 @@ import { addFavoriteCards, deleteCard, getAllFavoriteCards } from "./local-stora
 import { makePaginationByItems } from './pagination.js';
 import { handleOpenModalClick } from './modal-exercise';
 
-
 async function renderQuote() {
     const currentDate = new Date();
     const currentDay = currentDate.getDate();
@@ -208,7 +207,7 @@ const Refs = {
 function createExerciseCards(exercises) {
   
     return exercises.map(({_id, bodyPart, burnedCalories, target, name, time}) => 
-      `<li data-id="${_id}" class="exercise-card">
+      `<li data-id="${_id}" class="exercise-card ">
         <div class="exersise-header">
           <div class="exercise-trash">
             <p class="workout">WORKOUT</p>
@@ -226,10 +225,9 @@ function createExerciseCards(exercises) {
             </button>
         </div>  
           <div class = "exercise-tittle"> 
-          <div> <svg class="man-svg-quote" width="24" height="24">
+            <svg class="man-svg-quote" width="24" height="24">
               <use href="./img/sprite.svg#icon-icon-2"></use>
-            </svg></div>
-            
+            </svg>
             <p class="favorite-exercise-name">${capitalize(name)}</p>
           </div> 
           <div class="exercice-information">
@@ -259,7 +257,7 @@ function renderExercises(exercises) {
     
   const cardsEl = document.querySelectorAll(".exercise-card"); 
   for (let card of cardsEl) {
-    card.addEventListener('click', onCardClick);  
+    card.addEventListener('click', handleCardClick);  
   }
 
   if (exercises.length === 0) {
@@ -303,17 +301,17 @@ renderCards();
 const cards = document.querySelectorAll(".exercise-card"); 
 
 for (let card of cards) {
-  card.addEventListener('click', onCardClick);
+  card.addEventListener('click', handleCardClick);
 }
 
-async function onCardClick(event) {
+async function handleCardClick(event) {
   switch (event.target.id) {
     case "dell":
       return removeCard(event);
     case "open":
-      return openModal(event);
+      return openCard(event);
     case "arrow":
-      return openModal(event);
+      return openCard(event);
   }
 }
 
@@ -321,11 +319,11 @@ function removeCard(event) {
   const id = event.currentTarget.dataset.id; 
   deleteCard(id);
   renderCards();  
-  
 }
 
-async function openModal(event) {
+async function openCard(event) {
   const id = event.currentTarget.dataset.id; 
+    
   handleOpenModalClick(event, id);
 }
 
@@ -334,4 +332,3 @@ function capitalize(s) {
 }
 
 
-export {renderCards}
