@@ -2,14 +2,11 @@ import axios from 'axios';
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
 import { makePagination } from './pagination.js';
-import { fetchExercises } from './filter-2.js';
 import { getExercises } from './filter-2.js';
-const filterCategoryItem = document.querySelector(".filter-category-item");
-const filterSectionNext = document.querySelector(".filter-section-next");
-const filterSection = document.querySelector(".filter-section");
 
 const gallery = document.querySelector('.filter-category-list');
 
+// Функція для отримання даних з API
 async function fetchData(filter, page = 1) {
   try {
     const response = await axios.get(
@@ -23,57 +20,17 @@ async function fetchData(filter, page = 1) {
 }
 
 function createMarcup(arr) {
-
   gallery.innerHTML = '';
-
   return arr
-
     .map(
-
-      ({ filter, name, imgURL }) => `<li class="filter-category-item "
-
-          style = "background-image: linear-gradient(
-
-    to right,
-
-    rgba(47, 48, 50, 0.5),
-
-    rgba(47, 48, 50, 0.5)
-
-  ), url(${imgURL});
-
-     background-repeat: no-repeat;
-
+      ({ filter, name, imgURL }) => `<li class="filter-category-item"
+          data-name="${name}"
+          data-filter="${filter}"
+          style = "background-image: linear-gradient(0deg, rgba(17, 17, 17, 0.50) 0%, rgba(17, 17, 17, 0.50) 100%), url(${imgURL});
+    background-repeat: no-repeat;
     background-size: cover;
-
     background-position: center;
-
-     width='335' height='225'
-
-    >
-
-            <div class="category-text">
-
-              <h3 class="filter-category-title">${name}</h3>
-
-              <p class="filter-category-descr">${filter}</p>
-
-            </div>
-
-            </li>`
-
-    )
-
-    .join('');
-
-}
-             /* <img
-                class="filter-category-img"
-                src="${imgURL}"
-                alt=""
-                loading="lazy"
-                 width='335' height='225'
-              />
+    ">
             <div class="category-text">
               <h3 class="filter-category-title">${name}</h3>
               <p class="filter-category-descr">${filter}</p>
@@ -82,7 +39,15 @@ function createMarcup(arr) {
     )
     .join('');
 }
-*/
+
+// <img
+//   class="filter-category-img"
+//   src="${imgURL}"
+//   alt=""
+//   loading="lazy"
+//    width='335' height='225'
+// />
+
 // Початкова фільтрація "Body parts"
 
 fetchData('Body parts').then(data => {
@@ -91,6 +56,7 @@ fetchData('Body parts').then(data => {
     retutn;
   }
   gallery.insertAdjacentHTML('beforeend', createMarcup(data.results));
+  assignCardsClick()
 
   makePagination(12, data.totalPages).on('afterMove', ({ page }) => {
     renderCards(filter, page);
@@ -98,7 +64,7 @@ fetchData('Body parts').then(data => {
 });
 
 // Обробники подій для кнопок фільтрації
-const filterButtons = document.querySelectorAll('.filter-btn');
+const filterButtons = document.querySelectorAll('.filter1-btn');
 filterButtons.forEach(button => {
   button.addEventListener('click', async () => {
     // Видаляємо клас 'current' з усіх кнопок
@@ -116,6 +82,8 @@ filterButtons.forEach(button => {
     });
     if (data) {
       gallery.insertAdjacentHTML('beforeend', createMarcup(data.results));
+
+      assignCardsClick()
     }
   });
 });
@@ -123,29 +91,22 @@ filterButtons.forEach(button => {
 async function renderCards(filter, page) {
   const data = await fetchData(filter, page);
   if (data) {
-    gallery.insertAdjacentHTML('beforeend', createMarcup(data.results));
-  }
-} 
+    await gallery.insertAdjacentHTML('beforeend', createMarcup(data.results));
 
-function openExerciseCard() { 
-  document.querySelector('.filterCategoryItem').addEventListener('click', function (event) {  
-    filterSectionNext.classList.remove('hiden'); 
-    filterSection.style.display = 'none'; 
-    if (filterCategoryItem) {  
-      let filterObjString = galleryItem.dataset.filterObj; 
-      let filterObj = null; 
-      if (filterObjString.length) { 
-        try { 
-        filterObj = JSON.parse(filterObjString); 
-           
-        } catch(error) { 
-          console.error('An error occurred while parsing JSON:', error); 
-        } 
-      } 
-      if (filterObj) { 
-        fetchExercises(filterObj); 
-      } 
-    }  
-  }); 
-} 
+    assignCardsClick()
+  }
+}
+
+function assignCardsClick() {
+  const cards = document.querySelectorAll(".filter-category-item")
+
+  for (const card of cards) {
+    card.addEventListener("click", function(event) {
+      const name = event.currentTarget.dataset.name
+      const filter = event.currentTarget.dataset.filter
+
+      getExercises({filter, name})
+    })
+  }
+}
 
