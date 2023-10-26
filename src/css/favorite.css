@@ -370,7 +370,7 @@ right: 20px;
     font-family: NeueMontrealRegular;
     font-size: 20px;
     line-height: 20px;
-    margin-left: 16px;
+    /* margin-left: 16px; */
     /* font-weight: 400;    */
     line-height: 20px
 }
@@ -386,8 +386,13 @@ right: 20px;
     display: flex;
     margin-top: 27px;
     text-align: left;    
+    gap: 16px;
 }
 
+.man-svg-thumb {
+    width: 24px;
+    height: 24px;
+}
 .exercise-trash {
     display: flex;
     align-items: center;
