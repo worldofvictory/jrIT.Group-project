@@ -7,8 +7,9 @@ import {
 } from './templates/modal-exercise-markup';
 import { ModalBox } from './modal-class-box';
 import { addFavoriteCards, deleteCard, getAllFavoriteCards } from "./local-storage";
+import { renderCards } from "./favorite";
 
-const closeModalSelector = '[data-modal-exercise="close"]';
+const closeModalSelector = '[data-close="close"]';
 const LS_FAVORITES_ID = 'favorite-id-list';
 const favoriteList = getAllFavoriteCards() || [];
 const favoriteIdList = favoriteList.map((item) => item._id);
@@ -32,7 +33,8 @@ export async function handleOpenModalClick(
 
     modalBox.open();
 
-    ratingValue = Math.round(exericiseData.rating);
+    ratingValue = Math.round(exericiseData.rating); 
+
   } catch (error) {
     Notify.failure(
       'Sorry, there are no data matching your category. Please try again.'
@@ -41,16 +43,42 @@ export async function handleOpenModalClick(
 
   processActiveRatingStars(ratingValue);
 
+  const addToFavoriteBtnRef = document.querySelector('.exersice-modal-btn');
+ 
+  const currentUrl = window.location.href;
 
-  const addToFavoriteBtnRef = document.querySelector(
-    '.js-add-to-favorites-btn'
-  );
+  if (currentUrl.includes("/favorites.html")) {
 
-   addToFavoriteBtnRef.addEventListener('click', event =>
-    handleAddToFavoriteBtnClick(event, favoriteId, addToFavoriteBtnRef, exericiseData)
-  );
+    addToFavoriteBtnRef.style.display = "none"
+    
+    // RemoveButton.dataset.close = "close";
+    // RemoveButton.textContent = "Remove from favorites";
 
-  createRemoveMarkupIfIncludesId(favoriteId, addToFavoriteBtnRef);
+    // RemoveButton .insertAdjacentHTML('beforeend', `<svg class="modal-exercise-icon">
+    //   <use href="./img/sprite.svg#icon-trash-modal"></use></svg>`)
+    // }
+
+        
+    // for (let button of modalRefs) {
+    //   button.addEventListener('click', onRemoveBtnClick)
+
+    // }
+
+    // function onRemoveBtnClick(event) {
+    //   if (event.target.id !== addToFavoriteBtnRef) {
+    //     return;
+    //   }
+    
+    //   const id = event.currentTarget.dataset.id;
+         
+    //   deleteCard(id);   
+    // }
+    addToFavoriteBtnRef.addEventListener('click', event =>
+      handleAddToFavoriteBtnClick(event, favoriteId, addToFavoriteBtnRef, exericiseData)
+    );
+
+    createRemoveMarkupIfIncludesId(favoriteId, addToFavoriteBtnRef);
+  }
 }
 
 function handleAddToFavoriteBtnClick(_, favoriteId, addToFavoriteBtnRef, exericiseData) {
@@ -70,7 +98,7 @@ function processAddingToFavorites(favoriteId, addToFavoriteBtnRef, exericiseData
   const favoriteIdData = JSON.stringify(favoriteIdList);
   localStorage.setItem(LS_FAVORITES_ID, favoriteIdData);
 
-  addFavoriteCards(exericiseData)
+  addFavoriteCards(exericiseData);
 }
 
 function processRemovalsFromFavorites(favoriteId, addToFavoriteBtnRef) {
@@ -82,7 +110,8 @@ function processRemovalsFromFavorites(favoriteId, addToFavoriteBtnRef) {
 
   addToFavoriteBtnRef.innerHTML = createAddToFavoritesMarkup();
 
-  deleteCard(favoriteId)
+  deleteCard(favoriteId);
+
 }
 
 function createRemoveMarkupIfIncludesId(favoriteId, addToFavoriteBtnRef) {
