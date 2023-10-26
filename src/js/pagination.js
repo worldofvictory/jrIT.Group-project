@@ -25,8 +25,7 @@ function makePagination(perPage, totalPages) {
 
 function makePaginationByItems (perPage, totalItems) {
   const totalPages = totalItems / perPage + 1; 
-  console.log("totalPages", totalPages);
- console.log(" totalItems", totalItems)
+
   
   const paginationEl = document.getElementById('tui-pagination-container');  
   const visiblePages = totalPages < 5 ? totalPages : 5;

@@ -227,12 +227,6 @@ right: 20px;
     height: auto;
     border-radius: 20px;  
 }
-/* @media screen and (min-width: 1440px) {
-.favorites-img {
-        height: 141px;
-    }
-} */
-
 
 .text-pozition {
     display: flex;
@@ -378,6 +372,12 @@ right: 20px;
     line-height: 20px;
     margin-left: 16px;
     font-weight: 400;   
+}
+
+@media screen and (min-width: 768px) {
+    .favorite-exercise-name {
+        font-size: 24px;;
+    }
 }
 
 .exercise-tittle {
