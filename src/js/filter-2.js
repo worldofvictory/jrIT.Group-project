@@ -49,7 +49,7 @@ filterBtn.forEach(element => {
         filterParams.category = event.target.dataset.filter;
         activePage = 1;
 
-        fetchExercises();
+        getExercises(element);
     });
 });
 
@@ -61,9 +61,9 @@ form.addEventListener('submit', event => {
     fetchExercises();
 });
 
-export function handleExerciseData(results) { 
+function handleExerciseData(data) { 
     exercisesBack.innerHTML = ""; 
-    if (results.length === 0) { 
+    if (data.length === 0) { 
         exercisesBack.innerHTML = "Sorry, is not found"; 
     } else { 
         results.forEach((exercise) => { 
@@ -138,10 +138,10 @@ export function getExercises({ filter, name }) {
   };
   const filterParam = filterParamMap[filter];
   
-  fetch(`${apiUrl}/exercises?${filterParam}=${name}&page=${activePage}&limit=${activeLimit}`)
+  fetch(`${apiUrl}/exercises?${filterParam}=${name}&page=${activePage}&limit=12`)
     .then(response => response.json())
     .then(data => {
-      handleExerciseResponse(data);
+      handleExerciseData(data);
     })
     .catch(error => {
       console.error('Error while fetching exercises:', error);

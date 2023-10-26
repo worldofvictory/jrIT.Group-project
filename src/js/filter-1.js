@@ -3,7 +3,6 @@ import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
 import { makePagination } from './pagination.js';
 import { fetchExercises } from './filter-2.js';
-import { handleExerciseData } from './filter-2.js';
 import { getExercises } from './filter-2.js';
 const filterCategoryItem = document.querySelector(".filter-category-item");
 const filterSectionNext = document.querySelector(".filter-section-next");
@@ -144,7 +143,7 @@ function openExerciseCard() {
         } 
       } 
       if (filterObj) { 
-        getExercises(filterObj); 
+        fetchExercises(filterObj); 
       } 
     }  
   }); 
