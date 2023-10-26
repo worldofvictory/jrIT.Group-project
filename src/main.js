@@ -11,3 +11,4 @@ import './js/menu';
 import './js/modal-exercise';
 import './js/modal-class-box';
 import './js/quote-of-the-day';
+import './js/footer';
