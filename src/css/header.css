@@ -184,17 +184,21 @@ ul {
   font-style: normal;
   font-weight: 400;
   line-height: 1.5; /* 150% */
-  transition: color 300ms linear;
+  transition: font-size 300ms linear;
 }
 
-.h-link-active:hover {
-  color: #f4f4f4;
-  background-color: #141414;
+.h-link-active:hover,
+.h-link-active:focus {
+  /* color: #f4f4f4;
+  background-color: #141414; */
+  font-size: 20px;
 }
 
-.h-link-inactive:hover {
-  color: #141414;
-  background-color: #f4f4f4;
+.h-link-inactive:hover,
+.h-link-inactive:focus {
+  /* color: #141414;
+  background-color: #f4f4f4; */
+  font-size: 20px;
 }
 
 /* * Мобільне меню **********************************************************************/
