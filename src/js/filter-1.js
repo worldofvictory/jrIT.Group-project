@@ -149,3 +149,25 @@ function openExerciseCard() {
     }  
   }); 
 } 
+
+const filterHeader = document.querySelector('.filter-container-header');
+
+const paginationContainer = document.querySelector('.tui-pagination');
+
+ 
+
+gallery.addEventListener('click', onClick);
+
+function onClick(e) {
+
+  gallery.innerHTML = '';
+
+  //Верхне меню і пагінація приховане
+
+  filterHeader.classList.add('is-hidden');
+
+  paginationContainer.classList.add('is-hidden');
+
+  fetchExercises('');
+
+}
