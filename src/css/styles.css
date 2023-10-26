@@ -50,7 +50,7 @@
 background-color: var(--background-color);
   font-family: 'NeueMontrealRegular'
  }
-  
+ @media screen and (min-width: 1440px) {
  .quote-sport-container {
   float: left;
   width: 444px;
@@ -58,4 +58,5 @@ background-color: var(--background-color);
 
  .filter-section {
 margin-left: 476px;
+ }
  }

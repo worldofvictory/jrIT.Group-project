@@ -154,7 +154,7 @@
     .hero-container {
         position: relative;
         max-width: 1376px;
-        padding: 100px 32px 64px 32px;
+        padding: 100px 0px 64px 0px;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
