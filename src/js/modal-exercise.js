@@ -7,7 +7,7 @@ import {
 } from './templates/modal-exercise-markup';
 import { ModalBox } from './modal-class-box';
 import { addFavoriteCards, deleteCard, getAllFavoriteCards } from "./local-storage";
-import { renderCards } from "./favorite";
+
 
 const closeModalSelector = '[data-close="close"]';
 const LS_FAVORITES_ID = 'favorite-id-list';
