@@ -3,6 +3,7 @@ import axios from "axios";
 import { addFavoriteCards, deleteCard, getAllFavoriteCards } from "./local-storage";
 import { makePaginationByItems } from './pagination.js';
 import { handleOpenModalClick } from './modal-exercise';
+import { processRemovalsFromFavorites} from './modal-exercise';
 
 async function renderQuote() {
     const currentDate = new Date();
@@ -319,6 +320,7 @@ async function handleCardClick(event) {
 function removeCard(event) {
   const id = event.currentTarget.dataset.id; 
   deleteCard(id);
+  processRemovalsFromFavorites(id, event);
   renderCards();  
 }
 

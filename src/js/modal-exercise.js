@@ -105,7 +105,7 @@ function processAddingToFavorites(favoriteId, addToFavoriteBtnRef, exericiseData
   addFavoriteCards(exericiseData);
 }
 
-function processRemovalsFromFavorites(favoriteId, addToFavoriteBtnRef) {
+export function processRemovalsFromFavorites(favoriteId, addToFavoriteBtnRef) {
   const currentFavoriteIndex = favoriteIdList.indexOf(favoriteId);
   favoriteIdList.splice(currentFavoriteIndex, 1);
 
