@@ -54,7 +54,8 @@ body {
 /* @media screen and (min-width: 1440px) {
   .quote-sport-container {
     position: absolute;
-    top: 84%;
+    top: 100%;
+    transform: translate(0px, 190px);
     margin: 0;
     margin-left: auto;
   }
