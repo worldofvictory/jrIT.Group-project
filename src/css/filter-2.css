@@ -282,4 +282,9 @@
         max-width: 442px;
         width: 442px;
     }
+    .head-filt {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+    }
 }
