@@ -1,4 +1,4 @@
-import icon from '../../img/sprite.svg';
+import icon from '../img/sprite.svg';
 import Pagination from "tui-pagination";
 import 'tui-pagination/dist/tui-pagination.css';
 import axios from "axios";
