@@ -112,7 +112,7 @@ function assignCardsClick() {
       setDisplayCards(false)
       getExercises({ filter, name })
 
-      currentExerciseContainer.innerHTML = `<p class="current-exercises"><span>/</span>${name}</p>`
+      currentExerciseContainer.innerHTML = `<p class="current-exercises"><span class= "slash">/</span>${name}</p>`
     })
   }
 }
