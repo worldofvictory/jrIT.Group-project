@@ -52,12 +52,11 @@ filterBtn.forEach(element => {
     });
 });
 
-form.addEventListener('submit', event => {
-    event.preventDefault();
-    const searchValue = searchInput.value.toLowerCase();
-    filterParams.keyword = searchValue;
-    activePage = 1;
-    getExercises(searchValue);
+searchInput.addEventListener('input', function(event) {
+  const searchValue = event.target.value.toLowerCase();
+  filterParams.keyword = searchValue;
+  activePage = 1;
+  startExercises(searchValue);
 });
 
 function handleExerciseData(data) {
@@ -144,6 +143,23 @@ export function getExercises({ filter, name }) {
     })
     .catch(error => {
       console.error('Error while fetching exercises:', error);
+    });
+}
+
+function startExercises(keyword, name) {
+
+  fetch(`${apiUrl}/exercises?{filterParams}=${name}$keyword=${keyword}&page=1&limit=${itemsPerPage}`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Error');
+      }
+      return response.json();
+    })
+    .then(data => {
+      handleExerciseData(data);
+    })
+    .catch(error => {
+      console.error('Sorry, is not found', error);
     });
 }
 
