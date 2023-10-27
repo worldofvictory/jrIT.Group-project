@@ -36,7 +36,7 @@
   background-color: transparent;
   cursor: pointer;
   color: rgba(36, 36, 36, 0.6);
-  font-family:'NeueMontrealRegular';
+  font-family: 'NeueMontrealRegular';
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -60,17 +60,17 @@
   object-fit: cover;
   width: 335px;
   height: 225px;
-  cursor: pointer; 
+  cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
 }
 .filter-category-item:hover {
   transform: scale(1.05); /* Увеличиваем размер при наведении */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .filter-category-item:active {
-  transform: scale(0.95); 
-  box-shadow: none; 
+  transform: scale(0.95);
+  box-shadow: none;
 }
 /* .hidden {
   display: none;
@@ -138,11 +138,11 @@
 }
 @media screen and (min-width: 768px) {
   .filter-section {
-      padding: 64px 32px 0 32px;
-      width: 100%;
-      max-width: 768px;
-      margin: 0 auto;
-    }
+    padding: 64px 32px 0 32px;
+    width: 100%;
+    max-width: 768px;
+    margin: 0 auto;
+  }
   .filter-container-title {
     color: #242424;
     font-family: 'NeueMontrealRegular';
