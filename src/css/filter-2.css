@@ -263,32 +263,3 @@
 }
 
 @media screen and (min-width: 1440px) {
-  .exercises-back {
-    margin: 0;
-    margin-left: auto;
-    max-width: 900px;
-  }
-
-  .search-form {
-    margin-right: 0;
-    margin-left: auto;
-  }
-
-  .header-filters {
-    gap: 32px;
-    margin-bottom: 32px;
-  }
-  .exCard {
-    max-width: 442px;
-    width: 442px;
-  }
-  .head-filt {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-  }
-  .quote-sport-container {
-    position: absolute;
-    top: 109%;
-  }
-}

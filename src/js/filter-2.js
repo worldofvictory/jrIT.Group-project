@@ -57,7 +57,7 @@ form.addEventListener('submit', event => {
     const searchValue = searchInput.value.toLowerCase();
     filterParams.keyword = searchValue;
     activePage = 1;
-    // fetchExercises(filterParams);
+    getExercises(searchValue);
 });
 
 function handleExerciseData(data) {
@@ -73,8 +73,6 @@ function handleExerciseData(data) {
         });
     }
 }
-
-
 
 async function onStartClick(event) {
     console.log(event.target);
