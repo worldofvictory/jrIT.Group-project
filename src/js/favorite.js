@@ -1,3 +1,4 @@
+import icon from '../img/sprite.svg';
 import axios from "axios";
 import { addFavoriteCards, deleteCard, getAllFavoriteCards } from "./local-storage";
 import { makePaginationByItems } from './pagination.js';
@@ -212,20 +213,20 @@ function createExerciseCards(exercises) {
             <p class="workout">WORKOUT</p>
           <button class="trash-btn" type="submit">
           <svg class="trash-svg"  width="16" height="16">
-                <use id = "dell" href="../img/sprite.svg#icon-trash-modal"></use>
+                <use id = "dell" href="${icon}#icon-trash-modal"></use>
                 </svg> 
           </button>              
           </div>    
             <button id = "open" class="exercise-btn" type="button">Start
               <svg id = "arrow" class="arrow-svg" width="16" height="16">
-                <use href="../img/sprite.svg#icon-arrow"></use>
+                <use href="${icon}#icon-arrow"></use>
               </svg>
             </button>
         </div>  
           <div class = "exercise-tittle"> 
           <div class= "man-svg-thumb">
             <svg width="24" height="24">
-              <use href="../img/sprite.svg#icon-icon-2"></use>
+              <use href="${icon}#icon-icon-2"></use>
             </svg>
             </div>
             <p class="favorite-exercise-name">${capitalize(name)}</p>
