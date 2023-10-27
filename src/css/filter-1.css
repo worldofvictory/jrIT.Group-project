@@ -1,28 +1,33 @@
 .filter-section {
   margin: 0 auto;
 }
+
 .filter-container {
   padding: 40px 20px 0 20px;
   width: 100%;
   max-width: 375px;
   margin: 0 auto;
 }
+
 .filter-container-title {
   color: var(--backgroud-footer-text-color);
   font-family: 'NeueMontrealRegular';
   font-size: 28px;
   font-style: normal;
   font-weight: 400;
-  line-height: 38px; /* 135.714% */
+  line-height: 38px;
+  /* 135.714% */
   letter-spacing: -0.56px;
   margin-bottom: 20px;
 }
+
 .slash {
   font-size: 28px;
   color: var(--backgroud-footer-text-color);
   padding-left: 8px;
   padding-right: 8px;
 }
+
 .filter-list {
   display: flex;
   gap: 20px;
@@ -40,7 +45,8 @@
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  line-height: 20px; /* 142.857% */
+  line-height: 20px;
+  /* 142.857% */
 }
 
 .filter-container-category {
@@ -51,6 +57,7 @@
 .filter-category-list {
   flex-wrap: wrap;
 }
+
 .filter-category-item {
   margin: 0 auto;
   margin-bottom: 20px;
@@ -63,8 +70,10 @@
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
 }
+
 .filter-category-item:hover {
-  transform: scale(1.05); /* Увеличиваем размер при наведении */
+  transform: scale(1.05);
+  /* Увеличиваем размер при наведении */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
@@ -72,6 +81,7 @@
   transform: scale(0.95);
   box-shadow: none;
 }
+
 /* .hidden {
   display: none;
 } */
@@ -83,6 +93,7 @@
   object-fit: cover;
   align-items: center;
 }
+
 .category-text {
   display: flex;
   flex-direction: column;
@@ -94,6 +105,7 @@
   transform: translate(-50%, -50%);
   z-index: 10;
 }
+
 .filter-category-title {
   color: #f4f4f4;
   text-align: center;
@@ -102,9 +114,11 @@
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
-  line-height: 20px; /* 100% */
+  line-height: 20px;
+  /* 100% */
   text-transform: Capitalize;
 }
+
 .filter-category-descr {
   color: rgba(244, 244, 244, 0.4);
   font-feature-settings: 'clig' off, 'liga' off;
@@ -112,7 +126,8 @@
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
-  line-height: 18px; /* 150% */
+  line-height: 18px;
+  /* 150% */
   text-transform: Capitalize;
 }
 
@@ -121,6 +136,7 @@
     width: auto;
     max-width: 335px;
   }
+
   .filter-container {
     max-width: 375px;
     padding-left: 20px;
@@ -136,6 +152,7 @@
     min-width: 320px;
   }
 }
+
 @media screen and (min-width: 768px) {
   .filter-section {
     padding: 64px 32px 0 32px;
@@ -143,16 +160,19 @@
     max-width: 768px;
     margin: 0 auto;
   }
+
   .filter-container-title {
     color: #242424;
     font-family: 'NeueMontrealRegular';
     font-size: 44px;
     font-style: normal;
     font-weight: 400;
-    line-height: 48px; /* 109.091% */
+    line-height: 48px;
+    /* 109.091% */
     letter-spacing: -0.88px;
     margin-bottom: 32px;
   }
+
   .filter-list {
     margin-bottom: 32px;
   }
@@ -166,8 +186,10 @@
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 24px; /* 150% */
+    line-height: 24px;
+    /* 150% */
   }
+
   .filter-category-list {
     display: flex;
     flex-direction: row;
@@ -175,6 +197,7 @@
     gap: 32px 15px;
     justify-content: flex-start;
   }
+
   .filter-category-item {
     width: calc((100% - (2 * 15px)) / 3);
     margin-bottom: 0;
@@ -188,44 +211,53 @@
       margin: 0 auto;
       margin-bottom: 132px;
     }
+
     .filter-container-header {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       align-items: baseline;
     }
+
     .filter-container-title {
       color: #242424;
       font-family: 'NeueMontrealRegular';
       font-size: 28px;
       font-style: normal;
       font-weight: 400;
-      line-height: 38px; /* 135.714% */
+      line-height: 38px;
+      /* 135.714% */
       letter-spacing: -0.56px;
       margin-bottom: 20px;
     }
+
     .filter-list {
       margin-bottom: 42px;
       position: relative;
     }
+
     .filter1-btn {
       color: rgba(36, 36, 36, 0.6);
       font-family: 'NeueMontrealRegular';
       font-size: 16px;
       font-style: normal;
       font-weight: 400;
-      line-height: 24px; /* 150% */
+      line-height: 24px;
+      /* 150% */
     }
+
     .filter-container-category {
       width: 100%;
       max-width: 1440px;
     }
+
     .filter-category-list {
       display: flex;
       max-width: 900px;
       margin-left: auto;
       justify-content: flex-start;
     }
+
     .filter-category-item {
       margin-bottom: 0;
     }

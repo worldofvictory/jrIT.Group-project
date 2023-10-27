@@ -51,11 +51,11 @@ body {
   background-color: var(--background-color);
   font-family: 'NeueMontrealRegular';
 }
+
 /* @media screen and (min-width: 1440px) {
   .quote-sport-container {
     position: absolute;
-    top: 100%;
-    transform: translate(0px, 190px);
+    top: 84%;
     margin: 0;
     margin-left: auto;
   }

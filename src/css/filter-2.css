@@ -5,12 +5,14 @@
   background-color: var(--white-text-color);
   margin-top: 40px;
 }
+
 .ex-title-filter {
   display: flex;
   align-items: baseline;
   padding-left: 32px;
   padding-right: 32px;
 }
+
 .current-exercises {
   color: #24242480;
   font-family: Neue Montreal, sans-serif;
@@ -167,6 +169,7 @@
   font-size: 16px;
   line-height: 2.38;
 }
+
 .open-modal-exercises {
   display: flex;
   flex-wrap: nowrap;
@@ -261,5 +264,38 @@
     margin: 0;
   }
 }
+
 /* десктопна версія*/
 @media screen and (min-width: 1440px) {
+  .exercises-back {
+    margin: 0;
+    margin-left: auto;
+    max-width: 900px;
+  }
+
+  .search-form {
+    margin-right: 0;
+    margin-left: auto;
+  }
+
+  .header-filters {
+    gap: 32px;
+    margin-bottom: 32px;
+  }
+
+  .exCard {
+    max-width: 442px;
+    width: 442px;
+  }
+
+  .head-filt {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .quote-sport-container {
+    position: absolute;
+    top: 109%;
+  }
+}
