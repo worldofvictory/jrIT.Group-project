@@ -122,7 +122,7 @@ function createRemoveMarkupIfIncludesId(favoriteId, addToFavoriteBtnRef) {
   if (favoriteIdList.includes(favoriteId)) {
     addToFavoriteBtnRef.innerHTML = createRemoveFromFavoritesMarkup();
   } else {
-    addToFavoriteBtnRef.innerHTML = createRemoveFromFavoritesMarkup();
+    addToFavoriteBtnRef.innerHTML = createAddToFavoritesMarkup();
   }
 }
 
