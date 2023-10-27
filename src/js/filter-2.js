@@ -1,3 +1,4 @@
+import icons from '../../img/sprite.svg';
 import Pagination from "tui-pagination";
 import 'tui-pagination/dist/tui-pagination.css';
 import axios from "axios";
@@ -99,21 +100,21 @@ function createInfoCard(exercise) {
     <div class="ex-rating">
         <p class="rating">${exercise.rating}</p>
         <svg id="icon-star" width="18" height="18">
-        <use href="./img/sprite.svg#icon-star-yellow"></use>
+        <use href="${icons}#icon-star-yellow"></use>
         </svg>
          </div>
     </div>
         <button id ="ok" class="open-modal-exercises" >
         Start
         <svg id="icon-arrow" width="16" height="16">
-            <use href="./img/sprite.svg#icon-arrow"></use>
+            <use href="${icons}#icon-arrow"></use>
         </svg>
     </button>
     </div>
 
     <div class="exercise-name">
         <svg id="icon-run" width="24" height="24">
-        <use href="./img/sprite.svg#icon-icon-run"></use>
+        <use href="${icons}#icon-icon-run"></use>
         </svg>
         <h3 class="ex-name">${exercise.name}</h3>
     </div>
