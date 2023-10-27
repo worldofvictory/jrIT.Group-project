@@ -99,7 +99,7 @@ function createInfoCard(exercise) {
     <div class="ex-rating">
         <p class="rating">${exercise.rating}</p>
         <svg id="icon-star" width="18" height="18">
-        <use href="./img/sprite.svg#icon-star-yellow"></use>
+        <use href="../img/sprite.svg#icon-star-yellow"></use>
         </svg>
          </div>
     </div>
