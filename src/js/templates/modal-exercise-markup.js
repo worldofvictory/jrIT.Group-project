@@ -35,15 +35,15 @@ export function createModalExerciseMarkup({
         <p class="modal-exercise-rating-number">${rating}</p>
         <div class="modal-exercise-rating-stars" id="modal-exercise-rating-stars">
             <svg class="modal-exercise-rating-icon">
-              <use href="./img/sprite.svg#icon-star-yellow"></use></svg>
+              <use href="${icons}#icon-star-yellow"></use></svg>
             <svg class="modal-exercise-rating-icon">
-              <use href="./img/sprite.svg#icon-star-yellow"></use></svg>
+              <use href="${icons}#icon-star-yellow"></use></svg>
             <svg class="modal-exercise-rating-icon">
-              <use href="./img/sprite.svg#icon-star-yellow"></use></svg>
+              <use href="${icons}#icon-star-yellow"></use></svg>
             <svg class="modal-exercise-rating-icon">
-              <use href="./img/sprite.svg#icon-star-yellow"></use></svg>
+              <use href="${icons}#icon-star-yellow"></use></svg>
             <svg class="modal-exercise-rating-icon">
-              <use href="./img/sprite.svg#icon-star-yellow"></use></svg>
+              <use href="${icons}#icon-star-yellow"></use></svg>
         </div> 
       </div>
       <div class="modal-exercise-tag-container">
@@ -102,7 +102,7 @@ export function createRemoveFromFavoritesMarkup() {
   Remove from favorites
         
           <svg class="modal-exercise-icon">
-            <use href="./img/sprite.svg#icon-trash-modal"></use></svg
+            <use href="${icons}#icon-trash-modal"></use></svg
         >`;
 }
 
