@@ -18,6 +18,12 @@
   letter-spacing: -0.56px;
   margin-bottom: 20px;
 }
+.slash {
+  font-size: 28px;
+  color: var(--backgroud-footer-text-color);
+  padding-left: 8px;
+  padding-right: 8px;
+}
 .filter-list {
   display: flex;
   gap: 20px;
@@ -39,9 +45,8 @@
 }
 
 .filter-container-category {
- 
+  display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .filter-category-list {
