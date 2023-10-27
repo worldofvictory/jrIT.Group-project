@@ -1,3 +1,4 @@
+import icons from '../../img/sprite.svg';
 export function createModalExerciseMarkup({
   _id,
   gifUrl,
@@ -26,7 +27,7 @@ export function createModalExerciseMarkup({
         data-close="close"
       >
         <svg class="modal-exercise-close-icon">
-          <use href="./img/sprite.svg#icon-close-modal"></use>
+          <use href="${icons}#icon-close-modal"></use>
         </svg>
       </button>
       <h3 class="modal-exercise-title">${makeUpperCaseFirstLetter(name)}</h3>
@@ -92,7 +93,7 @@ export function createAddToFavoritesMarkup() {
   Add to favorites
    
           <svg class="modal-exercise-icon">
-            <use href="./img/sprite.svg#icon-heart-white"></use></svg
+            <use href="${icons}#icon-heart-white"></use></svg
         >`;
 }
 
