@@ -8,6 +8,8 @@
 .ex-title-filter {
     display: flex;
     align-items: baseline;
+    padding-left: 32px;
+    padding-right: 32px;
 }
 .current-exercises {
     color: #24242480;
@@ -25,6 +27,8 @@
 .header-filters {
     display: flex;
     flex-direction: column;
+    padding-left: 32px;
+    padding-right: 32px;
 }
 
 .exercises-title {
@@ -260,9 +264,9 @@
 
 @media screen and (min-width: 1440px) {
     .exercises-back {
-        max-width: 900px;
         margin: 0;
         margin-left: auto;
+        max-width: 900px;
     }
 
     .search-form {
@@ -272,5 +276,10 @@
 
     .header-filters {
         gap: 32px;
+        margin-bottom: 32px;
+    }
+    .exCard {
+        max-width: 442px;
+        width: 442px;
     }
 }

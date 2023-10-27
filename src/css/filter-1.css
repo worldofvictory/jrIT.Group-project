@@ -181,11 +181,12 @@
   }
 
   @media screen and (min-width: 1440px) {
-    .filter-container {
-      padding: 64px 32px 0 32px;
+    .filter-section {
+      padding: 20px 32px 0 32px;
       width: 100%;
       max-width: 1440px;
       margin: 0 auto;
+      margin-bottom: 132px;
     }
     .filter-container-header {
       display: flex;
