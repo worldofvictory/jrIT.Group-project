@@ -1,12 +1,11 @@
+.filter-section {
+  margin: 0 auto;
+}
 .filter-container {
   padding: 40px 20px 0 20px;
   width: 100%;
   max-width: 375px;
   margin: 0 auto;
-}
-.filter-container-header {
-  display: flex;
-  flex-direction: column;
 }
 .filter-container-title {
   color: var(--backgroud-footer-text-color);
@@ -45,23 +44,16 @@
 }
 
 .filter-container-category {
-  display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .filter-category-list {
-  display: flex;
-  flex-direction: column;
-
-  justify-content: center;
+  flex-wrap: wrap;
 }
 .filter-category-item {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  margin: 0 auto;
   margin-bottom: 20px;
-
   position: relative;
   border-radius: 12px;
   overflow: hidden;
@@ -125,6 +117,10 @@
 }
 
 @media screen and (min-width: 375px) {
+  .filter-section {
+    width: auto;
+    max-width: 335px;
+  }
   .filter-container {
     max-width: 375px;
     padding-left: 20px;
@@ -141,12 +137,12 @@
   }
 }
 @media screen and (min-width: 768px) {
-  .filter-container {
-    padding: 64px 32px 0 32px;
-    width: 100%;
-    max-width: 768px;
-    margin: 0 auto;
-  }
+  .filter-section {
+      padding: 64px 32px 0 32px;
+      width: 100%;
+      max-width: 768px;
+      margin: 0 auto;
+    }
   .filter-container-title {
     color: #242424;
     font-family: 'NeueMontrealRegular';
