@@ -7,6 +7,8 @@ import { getExercises } from './filter-2.js';
 const gallery = document.querySelector('.filter-category-list');
 const exerciseContainer = document.querySelector('.exercises-back');
 const currentExerciseContainer = document.querySelector('.current-exercises');
+const searchInput = document.querySelector('.search-input');
+const iconSearch = document.querySelector('.icon-position');
 
 // Функція для отримання даних з API
 async function fetchData(filter, page = 1) {
@@ -112,7 +114,7 @@ function assignCardsClick() {
       setDisplayCards(false)
       getExercises({ filter, name })
 
-      currentExerciseContainer.innerHTML = `<p class="current-exercises"><span>/</span>${name}</p>`
+      currentExerciseContainer.innerHTML = `<p class="current-exercises"><span class= "slash">/</span>${name}</p>`
     })
   }
 }
@@ -122,9 +124,13 @@ function setDisplayCards(isFilter) {
     gallery.style.display = 'flex';
     exerciseContainer.style.display = 'none';
     currentExerciseContainer.style.display = 'none';
+    iconSearch.style.display = 'none';
+    searchInput.style.display = 'none';
   } else {
     gallery.style.display = 'none';
     exerciseContainer.style.display = 'flex';
     currentExerciseContainer.style.display = 'flex';
+    iconSearch.style.display = 'flex';
+    searchInput.style.display = 'flex';
   }
 }

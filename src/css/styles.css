@@ -19,6 +19,7 @@
 @import url(./preloader.css);
 @import url(./loader-subscribe.css);
 @import url('./modal-form.css');
+@import url('./catalog.css');
 
 :root {
   --background-color: #f4f4f4;
@@ -41,22 +42,27 @@
   src: url('../fonts/NeueMontreal-Italic.otf');
 }
 
- @font-face {
-   font-family: 'Neue MontrealMedium';
-   src: url('../fonts/NeueMontreal-Medium.otf');
- }
+@font-face {
+  font-family: 'Neue MontrealMedium';
+  src: url('../fonts/NeueMontreal-Medium.otf');
+}
 
- body {
-background-color: var(--background-color);
-  font-family: 'NeueMontrealRegular'
- }
- @media screen and (min-width: 1440px) {
- .quote-sport-container {
-  float: left;
-  width: 444px;
- }
+body {
+  background-color: var(--background-color);
+  font-family: 'NeueMontrealRegular';
+}
 
- .filter-section {
-margin-left: 476px;
- }
- }
+/* @media screen and (min-width: 1440px) {
+  .quote-sport-container {
+    position: absolute;
+    top: 84%;
+    margin: 0;
+    margin-left: auto;
+  }
+
+  .exercises-info-card {
+    position: relative;
+    margin: 0;
+    margin-right: auto;
+  }
+} */

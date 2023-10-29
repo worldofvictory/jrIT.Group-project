@@ -1,5 +1,5 @@
-import Pagination from "tui-pagination";
-import 'tui-pagination/dist/tui-pagination.css';
+import icon from '../img/sprite.svg';
+import { makePagination } from './pagination.js';
 import axios from "axios";
 import { handleOpenModalClick } from './modal-exercise';
 
@@ -23,44 +23,15 @@ const filterParams = {
     keyword: '',
 };
 
-// export function fetchExercises() {
-//     const { filter, category, keyword } = filterParams;
-//     fetch(`${apiUrl}/exercises?filter=${filter}&category=${category}&keyword=${keyword}&page=${activePage}&limit=${itemsPerPage}`)
-//         .then(response => response.json())
-//         .then(data => {
-//             handleExerciseData(data);
-//         })
-//         .catch(error => {
-//             console.error('Sorry, is not found', error);
-//             return {
-//                 success: false
-//             }
-//         });
-// }
-
-filterBtn.forEach(element => {
-    element.addEventListener('click', event => {
-        filterBtn.forEach(btn => btn.classList.remove('current'));
-        element.classList.add('current');
-
-        filterParams.filter = event.target.dataset.filter;
-        filterParams.category = event.target.dataset.filter;
-        activePage = 1;
-
-        getExercises(element);
-    });
-});
-
-form.addEventListener('submit', event => {
-    event.preventDefault();
-    const searchValue = searchInput.value.toLowerCase();
-    filterParams.keyword = searchValue;
-    activePage = 1;
-    // fetchExercises(filterParams);
+searchInput.addEventListener('input', function (event) {
+  const searchValue = event.target.value.toLowerCase();
+  filterParams.keyword = searchValue;
+  activePage = 1;
+  startExercises(searchValue);
 });
 
 function handleExerciseData(data) {
-    console.log(data)
+
     exercisesBack.innerHTML = "";
     if (data.results.length === 0) {
         exercisesBack.innerHTML = "Sorry, is not found";
@@ -68,13 +39,12 @@ function handleExerciseData(data) {
         data.results.forEach((exercise) => {
             const infoCard = createInfoCard(exercise);
 
-            infoCard.addEventListener('click', onStartClick)
-            exercisesBack.appendChild(infoCard);         
+          infoCard.addEventListener('click', onStartClick)
+          exercisesBack.appendChild(infoCard);
+         
         });
     }
 }
-
-
 
 async function onStartClick(event) {
    
@@ -98,25 +68,27 @@ function createInfoCard(exercise) {
         <p class="workout-p">WORKOUT</p>
         </div>
     <div class="ex-rating">
-        <p class="rating">${exercise.rating}</p>
+        <p class="rating">${exercise.rating.toFixed(1)}</p>
         <svg id="icon-star" width="18" height="18">
-        <use href="./img/sprite.svg#icon-star-yellow"></use>
+        <use href="${icon}#icon-star-yellow"></use>
         </svg>
          </div>
     </div>
         <button id ="ok" class="open-modal-exercises" >
         Start
         <svg id="icon-arrow" width="16" height="16">
-            <use href="./img/sprite.svg#icon-arrow"></use>
+            <use href="${icon}#icon-arrow"></use>
         </svg>
     </button>
     </div>
 
     <div class="exercise-name">
+      <div>
         <svg id="icon-run" width="24" height="24">
-        <use href="./img/sprite.svg#icon-icon-run"></use>
+        <use href="${icon}#icon-icon-run"></use>
         </svg>
-        <h3 class="ex-name">${exercise.name}</h3>
+      </div>
+        <h3 class="ex-name">${capitalize(exercise.name)}</h3>
     </div>
     <div class="exercise-info">
         <p class="ex-info-p">Burned calories: <span class="ex-info-back">${exercise.burnedCalories} / ${exercise.time}</span></p>
@@ -139,13 +111,70 @@ export function getExercises({ filter, name }) {
   };
   const filterParam = filterParamMap[filter];
 
+  filterParams.filter = filter
+  filterParams.category = name
+
   fetch(`${apiUrl}/exercises?${filterParam}=${name}&page=${activePage}&limit=12`)
+    .then(response => response.json())
+    .then(data => {
+      
+      makePagination(12, data.totalPages).on(
+        'afterMove',
+        ({ page }) => {
+          getExercisesPage({filter, name, page})
+        });
+      
+      handleExerciseData(data);
+    })
+    .catch(error => {
+      console.error('Error while fetching exercises:', error);
+    });
+}
+
+
+function getExercisesPage({ filter, name, page }) {
+  const filterParamMap = {
+    'Body parts': 'bodypart',
+    'muscles': 'muscles',
+    'equipment': 'equipment'
+  };
+  const filterParam = filterParamMap[filter];
+
+  fetch(`${apiUrl}/exercises?${filterParam}=${name}&page=${page}&limit=12`)
     .then(response => response.json())
     .then(data => {
       handleExerciseData(data);
     })
     .catch(error => {
       console.error('Error while fetching exercises:', error);
+    });
+} 
+
+
+function startExercises(keyword) {
+  const filterParamMap = {
+    'Body parts': 'bodypart',
+    'muscles': 'muscles',
+    'equipment': 'equipment'
+  };
+
+  const filter = filterParams.filter
+  const name = filterParams.category
+
+  const filterParam = filterParamMap[filter];
+
+  fetch(`${apiUrl}/exercises?${filterParam}=${name}&keyword=${keyword}&page=1&limit=${itemsPerPage}`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Error');
+      }
+      return response.json();
+    })
+    .then(data => {
+      handleExerciseData(data);
+    })
+    .catch(error => {
+      console.error('Sorry, is not found', error);
     });
 }
 
@@ -159,3 +188,6 @@ searchInput.addEventListener('blur', function() {
         searchInput.value = '';
     });
 
+function capitalize(s) {
+  return s[0].toUpperCase() + s.slice(1);
+}

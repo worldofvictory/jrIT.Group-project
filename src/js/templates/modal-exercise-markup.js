@@ -1,3 +1,4 @@
+import icons from '../../img/sprite.svg';
 export function createModalExerciseMarkup({
   _id,
   gifUrl,
@@ -26,7 +27,7 @@ export function createModalExerciseMarkup({
         data-close="close"
       >
         <svg class="modal-exercise-close-icon">
-          <use href="./img/sprite.svg#icon-close-modal"></use>
+          <use href="${icons}#icon-close-modal"></use>
         </svg>
       </button>
       <h3 class="modal-exercise-title">${makeUpperCaseFirstLetter(name)}</h3>
@@ -34,15 +35,15 @@ export function createModalExerciseMarkup({
         <p class="modal-exercise-rating-number">${rating}</p>
         <div class="modal-exercise-rating-stars" id="modal-exercise-rating-stars">
             <svg class="modal-exercise-rating-icon">
-              <use href="./img/sprite.svg#icon-star-yellow"></use></svg>
+              <use href="${icons}#icon-star-yellow"></use></svg>
             <svg class="modal-exercise-rating-icon">
-              <use href="./img/sprite.svg#icon-star-yellow"></use></svg>
+              <use href="${icons}#icon-star-yellow"></use></svg>
             <svg class="modal-exercise-rating-icon">
-              <use href="./img/sprite.svg#icon-star-yellow"></use></svg>
+              <use href="${icons}#icon-star-yellow"></use></svg>
             <svg class="modal-exercise-rating-icon">
-              <use href="./img/sprite.svg#icon-star-yellow"></use></svg>
+              <use href="${icons}#icon-star-yellow"></use></svg>
             <svg class="modal-exercise-rating-icon">
-              <use href="./img/sprite.svg#icon-star-yellow"></use></svg>
+              <use href="${icons}#icon-star-yellow"></use></svg>
         </div> 
       </div>
       <div class="modal-exercise-tag-container">
@@ -92,7 +93,7 @@ export function createAddToFavoritesMarkup() {
   Add to favorites
    
           <svg class="modal-exercise-icon">
-            <use href="./img/sprite.svg#icon-heart-white"></use></svg
+            <use href="${icons}#icon-heart-white"></use></svg
         >`;
 }
 
@@ -101,7 +102,7 @@ export function createRemoveFromFavoritesMarkup() {
   Remove from favorites
         
           <svg class="modal-exercise-icon">
-            <use href="./img/sprite.svg#icon-trash-modal"></use></svg
+            <use href="${icons}#icon-trash-modal"></use></svg
         >`;
 }
 
