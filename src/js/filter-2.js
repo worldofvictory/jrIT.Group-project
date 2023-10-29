@@ -60,6 +60,7 @@ form.addEventListener('submit', event => {
 });
 
 function handleExerciseData(data) {
+    console.log(data)
     exercisesBack.innerHTML = "";
     if (data.results.length === 0) {
         exercisesBack.innerHTML = "Sorry, is not found";
@@ -76,7 +77,7 @@ function handleExerciseData(data) {
 
 
 async function onStartClick(event) {
-    console.log(event.target);
+   
         if (event.target.id !== "ok" && event.target.id !== "icon-arrow") {
         return; 
     }
