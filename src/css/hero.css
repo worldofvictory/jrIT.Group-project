@@ -1,7 +1,4 @@
 
-.hero {
-    padding-top: 48px; 
-}
 .hero-container {
     display: flex;
     flex-direction: column;
@@ -104,15 +101,9 @@
 }
 
 @media screen and (min-width: 768px) {
-    .hero {
-        padding-top: 100px;
-    }
-
     .hero-container {
-        max-width: 768px;
-        padding-left: 32px;
-        padding-right: 32px;
-        
+        max-width: 704px;
+        padding: 100px 0px 64px 0px;
     }
 
     .hero-image {

@@ -1,5 +1,4 @@
 #tui-pagination-container {
-margin:0; 
 
     .tui-page-btn {
         border: none;
@@ -56,7 +55,3 @@ margin:0;
     }
 
 }
-
-/* .pagination {
-margin: 0; 
-} */

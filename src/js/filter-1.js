@@ -3,7 +3,6 @@ import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
 import { makePagination } from './pagination.js';
 import { getExercises } from './filter-2.js';
-const form = document.querySelector(".search-form");
 
 const gallery = document.querySelector('.filter-category-list');
 const exerciseContainer = document.querySelector('.exercises-back');
@@ -64,7 +63,6 @@ fetchData('Body parts').then(data => {
   assignCardsClick()
   
   makePagination(12, data.totalPages).on('afterMove', ({ page }) => {
-      
     renderCards(filter, page);
   });
 });
@@ -84,7 +82,6 @@ filterButtons.forEach(button => {
     const data = await fetchData(filter);
 
     makePagination(12, data.totalPages).on('afterMove', ({ page }) => {
-      
       renderCards(filter, page);
     });
     if (data) {
@@ -101,7 +98,6 @@ async function renderCards(filter, page) {
     await gallery.insertAdjacentHTML('beforeend', createMarcup(data.results));
 
     assignCardsClick()
-
   }
 }
 
@@ -128,15 +124,13 @@ function setDisplayCards(isFilter) {
     gallery.style.display = 'flex';
     exerciseContainer.style.display = 'none';
     currentExerciseContainer.style.display = 'none';
-      form.style.display = 'none';
-    // iconSearch.style.display = 'none';
-    // searchInput.style.display = 'none';
+    iconSearch.style.display = 'none';
+    searchInput.style.display = 'none';
   } else {
     gallery.style.display = 'none';
     exerciseContainer.style.display = 'flex';
     currentExerciseContainer.style.display = 'flex';
-     form.style.display = 'block';
-    // iconSearch.style.display = 'flex';
-    // searchInput.style.display = 'flex';
+    iconSearch.style.display = 'flex';
+    searchInput.style.display = 'flex';
   }
 }
