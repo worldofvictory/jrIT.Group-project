@@ -4,13 +4,6 @@
     background-color: var(--white-text-color);
 }
 
-.quote-container {
-    /* padding-right: 20px;
-    padding-left: 20px; */
-    max-width: 375px;
-    margin: 0 auto;
-}
-
 .quote {
     position: relative;
     padding: 20px 20px 20px 72px;
@@ -37,7 +30,7 @@
     flex-direction: column;
     gap: 6px;
     height: 100%;
-    /* justify-content: space-between; */
+    justify-content: space-between;
 }
 
 .quote-title {
@@ -74,7 +67,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    /* width: 335px; */
+    width: 335px;
     height: 242px;
     border-radius: 20px;
     margin-bottom: 20px;
@@ -135,24 +128,28 @@
     -webkit-box-orient: vertical;
 }
 
-
 @media screen and (min-width: 375px) {
     .quote-sport-container {
-        /* max-width: 375px;
+        max-width: 375px;
         padding-left: 20px;
-        padding-right: 20px; */
+        padding-right: 20px;
         margin-left: auto;
         margin-right: auto;
         /* outline: 2px solid red; */
     }
 }
 
+@media screen and (max-width: 374px) {
+    .quote-sport-container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
 @media screen and (min-width: 768px) {
     .quote-sport-container {
-        padding-top: 64px;
-        padding-bottom: 100px;
-          
-                
+        max-width: 768px;
+        padding: 64px 32px 100px 32px;
     }
 
     .quote {
@@ -190,16 +187,10 @@
 
     .quote-photo-wrapper {
         display: flex;
-        flex-direction: row;
         gap: 16px;
         margin-bottom: 32px;
     }
 
-   .quote-container {
-         /* padding-right: 35px;
-            padding-left: 35px; */
-            max-width: 768px;
-   }
     .quote-photo {
         width: 288px;
         height: 249px;

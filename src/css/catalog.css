@@ -1,29 +1,11 @@
-.section-catalog {
-  max-width:375px; 
-  margin-top:20px; 
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  display: flex;
-  flex-direction: column;
-}
-
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1440px) {
   .section-catalog {
-      max-width: 768px;
-      padding-left: 32px;
-      padding-right: 32px;
+    display: flex;
+    padding: 0;
+  }
+
+  .quote-sport-container {
+    padding-top: 20px;
+    padding-left: 32px;
   }
 }
-
-@media screen and (min-width: 1440px) { 
-  .section-catalog {
-      max-width: 1440px;
-      flex-direction: row-reverse;
-      gap:32px;
-      margin-top:32px;
-      padding-bottom: 132px;
-  }
-}
-
