@@ -1,14 +1,15 @@
 import icon from '../img/sprite.svg';
 import { makePagination } from './pagination.js';
-import axios from "axios";
 import { handleOpenModalClick } from './modal-exercise';
+import {  throttle } from 'lodash';
 
 const form = document.querySelector(".search-form");
 const searchInput = document.querySelector(".search-input");
 const exercisesBack = document.querySelector(".exercises-back");
 const iconSearch = document.getElementById('icon-search');
 const iconX = document.getElementById('icon-x');
-const filterBtn = document.querySelectorAll(".filter-btn");
+
+form.style.display = 'none';
 
 const apiUrl = "https://your-energy.b.goit.study/api";
 
@@ -23,12 +24,21 @@ const filterParams = {
     keyword: '',
 };
 
-searchInput.addEventListener('input', function (event) {
+// searchInput.addEventListener('input', function (event) {
+//   const searchValue = event.target.value.toLowerCase();
+//   filterParams.keyword = searchValue;
+//   startExercises(searchValue);
+//   });
+
+searchInput.addEventListener('input', throttle(onInputChange, 700));
+
+
+function onInputChange(event)  {
   const searchValue = event.target.value.toLowerCase();
+
   filterParams.keyword = searchValue;
-  activePage = 1;
   startExercises(searchValue);
-});
+}
 
 function handleExerciseData(data) {
 
@@ -47,8 +57,7 @@ function handleExerciseData(data) {
 }
 
 async function onStartClick(event) {
-   
-        if (event.target.id !== "ok" && event.target.id !== "icon-arrow") {
+    if (event.target.id !== "ok" && event.target.id !== "icon-arrow") {
         return; 
     }
 
@@ -91,7 +100,7 @@ function createInfoCard(exercise) {
         <h3 class="ex-name">${capitalize(exercise.name)}</h3>
     </div>
     <div class="exercise-info">
-        <p class="ex-info-p">Burned calories: <span class="ex-info-back">${exercise.burnedCalories} / ${exercise.time}</span></p>
+        <p class="ex-info-p">Burned calories: <span class="ex-info-back">${exercise.burnedCalories}/${exercise.time}min</span></p>
         <p class="ex-info-p">Body part: <span class="ex-info-back">${exercise.bodyPart}</span></p>
         <p class="ex-info-p last-p">Target: <span class="ex-info-back">${exercise.target}</span></p>
     </div>
@@ -101,6 +110,7 @@ function createInfoCard(exercise) {
 
     return exerciseCard;
 }
+
 
 
 export function getExercises({ filter, name }) {
@@ -151,6 +161,7 @@ function getExercisesPage({ filter, name, page }) {
 } 
 
 
+
 function startExercises(keyword) {
   const filterParamMap = {
     'Body parts': 'bodypart',
@@ -160,6 +171,8 @@ function startExercises(keyword) {
 
   const filter = filterParams.filter
   const name = filterParams.category
+
+  console.log(filter, name)
 
   const filterParam = filterParamMap[filter];
 
@@ -178,15 +191,15 @@ function startExercises(keyword) {
     });
 }
 
-searchInput.addEventListener('focus', function() {
-        iconSearch.style.display = 'none';
-        iconX.style.display = 'block';
-    });
-searchInput.addEventListener('blur', function() {
-        iconSearch.style.display = 'block';
-        iconX.style.display = 'none';
-        searchInput.value = '';
-    });
+// searchInput.addEventListener('focus', function() {
+//         iconSearch.style.display = 'none';
+//         iconX.style.display = 'block';
+//     });
+// searchInput.addEventListener('blur', function() {
+//         iconSearch.style.display = 'block';
+//         iconX.style.display = 'none';
+//         searchInput.value = '';
+//     });
 
 function capitalize(s) {
   return s[0].toUpperCase() + s.slice(1);
