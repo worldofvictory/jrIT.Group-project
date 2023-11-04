@@ -32,9 +32,18 @@ const filterParams = {
 
 searchInput.addEventListener('input', throttle(onInputChange, 700));
 
+document.addEventListener("keydown", event => {
+  if (event.code === "Enter") {
+    event.preventDefault();
 
-function onInputChange(event)  {
-  const searchValue = event.target.value.toLowerCase();
+    onInputChange()
+    clearSearchInput()
+  }
+});
+
+
+function onInputChange(event) {
+  const searchValue = searchInput.value.toLowerCase();
 
   filterParams.keyword = searchValue;
   startExercises(searchValue);
@@ -116,15 +125,17 @@ function createInfoCard(exercise) {
 export function getExercises({ filter, name }) {
   const filterParamMap = {
     'Body parts': 'bodypart',
-    'muscles': 'muscles',
-    'equipment': 'equipment'
+    'Muscles': 'muscles',
+    'Equipment': 'equipment'
   };
   const filterParam = filterParamMap[filter];
 
   filterParams.filter = filter
   filterParams.category = name
 
-  fetch(`${apiUrl}/exercises?${filterParam}=${name}&page=${activePage}&limit=12`)
+  clearSearchInput()
+
+  fetch(`${apiUrl}/exercises?${filterParam}=${name.toLowerCase()}&page=${activePage}&limit=12`)
     .then(response => response.json())
     .then(data => {
       
@@ -145,8 +156,8 @@ export function getExercises({ filter, name }) {
 function getExercisesPage({ filter, name, page }) {
   const filterParamMap = {
     'Body parts': 'bodypart',
-    'muscles': 'muscles',
-    'equipment': 'equipment'
+    'Muscles': 'muscles',
+    'Equipment': 'equipment'
   };
   const filterParam = filterParamMap[filter];
 
@@ -165,8 +176,44 @@ function getExercisesPage({ filter, name, page }) {
 function startExercises(keyword) {
   const filterParamMap = {
     'Body parts': 'bodypart',
-    'muscles': 'muscles',
-    'equipment': 'equipment'
+    'Muscles': 'muscles',
+    'Equipment': 'equipment'
+  };
+
+  const filter = filterParams.filter
+  const name = filterParams.category
+
+  console.log("startExercises", filter, name)
+
+  const filterParam = filterParamMap[filter];
+
+  fetch(`${apiUrl}/exercises?${filterParam}=${name}&keyword=${keyword}&page=1&limit=${itemsPerPage}`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Error');
+      }
+      return response.json();
+    })
+    .then(data => {
+            makePagination(12, data.totalPages).on(
+        'afterMove',
+        ({ page }) => {
+          startExercisesPage(keyword, page)
+        });
+      
+
+      handleExerciseData(data);
+    })
+    .catch(error => {
+      console.error('Sorry, is not found', error);
+    });
+}
+
+function startExercisesPage(keyword, page=1) {
+  const filterParamMap = {
+    'Body parts': 'bodypart',
+    'Muscles': 'muscles',
+    'Equipment': 'equipment'
   };
 
   const filter = filterParams.filter
@@ -176,7 +223,7 @@ function startExercises(keyword) {
 
   const filterParam = filterParamMap[filter];
 
-  fetch(`${apiUrl}/exercises?${filterParam}=${name}&keyword=${keyword}&page=1&limit=${itemsPerPage}`)
+  fetch(`${apiUrl}/exercises?${filterParam}=${name}&keyword=${keyword}&page=${page}&limit=${itemsPerPage}`)
     .then(response => {
       if (!response.ok) {
         throw new Error('Error');
@@ -190,17 +237,20 @@ function startExercises(keyword) {
       console.error('Sorry, is not found', error);
     });
 }
+searchInput.addEventListener('focus', function() {
+        iconSearch.style.display = 'none';
+        iconX.style.display = 'block';
+    });
+searchInput.addEventListener('blur', function() {
+        iconSearch.style.display = 'block';
+        iconX.style.display = 'none';
+        searchInput.value = '';
+    });
 
-// searchInput.addEventListener('focus', function() {
-//         iconSearch.style.display = 'none';
-//         iconX.style.display = 'block';
-//     });
-// searchInput.addEventListener('blur', function() {
-//         iconSearch.style.display = 'block';
-//         iconX.style.display = 'none';
-//         searchInput.value = '';
-//     });
+function clearSearchInput() {
+  searchInput.value = ""
+}
 
-function capitalize(s) {
+export function capitalize(s) {
   return s[0].toUpperCase() + s.slice(1);
 }

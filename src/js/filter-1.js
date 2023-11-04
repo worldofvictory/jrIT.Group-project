@@ -2,7 +2,7 @@ import axios from 'axios';
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
 import { makePagination } from './pagination.js';
-import { getExercises } from './filter-2.js';
+import { getExercises, capitalize } from './filter-2.js';
 const form = document.querySelector(".search-form");
 
 const gallery = document.querySelector('.filter-category-list');
@@ -118,7 +118,7 @@ function assignCardsClick() {
       setDisplayCards(false)
       getExercises({ filter, name })
 
-      currentExerciseContainer.innerHTML = `<p class="current-exercises"><span class= "slash">/</span>${name}</p>`
+      currentExerciseContainer.innerHTML = `<p class="current-exercises"><span class= "slash">/</span>${capitalize(name)}</p>`
     })
   }
 }
