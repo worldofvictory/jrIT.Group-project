@@ -79,9 +79,9 @@ export function createModalExerciseMarkup({
       <p class="modal-exercise-description">${description}</p>
     </div>
   </div>
-   <button type="button"class="exersice-modal-btn ">
-     
-      </button>  
+   <button type="button"class="exersice-modal-btn">
+ 
+  </button>  
      
 
 </section>

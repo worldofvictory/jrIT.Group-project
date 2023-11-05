@@ -16,7 +16,7 @@ const favoriteIdList = favoriteList.map((item) => item._id);
 
 export async function handleOpenModalClick(
   _,
-  favoriteId = '64f389465ae26083f39b17a2'
+  favoriteId
 ) {
   let modalBox = {};
   let ratingValue = 0;
@@ -33,6 +33,7 @@ export async function handleOpenModalClick(
 
     modalBox.open();
 
+
     ratingValue = Math.round(exericiseData.rating); 
 
   } catch (error) {
@@ -44,38 +45,16 @@ export async function handleOpenModalClick(
   processActiveRatingStars(ratingValue);
 
   const addToFavoriteBtnRef = document.querySelector('.exersice-modal-btn');
+
  
   const currentUrl = window.location.href;
 
   if (currentUrl.includes("/favorites.html")) {
 
-    addToFavoriteBtnRef.style.display = "none"
-    
-    // RemoveButton.dataset.close = "close";
-    // RemoveButton.textContent = "Remove from favorites";
-
-    // RemoveButton .insertAdjacentHTML('beforeend', `<svg class="modal-exercise-icon">
-    //   <use href="./img/sprite.svg#icon-trash-modal"></use></svg>`)
-    // }
-
-        
-    // for (let button of modalRefs) {
-    //   button.addEventListener('click', onRemoveBtnClick)
-
-    // }
-
-    // function onRemoveBtnClick(event) {
-    //   if (event.target.id !== addToFavoriteBtnRef) {
-    //     return;
-    //   }
-    
-    //   const id = event.currentTarget.dataset.id;
-         
-    //   deleteCard(id);   
-    // }
-   
-  }
- addToFavoriteBtnRef.addEventListener('click', event =>
+    addToFavoriteBtnRef.style.display = "none";
+  } 
+     
+   addToFavoriteBtnRef.addEventListener('click', event =>
       handleAddToFavoriteBtnClick(event, favoriteId, addToFavoriteBtnRef, exericiseData)
     );
 

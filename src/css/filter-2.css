@@ -1,51 +1,71 @@
+.exercises-info-card {
+  margin-top: 20px;
+}
+
 .filter-section-next {
   width: 100%;
-  padding: 0 15px;
-  margin: 0 auto;
+  /* padding: 0 15px;
+  margin: 0 auto; */
   background-color: var(--white-text-color);
-  margin-top: 40px;
+  /* margin-top: 40px; */
+  padding-top: 40px;
+}
+
+.filter-container-next {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+@media screen and (min-width: 768px) {
+.filter-section-next {
+padding-top: 68px;
+  } 
+
 }
 
 .ex-title-filter {
-  display: flex;
+  display: inline-flex;
   align-items: baseline;
-  padding-left: 32px;
-  padding-right: 32px;
+  margin-bottom: 20px;
+  /* padding-left: 32px;
+  padding-right: 32px; */
 }
 
 .current-exercises {
   color: #24242480;
-  font-family: Neue Montreal, sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: 1;
 }
 
-.search-form {
+/* .search-form {
   margin: auto;
-}
+} */
+ .search-form {
+   margin-bottom: 20px;
+   display: block;
+ }
 
 .header-filters {
   display: flex;
   flex-direction: column;
-  padding-left: 32px;
-  padding-right: 32px;
+
 }
 
 .exercises-title {
   color: var(--backgroud-footer-text-color);
-  font-family: Neue Montreal, sans-serif;
   font-size: 28px;
   font-style: normal;
   font-weight: 400;
   line-height: 38px;
   letter-spacing: -0.56px;
-  margin-bottom: 20px;
+  
 }
 
 .search-exercises {
   position: relative;
+  
 }
 
 .search-input {
@@ -59,8 +79,6 @@
   line-height: 1.43;
   padding-left: 14px;
   color: var(--backgroud-footer-text-color);
-  margin-bottom: 20px;
-  font-family: 'Neue Montreal', sans-serif;
   background-color: var(--white-text-color);
 }
 
@@ -79,7 +97,7 @@
 .filter-list-next {
   display: flex;
   gap: 20px;
-  margin-bottom: 20px;
+ 
 }
 
 .filter-btn.current {
@@ -94,7 +112,6 @@
   background-color: transparent;
   cursor: pointer;
   color: #24242499;
-  font-family: Neue Montreal, sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -106,38 +123,47 @@
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  margin-bottom: 20px;
 }
 
 .exCard {
-  margin: auto;
   height: 141px;
-  width: 335px;
+  width: 100%;
   border-radius: 15px;
   background-color: white;
+  padding: 16px;
+  font-size: 12px;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.exCard:hover,
+.exCard:focus {
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, .12),
+    0px 1px 1px rgba(0, 0, 0, .14),
+    0px 2px 1px rgba(0, 0, 0, .2);
 }
 
 .high-card {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
-  padding: 16px;
-  align-items: baseline;
 }
 
 .left-high-card {
   display: flex;
   flex-wrap: nowrap;
   gap: 16px;
+ 
 }
 
 .ex-rating {
   display: flex;
+  align-items: center;
   flex-wrap: nowrap;
   gap: 2px;
 }
 
 .workout-p {
-  font-family: 'Neue Montreal', sans-serif;
   font-weight: 500;
   font-size: 12px;
   line-height: 1.16px;
@@ -152,6 +178,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+ 
 }
 
 #icon-star {
@@ -165,7 +192,6 @@
 
 .start-btn {
   color: var(--backgroud-footer-text-color);
-  font-family: Neue Montreal, sans-serif;
   font-size: 16px;
   line-height: 2.38;
 }
@@ -173,10 +199,17 @@
 .open-modal-exercises {
   display: flex;
   flex-wrap: nowrap;
-  align-items: baseline;
+  align-items: center;
   border: none;
-  background-color: white;
+  background-color: inherit;
+  font-size: 14px;
+  transition: font-size 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.open-modal-exercises:hover,
+.open-modal-exercises:focus {
+  font-size: 16px;
+} 
 
 #icon-arrow {
   stroke: var(--backgroud-footer-text-color);
@@ -188,15 +221,13 @@
   white-space: nowrap;
   gap: 16px;
   margin-bottom: 16px;
-  padding-left: 16px;
-  align-items: baseline;
+  margin-top: 24px; 
 }
 
 .ex-name {
   font-size: 20px;
   line-height: 1;
   color: var(--backgroud-footer-text-color);
-  font-family: 'Neue Montreal', sans-serif;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -204,18 +235,16 @@
 .exercise-info {
   display: flex;
   gap: 10px;
-  margin: auto;
-  padding-left: 16px;
-  padding-right: 16px;
+  
+ 
 }
 
 .ex-info-p {
-  font-size: 12px;
   line-height: 1.5;
   color: var(--backgroud-footer-text-color);
-  font-family: 'Neue Montreal', sans-serif;
   white-space: nowrap;
   color: #24242466;
+  font-size: 12px;
 }
 
 .last-p {
@@ -227,7 +256,6 @@
   font-size: 12px;
   line-height: 1.5;
   color: var(--backgroud-footer-text-color);
-  font-family: 'Neue Montreal', sans-serif;
   white-space: nowrap;
 }
 
@@ -241,6 +269,7 @@
   .header-filters {
     flex-direction: row;
     align-items: baseline;
+    justify-content: space-between;
   }
 
   .search-input {
@@ -248,10 +277,9 @@
     height: 48px;
   }
 
-  .search-form {
-    margin: 0;
-    margin-right: auto;
-  }
+ .current-exercises {
+font-size: 24px;
+ }
 
   .exercises-back {
     gap: 32px 16px;
@@ -260,9 +288,25 @@
   }
 
   .exCard {
-    max-width: 344px;
+    width: 344px;
     margin: 0;
   }
+
+    .ex-title-filter {
+      margin-bottom: 32px;
+    }
+
+        .search-form {
+          margin-bottom: 0;
+        }
+
+                .exercises-info-card {
+                  margin-top: 32px;
+                }
+
+    .filter-btn {
+      font-size: 16px;
+    }
 }
 
 /* десктопна версія*/
@@ -273,16 +317,21 @@
     max-width: 900px;
   }
 
-  .search-form {
+  /* .search-form {
     margin-right: 0;
     margin-left: auto;
-  }
+  } */
 
   .header-filters {
     gap: 32px;
-    margin-bottom: 32px;
-  }
+    margin-bottom: 0px
 
+
+
+  }
+    .exercises-info-card {
+      margin-top: 0;
+    }
   .exCard {
     max-width: 442px;
     width: 442px;
@@ -294,8 +343,11 @@
     align-items: baseline;
   }
 
-  .quote-sport-container {
+     .ex-title-filter {
+      margin-bottom: 0;
+     }
+  /* .quote-sport-container {
     position: absolute;
     top: 109%;
-  }
+  } */
 }

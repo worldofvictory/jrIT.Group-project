@@ -1,15 +1,15 @@
 import icon from '../img/sprite.svg';
-import Pagination from "tui-pagination";
-import 'tui-pagination/dist/tui-pagination.css';
-import axios from "axios";
+import { makePagination } from './pagination.js';
 import { handleOpenModalClick } from './modal-exercise';
+import {  throttle } from 'lodash';
 
 const form = document.querySelector(".search-form");
 const searchInput = document.querySelector(".search-input");
 const exercisesBack = document.querySelector(".exercises-back");
 const iconSearch = document.getElementById('icon-search');
 const iconX = document.getElementById('icon-x');
-const filterBtn = document.querySelectorAll(".filter-btn");
+
+form.style.display = 'none';
 
 const apiUrl = "https://your-energy.b.goit.study/api";
 
@@ -24,42 +24,33 @@ const filterParams = {
     keyword: '',
 };
 
-// export function fetchExercises() {
-//     const { filter, category, keyword } = filterParams;
-//     fetch(`${apiUrl}/exercises?filter=${filter}&category=${category}&keyword=${keyword}&page=${activePage}&limit=${itemsPerPage}`)
-//         .then(response => response.json())
-//         .then(data => {
-//             handleExerciseData(data);
-//         })
-//         .catch(error => {
-//             console.error('Sorry, is not found', error);
-//             return {
-//                 success: false
-//             }
-//         });
-// }
+// searchInput.addEventListener('input', function (event) {
+//   const searchValue = event.target.value.toLowerCase();
+//   filterParams.keyword = searchValue;
+//   startExercises(searchValue);
+//   });
 
-filterBtn.forEach(element => {
-    element.addEventListener('click', event => {
-        filterBtn.forEach(btn => btn.classList.remove('current'));
-        element.classList.add('current');
+searchInput.addEventListener('input', throttle(onInputChange, 700));
 
-        filterParams.filter = event.target.dataset.filter;
-        filterParams.category = event.target.dataset.filter;
-        activePage = 1;
+document.addEventListener("keydown", event => {
+  if (event.code === "Enter") {
+    event.preventDefault();
 
-        getExercises(element);
-    });
+    onInputChange()
+    clearSearchInput()
+  }
 });
 
-searchInput.addEventListener('input', function(event) {
-  const searchValue = event.target.value.toLowerCase();
+
+function onInputChange(event) {
+  const searchValue = searchInput.value.toLowerCase();
+
   filterParams.keyword = searchValue;
-  activePage = 1;
   startExercises(searchValue);
-});
+}
 
 function handleExerciseData(data) {
+
     exercisesBack.innerHTML = "";
     if (data.results.length === 0) {
         exercisesBack.innerHTML = "Sorry, is not found";
@@ -67,15 +58,15 @@ function handleExerciseData(data) {
         data.results.forEach((exercise) => {
             const infoCard = createInfoCard(exercise);
 
-            infoCard.addEventListener('click', onStartClick)
-            exercisesBack.appendChild(infoCard);         
+          infoCard.addEventListener('click', onStartClick)
+          exercisesBack.appendChild(infoCard);
+         
         });
     }
 }
 
 async function onStartClick(event) {
-    console.log(event.target);
-        if (event.target.id !== "ok" && event.target.id !== "icon-arrow") {
+    if (event.target.id !== "ok" && event.target.id !== "icon-arrow") {
         return; 
     }
 
@@ -95,7 +86,7 @@ function createInfoCard(exercise) {
         <p class="workout-p">WORKOUT</p>
         </div>
     <div class="ex-rating">
-        <p class="rating">${exercise.rating}</p>
+        <p class="rating">${exercise.rating.toFixed(1)}</p>
         <svg id="icon-star" width="18" height="18">
         <use href="${icon}#icon-star-yellow"></use>
         </svg>
@@ -110,13 +101,15 @@ function createInfoCard(exercise) {
     </div>
 
     <div class="exercise-name">
+      <div>
         <svg id="icon-run" width="24" height="24">
         <use href="${icon}#icon-icon-run"></use>
         </svg>
-        <h3 class="ex-name">${exercise.name}</h3>
+      </div>
+        <h3 class="ex-name">${capitalize(exercise.name)}</h3>
     </div>
     <div class="exercise-info">
-        <p class="ex-info-p">Burned calories: <span class="ex-info-back">${exercise.burnedCalories} / ${exercise.time}</span></p>
+        <p class="ex-info-p">Burned calories: <span class="ex-info-back">${exercise.burnedCalories}/${exercise.time}min</span></p>
         <p class="ex-info-p">Body part: <span class="ex-info-back">${exercise.bodyPart}</span></p>
         <p class="ex-info-p last-p">Target: <span class="ex-info-back">${exercise.target}</span></p>
     </div>
@@ -128,17 +121,30 @@ function createInfoCard(exercise) {
 }
 
 
+
 export function getExercises({ filter, name }) {
   const filterParamMap = {
     'Body parts': 'bodypart',
-    'muscles': 'muscles',
-    'equipment': 'equipment'
+    'Muscles': 'muscles',
+    'Equipment': 'equipment'
   };
   const filterParam = filterParamMap[filter];
 
-  fetch(`${apiUrl}/exercises?${filterParam}=${name}&page=${activePage}&limit=12`)
+  filterParams.filter = filter
+  filterParams.category = name
+
+  clearSearchInput()
+
+  fetch(`${apiUrl}/exercises?${filterParam}=${name.toLowerCase()}&page=${activePage}&limit=12`)
     .then(response => response.json())
     .then(data => {
+      
+      makePagination(12, data.totalPages).on(
+        'afterMove',
+        ({ page }) => {
+          getExercisesPage({filter, name, page})
+        });
+      
       handleExerciseData(data);
     })
     .catch(error => {
@@ -146,9 +152,78 @@ export function getExercises({ filter, name }) {
     });
 }
 
-function startExercises(keyword, name) {
 
-  fetch(`${apiUrl}/exercises?{filterParams}=${name}$keyword=${keyword}&page=1&limit=${itemsPerPage}`)
+function getExercisesPage({ filter, name, page }) {
+  const filterParamMap = {
+    'Body parts': 'bodypart',
+    'Muscles': 'muscles',
+    'Equipment': 'equipment'
+  };
+  const filterParam = filterParamMap[filter];
+
+  fetch(`${apiUrl}/exercises?${filterParam}=${name}&page=${page}&limit=12`)
+    .then(response => response.json())
+    .then(data => {
+      handleExerciseData(data);
+    })
+    .catch(error => {
+      console.error('Error while fetching exercises:', error);
+    });
+} 
+
+
+
+function startExercises(keyword) {
+  const filterParamMap = {
+    'Body parts': 'bodypart',
+    'Muscles': 'muscles',
+    'Equipment': 'equipment'
+  };
+
+  const filter = filterParams.filter
+  const name = filterParams.category
+
+  console.log("startExercises", filter, name)
+
+  const filterParam = filterParamMap[filter];
+
+  fetch(`${apiUrl}/exercises?${filterParam}=${name}&keyword=${keyword}&page=1&limit=${itemsPerPage}`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Error');
+      }
+      return response.json();
+    })
+    .then(data => {
+            makePagination(12, data.totalPages).on(
+        'afterMove',
+        ({ page }) => {
+          startExercisesPage(keyword, page)
+        });
+      
+
+      handleExerciseData(data);
+    })
+    .catch(error => {
+      console.error('Sorry, is not found', error);
+    });
+}
+
+function startExercisesPage(keyword, page=1) {
+  const filterParamMap = {
+    'Body parts': 'bodypart',
+    'Muscles': 'muscles',
+    'Equipment': 'equipment'
+  };
+
+  const filter = filterParams.filter
+  const name = filterParams.category
+
+  console.log(filter, name)
+
+  const filterParam = filterParamMap[filter];
+
+  fetch(`${apiUrl}/exercises?${filterParam}=${name}&keyword=${keyword}&page=${page}&limit=${itemsPerPage}`)
     .then(response => {
       if (!response.ok) {
         throw new Error('Error');
@@ -162,7 +237,6 @@ function startExercises(keyword, name) {
       console.error('Sorry, is not found', error);
     });
 }
-
 searchInput.addEventListener('focus', function() {
         iconSearch.style.display = 'none';
         iconX.style.display = 'block';
@@ -173,3 +247,10 @@ searchInput.addEventListener('blur', function() {
         searchInput.value = '';
     });
 
+function clearSearchInput() {
+  searchInput.value = ""
+}
+
+export function capitalize(s) {
+  return s[0].toUpperCase() + s.slice(1);
+}

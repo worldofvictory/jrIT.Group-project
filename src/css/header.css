@@ -348,15 +348,15 @@ ul {
 
 @media screen and (min-width: 375px) {
   .h-container {
-    max-width: 335px;
-    padding-left: 0;
-    padding-right: 0;
+    max-width: 375px;
   }
 }
 
 @media screen and (min-width: 768px) {
   .h-container {
-    max-width: 704px;
+    max-width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
   }
 
   .mobil-menu {
@@ -382,7 +382,8 @@ ul {
 
 @media screen and (min-width: 1440px) {
   .h-container {
-    max-width: 1376px;
+    max-width: 1440px;
+    
   }
   .heder-social {
     margin-left: 400px;
